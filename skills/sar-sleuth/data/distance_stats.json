@@ -1,0 +1,62 @@
+{
+ "_about": "Straight-line distance (km) from the last seen point to where people of each category were found, as percentiles. Numbers are facts quoted from the sources with citation; the source documents themselves are not redistributed. 'quality' says how much to trust the table. Percentiles a source does not give are interpolated by the code between the given points (0 km at 0 %).",
+ "terrain_rule": "ISRID convention: 'mountain' when the elevation range within 5 km of the point exceeds 305 m (1000 ft), else 'flat'; 'urban' when built-up covers over half of the 1 km around the point; 'dry' when bare/sparse vegetation covers over 30 % of the 5 km around the point.",
+ "sources": {
+  "uk2011": "Perkins, Roberts, Feeney (2011) The UK Missing Person Behaviour Study, Centre for Search Research, https://tcsr.org.uk/media/kushuk1a/uk-missing-person-behaviour-study-2011.pdf",
+  "koester2008": "Koester (2008) Lost Person Behavior, dementia sample chapter p.164, https://www.dbs-sar.com/LPB/Dementia.pdf",
+  "koester2025": "Koester (2025) LPB updates, ICAR 2025 slides, slide 15 (miles converted to km), https://www.alpine-rescue.org/system/production/article/documents/file/005/312/a4507c99bbf7f6ade0b44cd1068b2354b42ae1dd3748ad1612445944f372f92c/20251009-1130-ICAR_2025_LPB_Koester.pdf",
+  "sava2015": "Sava, Twardy, Koester, Sonwalkar (2015) Transactions in GIS, Table 1, reproducing Koester 2008 hiker figures (in miles; converted), http://geoinf.psu.edu/publications/2015_TransGIS_Search_Sava.pdf",
+  "twardy2006": "Twardy, Koester, Gatt (2006) Missing person behaviour: an Australian study, Tables 2.2 and 2.8, https://esf.com.au/wp-content/uploads/2017/03/RobertGatt2002VicPol.pdf",
+  "asrc2007": "ASRC Operations Manual draft (2007) lost person behavior table; units not stated, read as miles and converted, 'max' column not 95 %, https://www.archive.asrc.net/ASRC-Operations/ASRC-Operations-Manual/2007-03-12-ASRC-OpsMan-Lost-Person-Behavior-draft.pdf",
+  "d4h": "D4H blog quoting Koester 2008 for child 1-3 (secondhand), https://www.d4h.com/blog/dr-robert-koesters-lost-person-behavior-and-how-to-contribute-to-isrid",
+  "grampian2007": "Gibb, Woolnough (2007) Missing persons: understanding, planning, responding (Grampian Police), mostly urban police data, https://www.missingpersons.gov.au/sites/default/files/PDF%20-%20Publications/Research/International/Missing%20Persons%20Understanding%20Planning%20Respondi.pdf",
+  "dbs_id": "dbS Productions, intellectual disability profile (Virginia), https://dbs-sar.com/SAR_Research/retarded.htm"
+ },
+ "categories": {
+  "child_1_3": [
+   {"terrain": "any", "src": "d4h", "n": null, "quality": "secondhand", "p": {"25": 0.2, "50": 0.3, "75": 0.6, "95": 4.5}},
+   {"terrain": "urban", "src": "grampian2007", "n": null, "quality": "police data, ages 1-4", "p": {"30": 0.16, "50": 0.4, "70": 0.75, "80": 0.9, "98": 1.2}}
+  ],
+  "child_4_6": [
+   {"terrain": "any", "src": "asrc2007", "n": null, "quality": "units assumed miles; 'max' used as 99 %", "p": {"25": 0.32, "50": 1.29, "75": 2.74, "99": 6.92}},
+   {"terrain": "urban", "src": "grampian2007", "n": null, "quality": "police data, ages 5-8", "p": {"30": 0.35, "50": 0.55, "70": 1.1, "80": 1.3, "90": 1.8, "99": 6.8}}
+  ],
+  "child_7_12": [
+   {"terrain": "any", "src": "twardy2006", "n": 34, "quality": "children mostly <= 12, autistic children included", "p": {"25": 0.6, "50": 1.1, "75": 2.0, "95": 5.0}}
+  ],
+  "child_13_15": [
+   {"terrain": "any", "src": "asrc2007", "n": null, "quality": "units assumed miles; 'max' used as 99 %", "p": {"25": 0.97, "50": 1.77, "75": 2.9, "99": 4.99}}
+  ],
+  "dementia": [
+   {"terrain": "mountain", "src": "koester2025", "n": 1207, "quality": "ISRID 2.0", "p": {"25": 0.16, "50": 0.97, "75": 2.57, "95": 11.27}},
+   {"terrain": "flat", "src": "koester2025", "n": 320, "quality": "ISRID 2.0", "p": {"25": 0.32, "50": 0.97, "75": 2.41, "95": 9.33}},
+   {"terrain": "urban", "src": "koester2008", "n": 336, "quality": "ISRID 1.0", "p": {"25": 0.3, "50": 1.1, "75": 3.2, "95": 12.6}},
+   {"terrain": "dry_mountain", "src": "koester2008", "n": 14, "quality": "ISRID 1.0, small n", "p": {"25": 1.0, "50": 1.9, "75": 3.1, "95": 6.1}},
+   {"terrain": "dry_flat", "src": "koester2008", "n": 15, "quality": "ISRID 1.0, small n", "p": {"25": 0.5, "50": 1.6, "75": 3.6, "95": 11.8}}
+  ],
+  "elderly": [
+   {"terrain": "any", "src": "asrc2007", "n": null, "quality": "'normal' elderly; units assumed miles; 'max' used as 99 %", "p": {"25": 0.16, "50": 0.8, "75": 4.02, "99": 7.72}}
+  ],
+  "hiker": [
+   {"terrain": "mountain", "src": "sava2015", "n": 568, "quality": "secondhand reproduction of ISRID 1.0", "p": {"25": 1.13, "50": 3.06, "75": 5.79, "95": 18.19}},
+   {"terrain": "flat", "src": "sava2015", "n": 274, "quality": "secondhand reproduction of ISRID 1.0", "p": {"25": 0.64, "50": 1.77, "75": 3.22, "95": 9.82}},
+   {"terrain": "dry_mountain", "src": "sava2015", "n": 221, "quality": "secondhand reproduction of ISRID 1.0", "p": {"25": 1.61, "50": 3.22, "75": 6.44, "95": 19.15}},
+   {"terrain": "dry_flat", "src": "sava2015", "n": 58, "quality": "secondhand reproduction of ISRID 1.0", "p": {"25": 1.29, "50": 2.09, "75": 6.6, "95": 13.04}}
+  ],
+  "hunter_forager": [
+   {"terrain": "any", "src": "asrc2007", "n": null, "quality": "hunters; used for foragers and shepherds too (no open table); units assumed miles; 'max' used as 99 %", "p": {"25": 1.61, "50": 2.41, "75": 3.86, "99": 8.05}}
+  ],
+  "despondent": [
+   {"terrain": "any", "src": "uk2011", "n": 457, "quality": "UK all terrain", "p": {"10": 0.1, "20": 0.22, "30": 0.5, "40": 0.7, "50": 1.0, "60": 1.5, "70": 2.5, "80": 5.4, "90": 15}}
+  ],
+  "mental_illness": [
+   {"terrain": "any", "src": "uk2011", "n": 63, "quality": "UK all terrain", "p": {"10": 0.1, "20": 0.38, "30": 0.5, "40": 0.78, "50": 1.0, "60": 2.2, "70": 3.7, "80": 7.8, "90": 12}}
+  ],
+  "intellectual_disability": [
+   {"terrain": "any", "src": "dbs_id", "n": 29, "quality": "Virginia; used for autism too (no open autism table)", "p": {"25": 0.2, "50": 0.8, "75": 1.6, "95": 4.0}}
+  ],
+  "any": [
+   {"terrain": "any", "src": "twardy2006", "n": 238, "quality": "all missing persons, Australia", "p": {"25": 1.0, "50": 2.0, "75": 6.0, "95": 20.0}}
+  ]
+ }
+}

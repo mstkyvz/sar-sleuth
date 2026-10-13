@@ -1,0 +1,577 @@
+{
+ "notice": "Estimate for search planning (decision support). Zones show where the person could be, calibrated on a limited set of solved cases; local knowledge and field information take precedence.",
+ "last_seen": {
+  "lat": 39.3341,
+  "lon": 35.7679,
+  "time": "2026-05-28T20:15:00+03:00",
+  "hours_since": 10.0
+ },
+ "person": {
+  "age": 3.0,
+  "sex": "f",
+  "fitness": "normal",
+  "mobility": "normal",
+  "injured": false,
+  "dementia": false,
+  "can_run": null
+ },
+ "profile": {
+  "walk_kmh": 3.564,
+  "speed_factor": 0.7340885684860967,
+  "sens": 1.3,
+  "max_climb": 25.0,
+  "max_hill": 32.0,
+  "run_kmh": null,
+  "run_minutes": 0,
+  "activity": {
+   "night_speed": 0.5,
+   "likely": {
+    "day": 0.5,
+    "night": 0.0
+   },
+   "max": {
+    "day": 1.0,
+    "night": 0.1
+   },
+   "day_decay": {
+    "_note": "ASSUMPTION, to calibrate: multiplier on the daily moving-hour cap for day 1, 2, 3, 4+ (fatigue, hunger, thirst, cold).",
+    "likely": [
+     1.0,
+     0.6,
+     0.4,
+     0.3
+    ],
+    "max": [
+     1.0,
+     0.8,
+     0.6,
+     0.5
+    ]
+   }
+  },
+  "cap_likely": 3.0,
+  "cap_max": 6.0,
+  "likely_cap": 1.93,
+  "notes": [
+   "flat walking speed 0.99 m/s from walk_speed_child",
+   "does not run (age, mobility or injury; override with --can-run yes)"
+  ]
+ },
+ "budget": {
+  "likely": {
+   "moving_hours": 0.83,
+   "walk_equiv_hours": 1.93,
+   "run_bonus_hours": 0.0,
+   "cap_hours_by_day": [
+    3.0
+   ],
+   "calibrated_cap_hours": 1.93,
+   "capped": true,
+   "rule": "min(calibrated cap, max budget)"
+  },
+  "max": {
+   "moving_hours": 2.5,
+   "walk_equiv_hours": 2.08,
+   "run_bonus_hours": 0.0,
+   "cap_hours_by_day": [
+    6.0
+   ]
+  },
+  "dark_hours": 8.33,
+  "hours": 10.0
+ },
+ "grid": {
+  "lat0": 39.3341,
+  "lon0": 35.7679,
+  "res_m": 25.0,
+  "n": 382,
+  "size": 765,
+  "projection": "local equirectangular: lat = lat0 - (row-n)*res/110574, lon = lon0 + (col-n)*res/(111320*cos(lat0))"
+ },
+ "conditions": {
+  "scenes": [
+   {
+    "id": "S2C_36SYJ_20260527_0_L2A",
+    "date": "2026-05-27",
+    "cloud_pct": 0.8
+   },
+   {
+    "id": "S2C_37SBD_20260527_0_L2A",
+    "date": "2026-05-27",
+    "cloud_pct": 0.9
+   },
+   {
+    "id": "S2A_36SYJ_20260526_0_L2A",
+    "date": "2026-05-26",
+    "cloud_pct": 41.4
+   },
+   {
+    "id": "S2A_37SBD_20260526_0_L2A",
+    "date": "2026-05-26",
+    "cloud_pct": 43.8
+   },
+   {
+    "id": "S2C_37SBD_20260524_0_L2A",
+    "date": "2026-05-24",
+    "cloud_pct": 74.5
+   },
+   {
+    "id": "S2C_36SYJ_20260524_0_L2A",
+    "date": "2026-05-24",
+    "cloud_pct": 74.8
+   },
+   {
+    "id": "S2A_36SYJ_20260519_2_L2A",
+    "date": "2026-05-19",
+    "cloud_pct": 82.3
+   },
+   {
+    "id": "S2A_37SBD_20260519_2_L2A",
+    "date": "2026-05-19",
+    "cloud_pct": 85.5
+   },
+   {
+    "id": "S2C_37SBD_20260517_0_L2A",
+    "date": "2026-05-17",
+    "cloud_pct": 76.9
+   },
+   {
+    "id": "S2C_36SYJ_20260517_0_L2A",
+    "date": "2026-05-17",
+    "cloud_pct": 78.1
+   },
+   {
+    "id": "S2A_36SYJ_20260516_0_L2A",
+    "date": "2026-05-16",
+    "cloud_pct": 59.3
+   },
+   {
+    "id": "S2A_37SBD_20260516_0_L2A",
+    "date": "2026-05-16",
+    "cloud_pct": 67.0
+   }
+  ],
+  "clear_share": 0.952,
+  "snow_share": 0.0016,
+  "water_share": 0.0,
+  "source": "Sentinel-2 L2A SCL via Element84 Earth Search (Copernicus data, free and open)",
+  "snow_ignored": "915 snow cells (<0.5% of clear cells): treated as misclassified bright ground",
+  "applied": {
+   "snow_cells": 0,
+   "new_water_cells": 0
+  }
+ },
+ "roads": {
+  "source": "overture",
+  "ways": 918
+ },
+ "start_cell": {
+  "elevation_m": 1705.4,
+  "landcover": 50,
+  "on_road": 1
+ },
+ "rings": {
+  "category": "child_1_3",
+  "terrain": "mountain",
+  "table_terrain": "any",
+  "source": "d4h",
+  "n": null,
+  "quality": "secondhand",
+  "km": {
+   "25": 0.2,
+   "50": 0.3,
+   "75": 0.6,
+   "95": 4.5
+  },
+  "area_km2": {
+   "25": 0.12,
+   "50": 0.28,
+   "75": 1.12,
+   "95": 63.55
+  },
+  "reachable_share": {
+   "25": 1.0,
+   "50": 1.0,
+   "75": 1.0,
+   "95": 0.999
+  }
+ },
+ "transit": {
+  "status": "off: under 7 (unlikely to board alone; --transit yes to force)"
+ },
+ "likely": {
+  "area_km2": 84.77,
+  "max_km": 5.95,
+  "median_km": 3.68,
+  "farthest_km_by_direction": {
+   "N": 5.08,
+   "NE": 5.76,
+   "E": 5.87,
+   "SE": 5.6,
+   "S": 5.74,
+   "SW": 5.95,
+   "W": 5.67,
+   "NW": 5.18
+  },
+  "touches_grid_edge": false
+ },
+ "max": {
+  "area_km2": 98.87,
+  "max_km": 6.33,
+  "median_km": 3.97,
+  "farthest_km_by_direction": {
+   "N": 5.62,
+   "NE": 6.27,
+   "E": 6.3,
+   "SE": 6.0,
+   "S": 6.22,
+   "SW": 6.33,
+   "W": 6.17,
+   "NW": 5.66
+  },
+  "touches_grid_edge": false
+ },
+ "toward": {
+  "N": {
+   "likely": {
+    "bearing": 0,
+    "lat": 39.376605,
+    "lon": 35.790257,
+    "straight_km": 5.08,
+    "route_km": 5.5,
+    "walking_hours": 1.93
+   },
+   "max": {
+    "bearing": 0,
+    "lat": 39.381127,
+    "lon": 35.79258,
+    "straight_km": 5.62,
+    "route_km": 6.5,
+    "walking_hours": 2.08
+   }
+  },
+  "NE": {
+   "likely": {
+    "bearing": 45,
+    "lat": 39.378866,
+    "lon": 35.802162,
+    "straight_km": 5.76,
+    "route_km": 6.06,
+    "walking_hours": 1.93
+   },
+   "max": {
+    "bearing": 45,
+    "lat": 39.382484,
+    "lon": 35.805936,
+    "straight_km": 6.27,
+    "route_km": 6.58,
+    "walking_hours": 2.08
+   }
+  },
+  "E": {
+   "likely": {
+    "bearing": 90,
+    "lat": 39.322569,
+    "lon": 35.834391,
+    "straight_km": 5.87,
+    "route_km": 6.24,
+    "walking_hours": 1.93
+   },
+   "max": {
+    "bearing": 90,
+    "lat": 39.325282,
+    "lon": 35.840198,
+    "straight_km": 6.3,
+    "route_km": 6.74,
+    "walking_hours": 2.08
+   }
+  },
+  "SE": {
+   "likely": {
+    "bearing": 135,
+    "lat": 39.30403,
+    "lon": 35.820164,
+    "straight_km": 5.6,
+    "route_km": 5.8,
+    "walking_hours": 1.93
+   },
+   "max": {
+    "bearing": 135,
+    "lat": 39.300412,
+    "lon": 35.822486,
+    "straight_km": 6.0,
+    "route_km": 6.2,
+    "walking_hours": 2.08
+   }
+  },
+  "S": {
+   "likely": {
+    "bearing": 180,
+    "lat": 39.285942,
+    "lon": 35.74293,
+    "straight_km": 5.74,
+    "route_km": 6.05,
+    "walking_hours": 1.93
+   },
+   "max": {
+    "bearing": 180,
+    "lat": 39.282099,
+    "lon": 35.740316,
+    "straight_km": 6.22,
+    "route_km": 6.53,
+    "walking_hours": 2.08
+   }
+  },
+  "SW": {
+   "likely": {
+    "bearing": 225,
+    "lat": 39.304256,
+    "lon": 35.71041,
+    "straight_km": 5.95,
+    "route_km": 6.14,
+    "walking_hours": 1.93
+   },
+   "max": {
+    "bearing": 225,
+    "lat": 39.306969,
+    "lon": 35.703151,
+    "straight_km": 6.33,
+    "route_km": 6.51,
+    "walking_hours": 2.08
+   }
+  },
+  "W": {
+   "likely": {
+    "bearing": 270,
+    "lat": 39.314656,
+    "lon": 35.706926,
+    "straight_km": 5.67,
+    "route_km": 5.92,
+    "walking_hours": 1.93
+   },
+   "max": {
+    "bearing": 270,
+    "lat": 39.312847,
+    "lon": 35.701699,
+    "straight_km": 6.17,
+    "route_km": 6.42,
+    "walking_hours": 2.07
+   }
+  },
+  "NW": {
+   "likely": {
+    "bearing": 315,
+    "lat": 39.366657,
+    "lon": 35.724637,
+    "straight_km": 5.18,
+    "route_km": 5.6,
+    "walking_hours": 1.93
+   },
+   "max": {
+    "bearing": 315,
+    "lat": 39.368692,
+    "lon": 35.719411,
+    "straight_km": 5.66,
+    "route_km": 6.1,
+    "walking_hours": 2.08
+   }
+  }
+ },
+ "hourly": {
+  "0.5": {
+   "area_km2": 6.51,
+   "max_km": 1.6,
+   "median_km": 1.02,
+   "farthest_km_by_direction": {
+    "N": 1.5,
+    "NE": 1.5,
+    "E": 1.52,
+    "SE": 1.6,
+    "S": 1.58,
+    "SW": 1.55,
+    "W": 1.4,
+    "NW": 1.5
+   },
+   "touches_grid_edge": false
+  },
+  "1": {
+   "area_km2": 23.67,
+   "max_km": 3.18,
+   "median_km": 1.94,
+   "farthest_km_by_direction": {
+    "N": 2.66,
+    "NE": 2.91,
+    "E": 3.06,
+    "SE": 3.15,
+    "S": 3.08,
+    "SW": 3.18,
+    "W": 2.7,
+    "NW": 2.49
+   },
+   "touches_grid_edge": false
+  },
+  "2": {
+   "area_km2": 91.1,
+   "max_km": 6.13,
+   "median_km": 3.81,
+   "farthest_km_by_direction": {
+    "N": 5.25,
+    "NE": 5.99,
+    "E": 6.07,
+    "SE": 5.8,
+    "S": 5.96,
+    "SW": 6.13,
+    "W": 5.9,
+    "NW": 5.4
+   },
+   "touches_grid_edge": false
+  }
+ },
+ "warnings": [],
+ "model": "data/speed_model.json (see the _source of each block; 'ASSUMPTION' blocks are uncalibrated)",
+ "priority": {
+  "factors": {
+   "path": 1.3,
+   "drainage": 1.2,
+   "structure": 1.5
+  },
+  "beyond_likely_weight": 0.35,
+  "sector_km": 0.2,
+  "sectors": 2586,
+  "top": [
+   {
+    "rank": 1,
+    "poa": 0.0983,
+    "cum_poa": 0.0983,
+    "area_km2": 0.04,
+    "box": [
+     39.333760860600144,
+     35.766012701643135,
+     39.33556960406605,
+     35.76833553039004
+    ]
+   },
+   {
+    "rank": 2,
+    "poa": 0.0842,
+    "cum_poa": 0.1825,
+    "area_km2": 0.04,
+    "box": [
+     39.33195211713423,
+     35.766012701643135,
+     39.333760860600144,
+     35.76833553039004
+    ]
+   },
+   {
+    "rank": 3,
+    "poa": 0.0837,
+    "cum_poa": 0.2661,
+    "area_km2": 0.04,
+    "box": [
+     39.333760860600144,
+     35.76833553039004,
+     39.33556960406605,
+     35.77065835913695
+    ]
+   },
+   {
+    "rank": 4,
+    "poa": 0.07,
+    "cum_poa": 0.3361,
+    "area_km2": 0.04,
+    "box": [
+     39.33195211713423,
+     35.76833553039004,
+     39.333760860600144,
+     35.77065835913695
+    ]
+   },
+   {
+    "rank": 5,
+    "poa": 0.0523,
+    "cum_poa": 0.3884,
+    "area_km2": 0.04,
+    "box": [
+     39.33556960406605,
+     35.766012701643135,
+     39.33737834753197,
+     35.76833553039004
+    ]
+   },
+   {
+    "rank": 6,
+    "poa": 0.0449,
+    "cum_poa": 0.4333,
+    "area_km2": 0.04,
+    "box": [
+     39.333760860600144,
+     35.76368987289622,
+     39.33556960406605,
+     35.766012701643135
+    ]
+   },
+   {
+    "rank": 7,
+    "poa": 0.0425,
+    "cum_poa": 0.4758,
+    "area_km2": 0.04,
+    "box": [
+     39.33556960406605,
+     35.76833553039004,
+     39.33737834753197,
+     35.77065835913695
+    ]
+   },
+   {
+    "rank": 8,
+    "poa": 0.0387,
+    "cum_poa": 0.5145,
+    "area_km2": 0.04,
+    "box": [
+     39.33195211713423,
+     35.76368987289622,
+     39.333760860600144,
+     35.766012701643135
+    ]
+   },
+   {
+    "rank": 9,
+    "poa": 0.0298,
+    "cum_poa": 0.5443,
+    "area_km2": 0.04,
+    "box": [
+     39.330143373668314,
+     35.766012701643135,
+     39.33195211713423,
+     35.76833553039004
+    ]
+   },
+   {
+    "rank": 10,
+    "poa": 0.0247,
+    "cum_poa": 0.5689,
+    "area_km2": 0.04,
+    "box": [
+     39.333760860600144,
+     35.77065835913695,
+     39.33556960406605,
+     35.772981187883865
+    ]
+   }
+  ]
+ },
+ "weather": {
+  "source": "Open-Meteo (open-meteo.com, CC BY 4.0)",
+  "hours": 10,
+  "temp_min_c": 6.5,
+  "temp_max_c": 8.8,
+  "feels_like_min_c": 4.7,
+  "rain_mm": 2.9,
+  "snow_cm": 0.0,
+  "wind_max_kmh": 10.6,
+  "flags": [
+   "cold: hypothermia risk, worse if wet; people tend to seek shelter"
+  ]
+ }
+}

@@ -1,0 +1,648 @@
+{
+ "_about": "Every number used by person.py and reach.py. Each block says where it comes from. 'assumption' means no source was found yet: these are the first values to calibrate against solved cases.",
+ "terrain": {
+  "_source": "Wood, Mackaness, Simpson, Armstrong (2023), Improved prediction of hiking speeds using a data driven approach, Table 1, https://arxiv.org/abs/2303.16065. Speed km/h = exp(a + b*theta + c*theta^2 + d*phi); theta = walking slope in the direction of travel (deg, uphill positive), phi = hill slope of the terrain (deg). Fitted on 88,000 km of UK walking GPS tracks (average walker, breaks removed).",
+  "classes": {
+   "paved": {
+    "a": 1.58,
+    "b": -0.00726,
+    "c": -0.00218,
+    "d": -0.00389
+   },
+   "unpaved": {
+    "a": 1.58,
+    "b": -0.00965,
+    "c": -0.00248,
+    "d": -0.00389
+   },
+   "offroad": {
+    "a": 1.536,
+    "b": -0.00965,
+    "c": -0.00187,
+    "d": -0.00731
+   },
+   "offroad_light": {
+    "a": 1.58,
+    "b": -0.00965,
+    "c": -0.00187,
+    "d": -0.00731
+   },
+   "offroad_heavy": {
+    "a": 1.4,
+    "b": -0.00965,
+    "c": -0.00187,
+    "d": -0.00731
+   }
+  },
+  "flat_reference_kmh": 4.855,
+  "_flat_reference": "exp(1.580): the model's speed on flat paved ground; a person's own flat speed is divided by this to scale the whole model."
+ },
+ "landcover": {
+  "_source": "ESA WorldCover 10 m 2021 v200 classes, https://esa-worldcover.org/en/data-access (CC BY 4.0). Class -> Wood terrain class. 'extra' multiplies speed on top of the Wood class and is an ASSUMPTION: the Wood data only contains walkable ground, so it has no case for pushing through dense maquis, closed forest or marsh.",
+  "10": {
+   "name": "tree cover",
+   "class": "offroad_heavy",
+   "extra": 0.8
+  },
+  "20": {
+   "name": "shrubland",
+   "class": "offroad_heavy",
+   "extra": 0.65
+  },
+  "30": {
+   "name": "grassland",
+   "class": "offroad_light",
+   "extra": 1.0
+  },
+  "40": {
+   "name": "cropland",
+   "class": "offroad_light",
+   "extra": 0.9
+  },
+  "50": {
+   "name": "built-up",
+   "class": "offroad_light",
+   "extra": 0.9
+  },
+  "60": {
+   "name": "bare / sparse",
+   "class": "offroad_light",
+   "extra": 0.9
+  },
+  "70": {
+   "name": "snow and ice",
+   "class": "offroad_heavy",
+   "extra": 0.5
+  },
+  "80": {
+   "name": "permanent water",
+   "class": null
+  },
+  "90": {
+   "name": "herbaceous wetland",
+   "class": "offroad_heavy",
+   "extra": 0.45
+  },
+  "95": {
+   "name": "mangroves",
+   "class": null
+  },
+  "100": {
+   "name": "moss and lichen",
+   "class": "offroad_light",
+   "extra": 0.9
+  },
+  "0": {
+   "name": "no data",
+   "class": "offroad",
+   "extra": 1.0
+  }
+ },
+ "osm_ways": {
+  "_source": "OpenStreetMap highway=* (ODbL). surface=* overrides the default when present. A way is burned into every grid cell it crosses, after water, so bridges stay passable.",
+  "paved": [
+   "motorway",
+   "trunk",
+   "primary",
+   "secondary",
+   "tertiary",
+   "unclassified",
+   "residential",
+   "service",
+   "living_street",
+   "pedestrian",
+   "footway",
+   "steps",
+   "motorway_link",
+   "trunk_link",
+   "primary_link",
+   "secondary_link",
+   "tertiary_link",
+   "cycleway"
+  ],
+  "unpaved": [
+   "track",
+   "path",
+   "bridleway"
+  ],
+  "unpaved_surfaces": [
+   "unpaved",
+   "gravel",
+   "fine_gravel",
+   "dirt",
+   "earth",
+   "ground",
+   "grass",
+   "sand",
+   "mud",
+   "compacted",
+   "pebblestone",
+   "rock",
+   "wood"
+  ],
+  "paved_surfaces": [
+   "paved",
+   "asphalt",
+   "concrete",
+   "paving_stones",
+   "sett",
+   "cobblestone",
+   "concrete:plates"
+  ],
+  "barriers": [
+   "natural=cliff"
+  ]
+ },
+ "walk_speed_adult": {
+  "_source": "Bohannon & Andrews (2011), Normal walking speed: a descriptive meta-analysis, Physiotherapy 97:182-189, doi:10.1016/j.physio.2010.12.004; values by decade as reproduced in the University of Toronto iWalk guide. Comfortable gait on a walkway, m/s.",
+  "male": [
+   [
+    20,
+    1.36
+   ],
+   [
+    30,
+    1.43
+   ],
+   [
+    40,
+    1.43
+   ],
+   [
+    50,
+    1.43
+   ],
+   [
+    60,
+    1.34
+   ],
+   [
+    70,
+    1.26
+   ],
+   [
+    80,
+    0.97
+   ]
+  ],
+  "female": [
+   [
+    20,
+    1.34
+   ],
+   [
+    30,
+    1.34
+   ],
+   [
+    40,
+    1.39
+   ],
+   [
+    50,
+    1.31
+   ],
+   [
+    60,
+    1.24
+   ],
+   [
+    70,
+    1.13
+   ],
+   [
+    80,
+    0.94
+   ]
+  ]
+ },
+ "walk_speed_child": {
+  "_source": "Ages 2-4: Pediatric Physical Therapy 2015 normative table (0.93 / 0.99 / 1.14 m/s for 24-35, 36-47, 48-59 months), https://pmc.ncbi.nlm.nih.gov/articles/PMC4580974/table/T2. Ages 7-11: 1.05 and 1.11 m/s quoted in Genij Ortopedii (Ilizarov journal) from older references (single source). Ages 13-19 interpolated to the adult value (assumption).",
+  "any": [
+   [
+    2,
+    0.93
+   ],
+   [
+    3,
+    0.99
+   ],
+   [
+    4,
+    1.14
+   ],
+   [
+    7,
+    1.05
+   ],
+   [
+    10,
+    1.11
+   ],
+   [
+    13,
+    1.25
+   ],
+   [
+    19,
+    1.35
+   ]
+  ]
+ },
+ "modifiers": {
+  "_source": "ASSUMPTION unless stated. speed multiplies flat walking speed; sens multiplies the slope and hill-slope terms of the terrain model (1 = the average walker of Wood 2023, 1.5 = slopes cost half again as much); max_climb is the steepest walking slope (deg) the person can go up or down at all.",
+  "fitness": {
+   "low": {
+    "speed": 0.9,
+    "sens": 1.15
+   },
+   "normal": {
+    "speed": 1.0,
+    "sens": 1.0
+   },
+   "high": {
+    "speed": 1.08,
+    "sens": 0.9
+   }
+  },
+  "mobility": {
+   "normal": {
+    "speed": 1.0,
+    "sens": 1.0,
+    "max_climb": null
+   },
+   "limp": {
+    "speed": 0.65,
+    "sens": 1.5,
+    "max_climb": 22
+   },
+   "cane": {
+    "speed": 0.55,
+    "sens": 1.7,
+    "max_climb": 18
+   },
+   "walker": {
+    "speed": 0.4,
+    "sens": 2.5,
+    "max_climb": 10
+   }
+  },
+  "injured": {
+   "speed": 0.5,
+   "sens": 1.6,
+   "max_climb": 20
+  },
+  "age_sens": [
+   [
+    0,
+    1.3
+   ],
+   [
+    6,
+    1.3
+   ],
+   [
+    8,
+    1.1
+   ],
+   [
+    12,
+    1.0
+   ],
+   [
+    60,
+    1.0
+   ],
+   [
+    70,
+    1.2
+   ],
+   [
+    80,
+    1.5
+   ],
+   [
+    90,
+    1.8
+   ]
+  ],
+  "age_max_climb": [
+   [
+    0,
+    25
+   ],
+   [
+    6,
+    25
+   ],
+   [
+    10,
+    35
+   ],
+   [
+    60,
+    35
+   ],
+   [
+    70,
+    28
+   ],
+   [
+    80,
+    22
+   ],
+   [
+    90,
+    18
+   ]
+  ],
+  "hill_over_climb": 7,
+  "_hill_over_climb": "ASSUMPTION. Off paths, a cell whose hill slope exceeds max_climb + this many degrees is impassable even when traversed at an angle (zig-zagging lowers the walking slope, not the steepness of the ground underfoot)."
+ },
+ "running": {
+  "_source": "ASSUMPTION. Flat running speed (km/h) and how many minutes in total the person can run in the first hours; terrain slows running by the same ratio as walking. Nobody runs over 70 by default; --can-run yes/no overrides.",
+  "low": {
+   "kmh": 7.5,
+   "minutes": 10
+  },
+  "normal": {
+   "kmh": 9.0,
+   "minutes": 25
+  },
+  "high": {
+   "kmh": 11.0,
+   "minutes": 60
+  },
+  "child_7_12": {
+   "kmh": 8.0,
+   "minutes": 10
+  },
+  "default_can_run_ages": [
+   7,
+   69
+  ]
+ },
+ "activity": {
+  "_source": "ASSUMPTION. Share of each daylight / night hour spent actually moving, and a cap on moving hours per 24 h. 'likely' = a typical lost person who rests, hesitates and mostly stops at night; 'max' = keeps going as long as the body allows. Night speed multiplies speed after civil dusk (sun below -6 deg).",
+  "night_speed": 0.5,
+  "likely": {
+   "day": 0.5,
+   "night": 0.1
+  },
+  "max": {
+   "day": 1.0,
+   "night": 0.8
+  },
+  "cap_hours_per_24h": [
+   {
+    "ages": [
+     0,
+     6
+    ],
+    "likely": 3,
+    "max": 6
+   },
+   {
+    "ages": [
+     7,
+     12
+    ],
+    "likely": 5,
+    "max": 10
+   },
+   {
+    "ages": [
+     13,
+     59
+    ],
+    "likely": 8,
+    "max": 16
+   },
+   {
+    "ages": [
+     60,
+     69
+    ],
+    "likely": 6,
+    "max": 12
+   },
+   {
+    "ages": [
+     70,
+     79
+    ],
+    "likely": 4,
+    "max": 8
+   },
+   {
+    "ages": [
+     80,
+     120
+    ],
+    "likely": 3,
+    "max": 6
+   }
+  ],
+  "fitness_cap": {
+   "low": 0.8,
+   "normal": 1.0,
+   "high": 1.25
+  },
+  "mobility_cap": {
+   "normal": 1.0,
+   "limp": 0.6,
+   "cane": 0.5,
+   "walker": 0.35
+  },
+  "injured_cap": 0.4,
+  "dementia": {
+   "_note": "ASSUMPTION: people with dementia tend to keep walking and rest less, including at night.",
+   "likely": {
+    "day": 0.7,
+    "night": 0.4
+   },
+   "cap_factor": 1.3
+  },
+  "night_by_age": {
+   "_note": "ASSUMPTION, to calibrate: share of each dark hour spent moving, by age, per scenario (replaces likely/max night shares).",
+   "likely": [
+    [
+     0,
+     0.0
+    ],
+    [
+     6,
+     0.0
+    ],
+    [
+     7,
+     0.05
+    ],
+    [
+     13,
+     0.1
+    ],
+    [
+     70,
+     0.1
+    ],
+    [
+     80,
+     0.05
+    ]
+   ],
+   "max": [
+    [
+     0,
+     0.1
+    ],
+    [
+     6,
+     0.1
+    ],
+    [
+     7,
+     0.4
+    ],
+    [
+     13,
+     0.8
+    ],
+    [
+     70,
+     0.5
+    ],
+    [
+     80,
+     0.3
+    ]
+   ]
+  },
+  "day_decay": {
+   "_note": "ASSUMPTION, to calibrate: multiplier on the daily moving-hour cap for day 1, 2, 3, 4+ (fatigue, hunger, thirst, cold).",
+   "likely": [
+    1.0,
+    0.6,
+    0.4,
+    0.3
+   ],
+   "max": [
+    1.0,
+    0.8,
+    0.6,
+    0.5
+   ]
+  }
+ },
+ "likely_cap": {
+  "_source": "CALIBRATED 2026-10-13 on 70 solved cases (data/cases/; roads on; direction-unknown cases use the median walking time over all directions at the reported distance). The likely budget is min(cap, physical max); cap = 75th percentile of walking hours to the found point per group, because walking time does not grow with time missing. Leave-one-out coverage 71%; geographic hold-out 51% (international -> Türkiye) and 93% (Türkiye -> international). Re-fit with scripts/calibrate.py fit <dir> --write.",
+  "groups": {
+   "child_0_6": {
+    "ages": [
+     0,
+     6
+    ],
+    "hours": 1.93,
+    "n": 21
+   },
+   "child_7_15": {
+    "ages": [
+     7,
+     15
+    ],
+    "hours": 1.74,
+    "n": 11
+   },
+   "adult_16_64": {
+    "ages": [
+     16,
+     64
+    ],
+    "hours": 3.08,
+    "n": 6
+   },
+   "elderly_65": {
+    "ages": [
+     65,
+     130
+    ],
+    "hours": 2.17,
+    "n": 18
+   }
+  },
+  "dementia": {
+   "hours": 1.58,
+   "n": 14
+  }
+ },
+ "priority": {
+  "_source": "Where people are found, by category. Directions come from published lost-person findings: hikers 42 % found on a trail, road or stream (Doke 2012, Yosemite); dementia: 66 % cross or leave a road, those not on a road are mostly within 15 m of one, 20 % found in structures, downhill 42 % vs uphill 19 % (Koester 2008 dementia chapter; Koester ICAR 2025); young children shelter in small spaces and sleep (NEWSAR training notes, UVA Today interview). The multipliers themselves are ASSUMPTIONS sized to those shares; calibrate when found points with coordinates are available.",
+  "beyond_likely": 0.35,
+  "_beyond_likely": "ASSUMPTION: weight of a cell beyond the likely limit, falling linearly to 0 at the physical limit.",
+  "drainage_min_km2": 0.05,
+  "attractors": {
+   "default": {
+    "path": 2.0,
+    "drainage": 1.5,
+    "structure": 1.3
+   },
+   "hiker": {
+    "path": 3.0,
+    "drainage": 1.8,
+    "structure": 1.2
+   },
+   "hunter_forager": {
+    "path": 1.8,
+    "drainage": 1.6,
+    "structure": 1.2
+   },
+   "dementia": {
+    "path": 2.5,
+    "drainage": 1.5,
+    "structure": 1.8,
+    "downhill": 1.6
+   },
+   "elderly": {
+    "path": 2.2,
+    "drainage": 1.4,
+    "structure": 1.6,
+    "downhill": 1.3
+   },
+   "child_1_3": {
+    "path": 1.3,
+    "drainage": 1.2,
+    "structure": 1.5
+   },
+   "child_4_6": {
+    "path": 1.6,
+    "drainage": 1.3,
+    "structure": 1.5
+   },
+   "child_7_12": {
+    "path": 2.0,
+    "drainage": 1.4,
+    "structure": 1.4
+   },
+   "child_13_15": {
+    "path": 2.2,
+    "drainage": 1.4,
+    "structure": 1.3
+   },
+   "intellectual_disability": {
+    "path": 1.8,
+    "drainage": 1.5,
+    "structure": 1.4
+   },
+   "despondent": {
+    "path": 1.5,
+    "drainage": 1.3,
+    "structure": 1.2
+   },
+   "mental_illness": {
+    "path": 1.8,
+    "drainage": 1.3,
+    "structure": 1.4
+   }
+  }
+ }
+}

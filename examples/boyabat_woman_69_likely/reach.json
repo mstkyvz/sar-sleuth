@@ -1,0 +1,915 @@
+{
+ "notice": "Estimate for search planning (decision support). Zones show where the person could be, calibrated on a limited set of solved cases; local knowledge and field information take precedence.",
+ "last_seen": {
+  "lat": 41.469,
+  "lon": 34.7672,
+  "time": "2026-10-10T08:00:00+03:00",
+  "hours_since": 48.0
+ },
+ "person": {
+  "age": 69.0,
+  "sex": "f",
+  "fitness": "normal",
+  "mobility": "normal",
+  "injured": false,
+  "dementia": false,
+  "can_run": null
+ },
+ "profile": {
+  "walk_kmh": 4.107600000000001,
+  "speed_factor": 0.8460556127703399,
+  "sens": 1.18,
+  "max_climb": 28.7,
+  "max_hill": 35.7,
+  "run_kmh": 9.0,
+  "run_minutes": 25,
+  "activity": {
+   "night_speed": 0.5,
+   "likely": {
+    "day": 0.5,
+    "night": 0.1
+   },
+   "max": {
+    "day": 1.0,
+    "night": 0.5052631578947369
+   },
+   "day_decay": {
+    "_note": "ASSUMPTION, to calibrate: multiplier on the daily moving-hour cap for day 1, 2, 3, 4+ (fatigue, hunger, thirst, cold).",
+    "likely": [
+     1.0,
+     0.6,
+     0.4,
+     0.3
+    ],
+    "max": [
+     1.0,
+     0.8,
+     0.6,
+     0.5
+    ]
+   }
+  },
+  "cap_likely": 6.0,
+  "cap_max": 12.0,
+  "likely_cap": 2.17,
+  "notes": [
+   "flat walking speed 1.14 m/s from walk_speed_adult.female",
+   "can run: 9.0 km/h on the flat for 25 min in total (assumption)"
+  ]
+ },
+ "budget": {
+  "likely": {
+   "moving_hours": 9.6,
+   "walk_equiv_hours": 2.17,
+   "run_bonus_hours": 0.0,
+   "cap_hours_by_day": [
+    6.0,
+    3.6,
+    2.4
+   ],
+   "calibrated_cap_hours": 2.17,
+   "capped": true,
+   "rule": "min(calibrated cap, max budget)"
+  },
+  "max": {
+   "moving_hours": 21.6,
+   "walk_equiv_hours": 21.43,
+   "run_bonus_hours": 0.5,
+   "cap_hours_by_day": [
+    12.0,
+    9.6,
+    7.2
+   ]
+  },
+  "dark_hours": 23.33,
+  "hours": 48.0
+ },
+ "grid": {
+  "lat0": 41.469,
+  "lon0": 34.7672,
+  "res_m": 30.0,
+  "n": 500,
+  "size": 1001,
+  "projection": "local equirectangular: lat = lat0 - (row-n)*res/110574, lon = lon0 + (col-n)*res/(111320*cos(lat0))"
+ },
+ "conditions": {
+  "scenes": [
+   {
+    "id": "S2A_36TXM_20261009_2_L2A",
+    "date": "2026-10-09",
+    "cloud_pct": 0.0
+   },
+   {
+    "id": "S2A_36TXL_20261009_1_L2A",
+    "date": "2026-10-09",
+    "cloud_pct": 0.4
+   },
+   {
+    "id": "S2B_36TXL_20261009_0_L2A",
+    "date": "2026-10-09",
+    "cloud_pct": 4.6
+   },
+   {
+    "id": "S2B_36TXM_20261009_1_L2A",
+    "date": "2026-10-09",
+    "cloud_pct": 8.1
+   }
+  ],
+  "clear_share": 0.994,
+  "snow_share": 0.0,
+  "water_share": 0.0011,
+  "source": "Sentinel-2 L2A SCL via Element84 Earth Search (Copernicus data, free and open)",
+  "snow_ignored": "0 snow cells (<0.5% of clear cells): treated as misclassified bright ground",
+  "applied": {
+   "snow_cells": 0,
+   "new_water_cells": 48
+  }
+ },
+ "roads": {
+  "source": "overture",
+  "ways": 5249
+ },
+ "start_cell": {
+  "elevation_m": 309.6,
+  "landcover": 50,
+  "on_road": 1
+ },
+ "rings": {
+  "category": "hunter_forager",
+  "terrain": "mountain",
+  "table_terrain": "any",
+  "source": "asrc2007",
+  "n": null,
+  "quality": "hunters; used for foragers and shepherds too (no open table); units assumed miles; 'max' used as 99 %",
+  "km": {
+   "25": 1.61,
+   "50": 2.41,
+   "75": 3.86,
+   "95": 7.35
+  },
+  "area_km2": {
+   "25": 8.13,
+   "50": 18.26,
+   "75": 46.78,
+   "95": 169.65
+  },
+  "reachable_share": {
+   "25": 0.999,
+   "50": 1.0,
+   "75": 1.0,
+   "95": 0.999
+  }
+ },
+ "transit": {
+  "feeds": [
+   {
+    "id": "jbda-awajicity-awajinawahimebus",
+    "provider": "淡路市",
+    "url": "https://files.mobilitydatabase.org/jbda-awajicity-awajinawahimebus/latest.zip",
+    "license": "https://creativecommons.org/licenses/by/2.1/jp/",
+    "place": "Awaji",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-784",
+    "provider": "Rursee-Schifffahrt KG",
+    "url": "https://files.mobilitydatabase.org/mdb-784/latest.zip",
+    "license": "",
+    "place": "",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-1082",
+    "provider": "Hofmann Omnibusverkehr GmbH",
+    "url": "https://files.mobilitydatabase.org/mdb-1082/latest.zip",
+    "license": "https://www.nvbw.de/open-data/fahrplandaten/fahrplandaten-mit-liniennetz",
+    "place": "Landkreis Schwäbisch Hall",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-2393",
+    "provider": "NVBW - Nahverkehrsgesellschaft Baden-Württemberg mbH",
+    "url": "https://files.mobilitydatabase.org/mdb-2393/latest.zip",
+    "license": "https://www.nvbw.de/open-data/lizenz",
+    "place": "Ostalbkreis",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-2922",
+    "provider": "Flixbus Türkiye",
+    "url": "https://files.mobilitydatabase.org/mdb-2922/latest.zip",
+    "license": "",
+    "place": "Pozantı",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3047",
+    "provider": "Tallinna Linn",
+    "url": "https://files.mobilitydatabase.org/mdb-3047/latest.zip",
+    "license": "https://peatus.ee/content/teenusest",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3108",
+    "provider": "Georgian Railway",
+    "url": "https://files.mobilitydatabase.org/mdb-3108/latest.zip",
+    "license": "",
+    "place": "Tbilisi",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3153",
+    "provider": "ELRON",
+    "url": "https://files.mobilitydatabase.org/mdb-3153/latest.zip",
+    "license": "",
+    "place": "Anija vald",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3215",
+    "provider": "DELFI Germany-wide scheduled timetable data (GTFS)",
+    "url": "https://files.mobilitydatabase.org/mdb-3215/latest.zip",
+    "license": "http://www.opendefinition.org/licenses/cc-by",
+    "place": "",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3234",
+    "provider": "Verkehrsverbund Berlin-Brandenburg (VBB)",
+    "url": "https://files.mobilitydatabase.org/mdb-3234/latest.zip",
+    "license": "https://creativecommons.org/licenses/by/4.0/deed.en",
+    "place": "Barnim",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3235",
+    "provider": "ABuss OÜ, Aktsiaselts Hansa Bussiliinid, Aktsiaselts MK Autobuss, Alukvik OÜ, Arilix OÜ, AS Lux Express Estonia, Asunduse osaühing, ATG Bussiliinid OÜ, Atko Bussiliinid AS, ATKO Liinid OÜ, ATKO Transport OÜ, Ekspress-Auto L Osaühing, Ekspressbussiliinid osaühing, Elmar Purga FIE, ELRON, Estonian Lines OÜ, GoBus AS, HANSABUSS AS, Kalle Bussid OÜ, MEELIS HEEK, MK Reis-X OÜ, NAJA OÜ, Osaühing Bristol Takso, OSAÜHING FREMANTI, osaühing Tulisilm, OV Ida-Bus OÜ, OÜ Baltic Shuttle, PRESTO osaühing, Radix Transport OÜ, Rannu Rukkilill E.S.T. OÜ, Saaremaa vald, SEBE Aktsiaselts, Sirel Reisid OÜ, Taisto Express OÜ, Tallinna Linnatranspordi AS, TS Laevad OÜ, Tõnu Tours OÜ, Valgis osaühing",
+    "url": "https://files.mobilitydatabase.org/mdb-3235/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3363",
+    "provider": "GoBus AS, HANSABUSS AS, SEBE Aktsiaselts",
+    "url": "https://files.mobilitydatabase.org/mdb-3363/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3364",
+    "provider": "Osaühing Bristol Takso, Papiniidu Projekt AS, Piiroja Invest OÜ, SEBE Aktsiaselts",
+    "url": "https://files.mobilitydatabase.org/mdb-3364/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3368",
+    "provider": "Alukvik OÜ, Ekspressbussiliinid osaühing, GoBus AS, HANSABUSS AS, SEBE Aktsiaselts",
+    "url": "https://files.mobilitydatabase.org/mdb-3368/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3369",
+    "provider": "GoBus AS, MK Reis OÜ",
+    "url": "https://files.mobilitydatabase.org/mdb-3369/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3370",
+    "provider": "HANSABUSS AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3370/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3371",
+    "provider": "GoBus AS, HANSABUSS AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3371/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3372",
+    "provider": "GoBus AS, MEELIS HEEK, MK Reis OÜ",
+    "url": "https://files.mobilitydatabase.org/mdb-3372/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3373",
+    "provider": "Eesti Bussiliinid OÜ, GoBus AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3373/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3374",
+    "provider": "ATG Bussipark OÜ, GoBus AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3374/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3375",
+    "provider": "GoBus AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3375/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3376",
+    "provider": "GoBus AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3376/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3377",
+    "provider": "Aktsiaselts MK Autobuss, Atko Bussiliinid AS, GoBus AS, SEBE Aktsiaselts",
+    "url": "https://files.mobilitydatabase.org/mdb-3377/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3378",
+    "provider": "HANSABUSS AS, Kihnu Veeteed AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3378/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3379",
+    "provider": "ATG Bussiliinid OÜ, GoBus AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3379/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3380",
+    "provider": "Atko Bussiliinid AS, Estonian Lines OÜ, GoBus AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3380/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3381",
+    "provider": "HANSABUSS AS",
+    "url": "https://files.mobilitydatabase.org/mdb-3381/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3382",
+    "provider": "GoBus AS, Saaremaa vald",
+    "url": "https://files.mobilitydatabase.org/mdb-3382/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "mdb-3383",
+    "provider": "Aktsiaselts MK Autobuss, Arilix OÜ, AS ANNISTON, AS Lux Express Estonia, Estonian Lines OÜ, GoBus AS, HANSABUSS AS, Kalle Bussid OÜ, MK Reis OÜ, osaühing Tulisilm, OÜ Baltic Shuttle, Sirel Reisid OÜ, Taisto Express OÜ",
+    "url": "https://files.mobilitydatabase.org/mdb-3383/latest.zip",
+    "license": "https://www.agri.ee/regionaalareng-uhistransport/uhistransport-ja-reisimine/uhistranspordiregistri-avaandmed",
+    "place": "Tallinn",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "tdg-11681",
+    "provider": "Flixbus France",
+    "url": "https://files.mobilitydatabase.org/tdg-11681/latest.zip",
+    "license": "https://opendatacommons.org/licenses/odbl/1.0/",
+    "place": "",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "tdg-83315",
+    "provider": "COMMUNAUTE D'AGGLOMERATION DES 2 BAIES EN MONTREUILLOIS",
+    "url": "https://files.mobilitydatabase.org/tdg-83315/latest.zip",
+    "license": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "place": "Étaples",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "tdg-83821",
+    "provider": "Syndicat intercommunal des Transports Urbains Soissonnais",
+    "url": "https://files.mobilitydatabase.org/tdg-83821/latest.zip",
+    "license": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "place": "Soissons",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "tdg-83962",
+    "provider": "Communauté d'Agglomération de Bastia",
+    "url": "https://files.mobilitydatabase.org/tdg-83962/latest.zip",
+    "license": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "place": "Bastia",
+    "stops_in_area": 0,
+    "connections": 0
+   },
+   {
+    "id": "tdg-84244",
+    "provider": "Grand Bourg Agglomération",
+    "url": "https://files.mobilitydatabase.org/tdg-84244/latest.zip",
+    "license": "https://www.data.gouv.fr/pages/legal/licences/etalab-2.0",
+    "place": "Attignat",
+    "stops_in_area": 0,
+    "connections": 0
+   }
+  ],
+  "source": "Mobility Database catalog + GTFS feeds (licences per feed in 'feeds')",
+  "note": "no stop reachable on foot within the walking budget, or no service in the period",
+  "status": "on (built-up 42% within 1 km)"
+ },
+ "likely": {
+  "area_km2": 156.02,
+  "max_km": 8.13,
+  "median_km": 4.98,
+  "farthest_km_by_direction": {
+   "N": 7.89,
+   "NE": 7.91,
+   "E": 8.13,
+   "SE": 7.87,
+   "S": 7.15,
+   "SW": 6.74,
+   "W": 7.4,
+   "NW": 7.67
+  },
+  "touches_grid_edge": false
+ },
+ "max": {
+  "area_km2": 898.7,
+  "max_km": 21.21,
+  "median_km": 11.97,
+  "farthest_km_by_direction": {
+   "N": 16.23,
+   "NE": 21.21,
+   "E": 16.23,
+   "SE": 21.21,
+   "S": 16.23,
+   "SW": 21.21,
+   "W": 16.23,
+   "NW": 21.21
+  },
+  "touches_grid_edge": true
+ },
+ "toward": {
+  "N": {
+   "likely": {
+    "bearing": 0,
+    "lat": 41.540084,
+    "lon": 34.775472,
+    "straight_km": 7.89,
+    "route_km": 8.22,
+    "walking_hours": 2.17
+   },
+   "max": {
+    "bearing": 0,
+    "lat": 41.604656,
+    "lon": 34.692752,
+    "straight_km": 16.23,
+    "route_km": 17.47,
+    "walking_hours": 4.72
+   }
+  },
+  "NE": {
+   "likely": {
+    "bearing": 45,
+    "lat": 41.527061,
+    "lon": 34.822587,
+    "straight_km": 7.91,
+    "route_km": 8.3,
+    "walking_hours": 2.17
+   },
+   "max": {
+    "bearing": 45,
+    "lat": 41.604656,
+    "lon": 34.947027,
+    "straight_km": 21.21,
+    "route_km": 22.99,
+    "walking_hours": 6.65
+   }
+  },
+  "E": {
+   "likely": {
+    "bearing": 90,
+    "lat": 41.45652,
+    "lon": 34.863227,
+    "straight_km": 8.13,
+    "route_km": 8.5,
+    "walking_hours": 2.17
+   },
+   "max": {
+    "bearing": 90,
+    "lat": 41.525161,
+    "lon": 34.947027,
+    "straight_km": 16.23,
+    "route_km": 18.34,
+    "walking_hours": 5.35
+   }
+  },
+  "SE": {
+   "likely": {
+    "bearing": 135,
+    "lat": 41.427489,
+    "lon": 34.843806,
+    "straight_km": 7.87,
+    "route_km": 8.08,
+    "walking_hours": 2.17
+   },
+   "max": {
+    "bearing": 135,
+    "lat": 41.333344,
+    "lon": 34.947027,
+    "straight_km": 21.21,
+    "route_km": 23.29,
+    "walking_hours": 7.24
+   }
+  },
+  "S": {
+   "likely": {
+    "bearing": 180,
+    "lat": 41.405242,
+    "lon": 34.781586,
+    "straight_km": 7.15,
+    "route_km": 7.61,
+    "walking_hours": 2.17
+   },
+   "max": {
+    "bearing": 180,
+    "lat": 41.333344,
+    "lon": 34.692752,
+    "straight_km": 16.23,
+    "route_km": 17.96,
+    "walking_hours": 5.08
+   }
+  },
+  "SW": {
+   "likely": {
+    "bearing": 225,
+    "lat": 41.440241,
+    "lon": 34.695989,
+    "straight_km": 6.74,
+    "route_km": 7.22,
+    "walking_hours": 2.17
+   },
+   "max": {
+    "bearing": 225,
+    "lat": 41.333344,
+    "lon": 34.587373,
+    "straight_km": 21.21,
+    "route_km": 23.17,
+    "walking_hours": 6.56
+   }
+  },
+  "W": {
+   "likely": {
+    "bearing": 270,
+    "lat": 41.493961,
+    "lon": 34.684839,
+    "straight_km": 7.4,
+    "route_km": 7.7,
+    "walking_hours": 2.17
+   },
+   "max": {
+    "bearing": 270,
+    "lat": 41.525161,
+    "lon": 34.587373,
+    "straight_km": 16.23,
+    "route_km": 17.44,
+    "walking_hours": 5.02
+   }
+  },
+  "NW": {
+   "likely": {
+    "bearing": 315,
+    "lat": 41.503457,
+    "lon": 34.687357,
+    "straight_km": 7.67,
+    "route_km": 7.88,
+    "walking_hours": 2.17
+   },
+   "max": {
+    "bearing": 315,
+    "lat": 41.604656,
+    "lon": 34.587373,
+    "straight_km": 21.21,
+    "route_km": 22.88,
+    "walking_hours": 6.98
+   }
+  }
+ },
+ "hourly": {
+  "0.5": {
+   "area_km2": 8.05,
+   "max_km": 2.01,
+   "median_km": 1.13,
+   "farthest_km_by_direction": {
+    "N": 1.74,
+    "NE": 2.01,
+    "E": 1.91,
+    "SE": 1.91,
+    "S": 1.71,
+    "SW": 1.58,
+    "W": 1.59,
+    "NW": 1.68
+   },
+   "touches_grid_edge": false
+  },
+  "1": {
+   "area_km2": 34.69,
+   "max_km": 3.94,
+   "median_km": 2.35,
+   "farthest_km_by_direction": {
+    "N": 3.61,
+    "NE": 3.94,
+    "E": 3.86,
+    "SE": 3.73,
+    "S": 3.48,
+    "SW": 3.21,
+    "W": 3.38,
+    "NW": 3.47
+   },
+   "touches_grid_edge": false
+  },
+  "2": {
+   "area_km2": 132.09,
+   "max_km": 7.5,
+   "median_km": 4.59,
+   "farthest_km_by_direction": {
+    "N": 7.31,
+    "NE": 7.36,
+    "E": 7.5,
+    "SE": 7.35,
+    "S": 6.51,
+    "SW": 6.28,
+    "W": 6.8,
+    "NW": 7.08
+   },
+   "touches_grid_edge": false
+  },
+  "4": {
+   "area_km2": 552.82,
+   "max_km": 14.94,
+   "median_km": 9.39,
+   "farthest_km_by_direction": {
+    "N": 14.14,
+    "NE": 14.2,
+    "E": 14.94,
+    "SE": 13.85,
+    "S": 13.64,
+    "SW": 13.24,
+    "W": 13.6,
+    "NW": 14.26
+   },
+   "touches_grid_edge": false
+  },
+  "8": {
+   "area_km2": 898.7,
+   "max_km": 21.21,
+   "median_km": 11.97,
+   "farthest_km_by_direction": {
+    "N": 16.23,
+    "NE": 21.21,
+    "E": 16.23,
+    "SE": 21.21,
+    "S": 16.23,
+    "SW": 21.21,
+    "W": 16.23,
+    "NW": 21.21
+   },
+   "touches_grid_edge": true
+  },
+  "12": {
+   "area_km2": 898.7,
+   "max_km": 21.21,
+   "median_km": 11.97,
+   "farthest_km_by_direction": {
+    "N": 16.23,
+    "NE": 21.21,
+    "E": 16.23,
+    "SE": 21.21,
+    "S": 16.23,
+    "SW": 21.21,
+    "W": 16.23,
+    "NW": 21.21
+   },
+   "touches_grid_edge": true
+  },
+  "16": {
+   "area_km2": 898.7,
+   "max_km": 21.21,
+   "median_km": 11.97,
+   "farthest_km_by_direction": {
+    "N": 16.23,
+    "NE": 21.21,
+    "E": 16.23,
+    "SE": 21.21,
+    "S": 16.23,
+    "SW": 21.21,
+    "W": 16.23,
+    "NW": 21.21
+   },
+   "touches_grid_edge": true
+  }
+ },
+ "warnings": [
+  "max contour touches the grid edge: raise --max-cells or --res"
+ ],
+ "model": "data/speed_model.json (see the _source of each block; 'ASSUMPTION' blocks are uncalibrated)",
+ "priority": {
+  "factors": {
+   "path": 1.8,
+   "drainage": 1.6,
+   "structure": 1.2
+  },
+  "beyond_likely_weight": 0.35,
+  "sector_km": 1.1,
+  "sectors": 344,
+  "top": [
+   {
+    "rank": 1,
+    "poa": 0.0636,
+    "cum_poa": 0.0636,
+    "area_km2": 1.228,
+    "box": [
+     41.464252048401974,
+     34.76018675920856,
+     41.4742905746378,
+     34.77349393404361
+    ]
+   },
+   {
+    "rank": 2,
+    "poa": 0.0451,
+    "cum_poa": 0.1087,
+    "area_km2": 1.232,
+    "box": [
+     41.45421352216615,
+     34.77349393404361,
+     41.464252048401974,
+     34.786801108878656
+    ]
+   },
+   {
+    "rank": 3,
+    "poa": 0.0437,
+    "cum_poa": 0.1523,
+    "area_km2": 1.232,
+    "box": [
+     41.464252048401974,
+     34.77349393404361,
+     41.4742905746378,
+     34.786801108878656
+    ]
+   },
+   {
+    "rank": 4,
+    "poa": 0.0405,
+    "cum_poa": 0.1928,
+    "area_km2": 1.232,
+    "box": [
+     41.45421352216615,
+     34.76018675920856,
+     41.464252048401974,
+     34.77349393404361
+    ]
+   },
+   {
+    "rank": 5,
+    "poa": 0.0353,
+    "cum_poa": 0.2282,
+    "area_km2": 1.232,
+    "box": [
+     41.4742905746378,
+     34.76018675920856,
+     41.48432910087362,
+     34.77349393404361
+    ]
+   },
+   {
+    "rank": 6,
+    "poa": 0.0328,
+    "cum_poa": 0.261,
+    "area_km2": 1.232,
+    "box": [
+     41.4742905746378,
+     34.77349393404361,
+     41.48432910087362,
+     34.786801108878656
+    ]
+   },
+   {
+    "rank": 7,
+    "poa": 0.0303,
+    "cum_poa": 0.2913,
+    "area_km2": 1.232,
+    "box": [
+     41.45421352216615,
+     34.786801108878656,
+     41.464252048401974,
+     34.800108283713705
+    ]
+   },
+   {
+    "rank": 8,
+    "poa": 0.0302,
+    "cum_poa": 0.3215,
+    "area_km2": 1.232,
+    "box": [
+     41.464252048401974,
+     34.786801108878656,
+     41.4742905746378,
+     34.800108283713705
+    ]
+   },
+   {
+    "rank": 9,
+    "poa": 0.0299,
+    "cum_poa": 0.3514,
+    "area_km2": 1.232,
+    "box": [
+     41.4742905746378,
+     34.74687958437351,
+     41.48432910087362,
+     34.76018675920856
+    ]
+   },
+   {
+    "rank": 10,
+    "poa": 0.0285,
+    "cum_poa": 0.3799,
+    "area_km2": 1.232,
+    "box": [
+     41.464252048401974,
+     34.74687958437351,
+     41.4742905746378,
+     34.76018675920856
+    ]
+   }
+  ]
+ },
+ "weather": {
+  "source": "Open-Meteo (open-meteo.com, CC BY 4.0)",
+  "hours": 49,
+  "temp_min_c": 10.0,
+  "temp_max_c": 27.3,
+  "feels_like_min_c": 8.7,
+  "rain_mm": 0.0,
+  "snow_cm": 0.0,
+  "wind_max_kmh": 8.8,
+  "flags": []
+ }
+}

@@ -1,0 +1,1556 @@
+[
+ {
+  "id": "GR-2026-ormylia-01",
+  "country": "GR",
+  "sources": [],
+  "person": {
+   "age": 90,
+   "sex": "f",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "90-year-old woman with dementia."
+  },
+  "last_seen": {
+   "text": "Her village, Ormylia (Chalkidiki); exact house unknown",
+   "lat": 40.2929,
+   "lon": 23.5444,
+   "precision_m": 800,
+   "time": null,
+   "time_text": "Thursday morning (approx. 30 Jul 2026); article dated 31.07.2026"
+  },
+  "found": {
+   "text": "Hard-to-reach forested mountain spot where she had taken shelter, about 1 km from the village",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "after ~24 h of searching, she had spent the night on the mountain",
+   "distance_km_reported": 1.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "forest/mountain shelter spot"
+  },
+  "elapsed_hours": 26,
+  "elapsed_precision_hours": 6,
+  "terrain_text": "forested mountain, difficult access",
+  "notes": "Found dehydrated by citizens and volunteer rescuers. Found coordinates unknown, only the distance.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "GR-2026-mavrovouni-02",
+  "country": "GR",
+  "sources": [],
+  "person": {
+   "age": 90,
+   "sex": "m",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "90-year-old man with dementia."
+  },
+  "last_seen": {
+   "text": "Home in Mavrovouni village, Pella",
+   "lat": 40.782,
+   "lon": 22.1554,
+   "precision_m": 600,
+   "time": null,
+   "time_text": "reported missing on a Tuesday (prob. 17 Mar 2026)"
+  },
+  "found": {
+   "text": "Tangled in a dense bed of tall reeds about 300 m from his home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "Friday (prob. 20 Mar 2026), during a large search",
+   "distance_km_reported": 0.3,
+   "direction_text": null,
+   "state": "alive",
+   "where": "reed bed"
+  },
+  "elapsed_hours": 72,
+  "elapsed_precision_hours": 18,
+  "terrain_text": "farmland edge, dense tall reeds; nights 6-9 C",
+  "notes": "Article says he survived 'four days'; Tue to Fri used. Very short distance despite long time: stuck/entangled.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "GR-2024-symi-03",
+  "country": "GR",
+  "sources": [],
+  "person": {
+   "age": null,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The hiker, a British TV doctor, walking alone in ~37-40 C heat. Age is general knowledge, not from the opened sources. Age not stated in opened sources."
+  },
+  "last_seen": {
+   "text": "Agios Nikolaos beach, Symi, where he left his wife to walk back over the hill",
+   "lat": 36.6147,
+   "lon": 27.8691,
+   "precision_m": 300,
+   "time": "2024-06-05T13:30+03:00",
+   "time_text": "Wednesday 5 Jun 2024; departure ~13:30 inferred from estimated death ~16:00 being 2.5 h after leaving"
+  },
+  "found": {
+   "text": "Rocky slope near caves just above Agia Marina beach, ~100 m from the beach bar",
+   "lat": 36.6238,
+   "lon": 27.8713,
+   "precision_m": 200,
+   "time": null,
+   "time_text": "Sunday 9 Jun 2024",
+   "distance_km_reported": null,
+   "direction_text": "took wrong route over mountain toward Agia Marina instead of Pedi",
+   "state": "dead",
+   "where": "rocky slope near beach"
+  },
+  "elapsed_hours": 92,
+  "elapsed_precision_hours": 8,
+  "terrain_text": "rocky mountainous coastal terrain, extreme heat",
+  "notes": "Estimated death ~2.5 h after setting out (~16:00 on day 1). Straight line Agios Nikolaos to Agia Marina is about 1 km; route went over a hill. Last CCTV sighting was in Pedi.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "GR-2024-omalos-04",
+  "country": "GR",
+  "sources": [],
+  "person": {
+   "age": 67,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "German tourist, hiking alone, reportedly without water."
+  },
+  "last_seen": {
+   "text": "Omalos plateau (Chania, Crete), start of a solo hike toward Sougia",
+   "lat": 35.3439,
+   "lon": 23.9045,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "Sunday (prob. 23 Jun 2024); in phone contact until late Sunday evening"
+  },
+  "found": {
+   "text": "Ravine near Sentoni beach on the path toward Tripiti gorge, near Sougia; found by drone after phone-signal fix",
+   "lat": 35.2388,
+   "lon": 23.8807,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "Monday (prob. 24 Jun 2024), search lasted ~24 h",
+   "distance_km_reported": null,
+   "direction_text": "south, toward the Libyan Sea coast",
+   "state": "dead",
+   "where": "ravine"
+  },
+  "elapsed_hours": 30,
+  "elapsed_precision_hours": 12,
+  "terrain_text": "remote gorge/ravine, summer heat",
+  "notes": "Found point uses Nominatim 'Sentoni' beach; body was in a ravine near it, so precision is coarse. Start time on Sunday unknown.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "GR-2025-samaria-05",
+  "country": "GR",
+  "sources": [],
+  "person": {
+   "age": 21,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The hiker, a German tourist."
+  },
+  "last_seen": {
+   "text": "Xyloskalo car park at the head of the Samaria Gorge (CCTV shows him parking and walking off)",
+   "lat": 35.3083,
+   "lon": 23.9182,
+   "precision_m": 300,
+   "time": null,
+   "time_text": "13 Feb 2025"
+  },
+  "found": {
+   "text": "Gigilos (Gingilos) slopes near 'Mitato of Tzatzimos'",
+   "lat": 35.2962,
+   "lon": 23.9186,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "about one month later (article 14 Mar 2025)",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "dead",
+   "where": "steep mountain slope"
+  },
+  "elapsed_hours": 696,
+  "elapsed_precision_hours": 48,
+  "terrain_text": "rugged high mountain, winter conditions",
+  "notes": "Found coords are the Gingilos peak; the mitato was not geocodable. Time of death unknown.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "CY-2026-tsakistra-06",
+  "country": "CY",
+  "sources": [],
+  "person": {
+   "age": 75,
+   "sex": "f",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The woman; regularly walked the area."
+  },
+  "last_seen": {
+   "text": "Disappeared during one of her usual walks near Tsakistra village",
+   "lat": 35.0245,
+   "lon": 32.7231,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "evening search began the day she vanished; ~11 days before article of 4 Sep 2026"
+  },
+  "found": {
+   "text": "Kallinikos area of the Paphos state forest, dead-end road, hard to access",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "around 3 Sep 2026",
+   "distance_km_reported": 25.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "forest dead-end road"
+  },
+  "elapsed_hours": 264,
+  "elapsed_precision_hours": 24,
+  "terrain_text": "mountainous forest, ravines",
+  "notes": "CAUTION: source does not explicitly say she travelled on foot; 25 km is large. Identification not officially confirmed at time of article. Kallinikos not found in Nominatim.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "IL-2019-givat-massua-07",
+  "country": "IL",
+  "sources": [],
+  "person": {
+   "age": 80,
+   "sex": "m",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "French visitor with Alzheimer's."
+  },
+  "last_seen": {
+   "text": "Costa Rica St, Jerusalem, where he was staying",
+   "lat": 31.7516,
+   "lon": 35.1735,
+   "precision_m": 300,
+   "time": null,
+   "time_text": "Wednesday night (date ~29 Aug 2019 worked out from the Hebrew date)"
+  },
+  "found": {
+   "text": "Sitting on a boulder in the forest near Givat Massua, Jerusalem",
+   "lat": 31.7488,
+   "lon": 35.1696,
+   "precision_m": 600,
+   "time": null,
+   "time_text": "Thursday",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "alive",
+   "where": "forest"
+  },
+  "elapsed_hours": 14,
+  "elapsed_precision_hours": 8,
+  "terrain_text": "urban-edge pine forest, hills",
+  "notes": "Duration only 'overnight'. Straight-line distance ~0.5 km between geocodes.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "IT-2021-palazzuolo-sul-senio-08",
+  "country": "IT",
+  "sources": [],
+  "person": {
+   "age": 1.75,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The toddler, 21 months."
+  },
+  "last_seen": {
+   "text": "Family home, Campanara hamlet, Palazzuolo sul Senio (Mugello)",
+   "lat": 44.1004,
+   "lon": 11.4932,
+   "precision_m": 300,
+   "time": "2021-06-21T19:00+02:00",
+   "time_text": "put to bed ~19:00 Mon 21 Jun; noticed gone ~midnight"
+  },
+  "found": {
+   "text": "Bottom of a ravine ~30 m below a mule track, about 1.5 km from Quadalto; 2-3 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "morning of Wed 23 Jun 2021",
+   "distance_km_reported": 2.5,
+   "direction_text": null,
+   "state": "alive",
+   "where": "ravine below mule track"
+  },
+  "elapsed_hours": 36,
+  "elapsed_precision_hours": 6,
+  "terrain_text": "steep, very dense woodland, mule tracks",
+  "notes": "Reported distance 2 km (Open), ~3 km (ANSA), '>3 km at furthest' (tio.ch); 2.5 used.",
+  "source_note": "3 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "JP-2016-nanae-09",
+  "country": "JP",
+  "sources": [],
+  "person": {
+   "age": 7,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy; left on a forest road by parents as punishment."
+  },
+  "last_seen": {
+   "text": "Roadside on a mountain/forest road in Nanae, Hokkaido (exact spot not located)",
+   "lat": 42.0661,
+   "lon": 140.7558,
+   "precision_m": 7000,
+   "time": null,
+   "time_text": "Sat 28 May 2016 (evening)"
+  },
+  "found": {
+   "text": "Hut in the GSDF Komagatake training area, Shikabe",
+   "lat": 42.0661,
+   "lon": 140.7558,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "Fri 3 Jun 2016",
+   "distance_km_reported": 5.5,
+   "direction_text": null,
+   "state": "alive",
+   "where": "military hut"
+  },
+  "elapsed_hours": 144,
+  "elapsed_precision_hours": 12,
+  "terrain_text": "bear-inhabited forest",
+  "notes": "Last-seen point was not geolocated; coordinates are the training-area centroid with large precision. Distances reported 5, 5.5, 6 km.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "DE-2024-bremervorde-10",
+  "country": "DE",
+  "sources": [],
+  "person": {
+   "age": 6,
+   "sex": "m",
+   "category": "autism",
+   "mobility": null,
+   "notes": "Autistic boy."
+  },
+  "last_seen": {
+   "text": "Home in Elm, Bremervörde; CCTV saw him alone in the residential area ~19:15",
+   "lat": 53.5159,
+   "lon": 9.2048,
+   "precision_m": 800,
+   "time": "2024-04-22T19:00+02:00",
+   "time_text": "Mon 22 Apr 2024 ~19:00"
+  },
+  "found": {
+   "text": "Edge of a meadow in Estorf (Landkreis Stade), found by a farmer mowing",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "Mon afternoon, prob. 24 Jun 2024 (~16:30)",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "meadow edge"
+  },
+  "elapsed_hours": 1509,
+  "elapsed_precision_hours": 24,
+  "terrain_text": "farmland, meadows, woods",
+  "notes": "Distance reported 'a few km'/'about 2 km'/'just under 3 km'. Area searched in April; time of death unknown.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "FR-2019-saint-martin-dheres-11",
+  "country": "FR",
+  "sources": [],
+  "person": {
+   "age": 8,
+   "sex": "f",
+   "category": "autism",
+   "mobility": null,
+   "notes": "Autistic girl."
+  },
+  "last_seen": {
+   "text": "Escaped parents' supervision, home linked to Saint-Martin-d'Hères (exact address unknown)",
+   "lat": 45.1837,
+   "lon": 5.7545,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "afternoon of 30 May 2019; alert just before 20:00"
+  },
+  "found": {
+   "text": "Garden in hamlet Le Bigot, Quartier du Murier, Saint-Martin-d'Hères",
+   "lat": 45.1626,
+   "lon": 5.7792,
+   "precision_m": 500,
+   "time": "2019-05-31T09:00+02:00",
+   "time_text": "~09:00 31 May 2019",
+   "distance_km_reported": 5.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "private garden"
+  },
+  "elapsed_hours": 17,
+  "elapsed_precision_hours": 3,
+  "terrain_text": "peri-urban edge rising into hills",
+  "notes": "Last-seen coordinates are commune centroid only.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "ES-2017-gil-garcia-12",
+  "country": "ES",
+  "sources": [],
+  "person": {
+   "age": 2,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "The toddler (a girl), with family dog."
+  },
+  "last_seen": {
+   "text": "Outskirts of Gil García (Ávila, Gredos), walking with father",
+   "lat": 40.2978,
+   "lon": -5.5942,
+   "precision_m": 1500,
+   "time": "2017-10-17T17:00+02:00",
+   "time_text": "~17:00 17 Oct 2017"
+  },
+  "found": {
+   "text": "Paraje Arroyo de la Gregoria, brambles on steep ground near the track up to the sierra",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2017-10-18T02:00+02:00",
+   "time_text": "just after 02:00",
+   "distance_km_reported": 4.0,
+   "direction_text": "toward the sierra",
+   "state": "alive",
+   "where": "bramble on steep slope"
+  },
+  "elapsed_hours": 9,
+  "elapsed_precision_hours": 1,
+  "terrain_text": "steep mountain slopes, scrub",
+  "notes": "Found by Guardia Civil GREIM.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "ES-2015-folgoso-del-monte-13",
+  "country": "ES",
+  "sources": [],
+  "person": {
+   "age": 2,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": ""
+  },
+  "last_seen": {
+   "text": "Front door of home, Folgoso del Monte (León)",
+   "lat": 42.513,
+   "lon": -6.4321,
+   "precision_m": 300,
+   "time": "2015-10-25T17:00+01:00",
+   "time_text": "Sun 25 Oct 2015 ~17:00"
+  },
+  "found": {
+   "text": "On a forest track",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2015-10-26T10:00+01:00",
+   "time_text": "Mon 26 Oct ~10:00",
+   "distance_km_reported": 1.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "forest track"
+  },
+  "elapsed_hours": 17,
+  "elapsed_precision_hours": 1,
+  "terrain_text": "mountain forest",
+  "notes": "Article gives both 'more than 1 km' and 'barely 1 km'.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "ES-2020-pico-salvaguardia-14",
+  "country": "ES",
+  "sources": [],
+  "person": {
+   "age": 37,
+   "sex": "f",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The woman, a solo hiker."
+  },
+  "last_seen": {
+   "text": "Summit of Pic de Sauvegarde / Pico Salvaguardia (last contact)",
+   "lat": 42.695,
+   "lon": 0.6309,
+   "precision_m": 100,
+   "time": "2020-11-22T16:00+01:00",
+   "time_text": "~16:00 22 Nov 2020"
+  },
+  "found": {
+   "text": "Near the path below Port de la Glère, French side",
+   "lat": 42.7008,
+   "lon": 0.6033,
+   "precision_m": 500,
+   "time": null,
+   "time_text": "skull part ~23 Jul 2021; rest 9 Aug 2021",
+   "distance_km_reported": null,
+   "direction_text": "a few km west",
+   "state": "dead",
+   "where": "alpine slope below pass"
+  },
+  "elapsed_hours": 5872,
+  "elapsed_precision_hours": 48,
+  "terrain_text": "high alpine, snow until spring",
+  "notes": "Likely accidental fall soon after last contact; animals may have moved remains. Straight-line ~2.3 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "IT-2019-policastro-bussentino-15",
+  "country": "IT",
+  "sources": [],
+  "person": {
+   "age": 27,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The hiker, French; called 112 with two broken legs after a fall."
+  },
+  "last_seen": {
+   "text": "Policastro Bussentino, start of solo coastal hike",
+   "lat": 40.0765,
+   "lon": 15.5246,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "8-9 Aug 2019"
+  },
+  "found": {
+   "text": "Bottom of ravine at Belvedere di Ciolandrea, San Giovanni a Piro",
+   "lat": 40.0407,
+   "lon": 15.4574,
+   "precision_m": 500,
+   "time": null,
+   "time_text": "18 Aug 2019",
+   "distance_km_reported": null,
+   "direction_text": "west/south-west along coast",
+   "state": "dead",
+   "where": "ravine"
+  },
+  "elapsed_hours": 230,
+  "elapsed_precision_hours": 24,
+  "terrain_text": "coastal cliffs",
+  "notes": "Immobilised by fall early (on ~9 Aug); travel time much shorter than elapsed.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "ES-2019-cercedilla-16",
+  "country": "ES",
+  "sources": [],
+  "person": {
+   "age": null,
+   "sex": "f",
+   "category": "other",
+   "mobility": null,
+   "notes": "The woman, a former Olympic skier; age not in the opened article. Age not stated in opened sources."
+  },
+  "last_seen": {
+   "text": "Las Dehesas car park, Cercedilla (her car stood there from ~25 Aug)",
+   "lat": 40.7567,
+   "lon": -4.0722,
+   "precision_m": 500,
+   "time": null,
+   "time_text": "~25 Aug 2019"
+  },
+  "found": {
+   "text": "Northern slope of Pico de La Peñota",
+   "lat": 40.748,
+   "lon": -4.1007,
+   "precision_m": 1000,
+   "time": "2019-09-04T13:00+02:00",
+   "time_text": "after 13:00 4 Sep 2019",
+   "distance_km_reported": null,
+   "direction_text": "about 2 h walk from the car",
+   "state": "dead",
+   "where": "wooded/rocky slope"
+  },
+  "elapsed_hours": 252,
+  "elapsed_precision_hours": 24,
+  "terrain_text": "wooded rocky mountain, ~1000 m climb",
+  "notes": "Probably died soon after arrival; elapsed is time to discovery.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "ES-2024-masca-17",
+  "country": "ES",
+  "sources": [],
+  "person": {
+   "age": 19,
+   "sex": "m",
+   "category": "other",
+   "mobility": null,
+   "notes": "The young man, a British tourist, set off walking after missing a lift."
+  },
+  "last_seen": {
+   "text": "Masca village, Tenerife",
+   "lat": 28.3053,
+   "lon": -16.8405,
+   "precision_m": 300,
+   "time": "2024-06-17T08:00+01:00",
+   "time_text": "~08:00 17 Jun 2024; last call 08:50"
+  },
+  "found": {
+   "text": "Juan López ravine (Buenavista del Norte), near last phone location",
+   "lat": 28.3077,
+   "lon": -16.8619,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "15 Jul 2024",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "dead",
+   "where": "ravine, fall of 20-25 m"
+  },
+  "elapsed_hours": 672,
+  "elapsed_precision_hours": 24,
+  "terrain_text": "steep volcanic ravines",
+  "notes": "Accidental fall; time of death unknown. Two Nominatim hits for the ravine.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "GB-2017-swanage-18",
+  "country": "GB",
+  "sources": [],
+  "person": {
+   "age": 19,
+   "sex": "f",
+   "category": "mental_illness",
+   "mobility": null,
+   "notes": "The young woman; epilepsy and mental-health problems."
+  },
+  "last_seen": {
+   "text": "CCTV near Morrison Road, Swanage",
+   "lat": 50.6107,
+   "lon": -1.9727,
+   "precision_m": 200,
+   "time": "2017-11-07T15:55+00:00",
+   "time_text": "just before 16:00 7 Nov 2017"
+  },
+  "found": {
+   "text": "Dense vegetation by the coast path near Dancing Ledge",
+   "lat": 50.5922,
+   "lon": -2.0043,
+   "precision_m": 700,
+   "time": "2017-11-18T15:00+00:00",
+   "time_text": "~15:00 18 Nov 2017",
+   "distance_km_reported": 1.6,
+   "direction_text": null,
+   "state": "dead",
+   "where": "coastal scrub"
+  },
+  "elapsed_hours": 263,
+  "elapsed_precision_hours": 2,
+  "terrain_text": "coastal clifftop, dense gorse",
+  "notes": "Wikipedia says 'less than a mile'; geocodes are ~3 km apart, so distance is uncertain. Hypothermia.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "CH-2011-chexbres-19",
+  "country": "CH",
+  "sources": [],
+  "person": {
+   "age": 85,
+   "sex": "f",
+   "category": "dementia",
+   "mobility": null,
+   "notes": ""
+  },
+  "last_seen": {
+   "text": "Chemin de l'Ogoz, Chexbres",
+   "lat": 46.481,
+   "lon": 6.7803,
+   "precision_m": 800,
+   "time": "2011-09-20T15:30+02:00",
+   "time_text": "~15:30 Tue 20 Sep 2011"
+  },
+  "found": {
+   "text": "Chardonne vineyards, under the motorway bridge below the Chardonne school",
+   "lat": 46.4758,
+   "lon": 6.8235,
+   "precision_m": 400,
+   "time": "2011-09-21T13:15+02:00",
+   "time_text": "13:15 Wed 21 Sep 2011",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "alive",
+   "where": "vineyard below motorway bridge"
+  },
+  "elapsed_hours": 21.75,
+  "elapsed_precision_hours": 0.5,
+  "terrain_text": "steep vineyard terraces",
+  "notes": "Street not in Nominatim; Chexbres centroid used. Straight-line ~3.3 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "AU-2015-lake-eildon-20",
+  "country": "AU",
+  "sources": [],
+  "person": {
+   "age": 11,
+   "sex": "m",
+   "category": "autism",
+   "mobility": null,
+   "notes": "The boy."
+  },
+  "last_seen": {
+   "text": "Family tent, Candlebark campground, Fraser National Park, Lake Eildon",
+   "lat": -37.1767,
+   "lon": 145.8406,
+   "precision_m": 200,
+   "time": "2015-04-03T09:30+11:00",
+   "time_text": "~09:30 Good Friday 3 Apr 2015"
+  },
+  "found": {
+   "text": "Forest in Fraser NP, spotted by police helicopter",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2015-04-07T11:55+10:00",
+   "time_text": "11:55 Tue 7 Apr 2015",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "forest"
+  },
+  "elapsed_hours": 99.4,
+  "elapsed_precision_hours": 1,
+  "terrain_text": "steep bush, spurs and gullies",
+  "notes": "Hat found on a high spur the day before.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "AU-2021-putty-21",
+  "country": "AU",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "m",
+   "category": "autism",
+   "mobility": null,
+   "notes": "The boy, non-verbal autistic."
+  },
+  "last_seen": {
+   "text": "Family property at Putty, NSW (exact location not located)",
+   "lat": -32.9548,
+   "lon": 150.6595,
+   "precision_m": 5000,
+   "time": null,
+   "time_text": "Friday afternoon 3 Sep 2021"
+  },
+  "found": {
+   "text": "Creek bed in a puddle, spotted by police helicopter",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "Monday morning 6 Sep 2021",
+   "distance_km_reported": 0.5,
+   "direction_text": null,
+   "state": "alive",
+   "where": "creek bed"
+  },
+  "elapsed_hours": 66,
+  "elapsed_precision_hours": 6,
+  "terrain_text": "bush, creek gullies",
+  "notes": "Reported 450-500 m. Area had been searched several times.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2023-faithorn-22",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 2,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "Walked off with two family dogs."
+  },
+  "last_seen": {
+   "text": "Family home in Faithorn, Menominee County, MI",
+   "lat": 45.6797,
+   "lon": -87.7521,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "Wed evening (prob. 20 Sep 2023); police called ~20:00"
+  },
+  "found": {
+   "text": "Wooded area, asleep using a dog as pillow; found by ATV rider",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "close to midnight",
+   "distance_km_reported": 4.8,
+   "direction_text": null,
+   "state": "alive",
+   "where": "woods"
+  },
+  "elapsed_hours": 4.5,
+  "elapsed_precision_hours": 1,
+  "terrain_text": "woods",
+  "notes": "3 miles. Very high speed for a 2-year-old (~1 km/h straight line).",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2009-arcadia-23",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy."
+  },
+  "last_seen": {
+   "text": "Rural home near Arcadia, Iron County, MO",
+   "lat": 37.5881,
+   "lon": -90.629,
+   "precision_m": 4000,
+   "time": null,
+   "time_text": "Mon 4 May 2009, before noon"
+  },
+  "found": {
+   "text": "Hollow / dry creek bottom in Mark Twain National Forest",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "Wed afternoon 6 May 2009",
+   "distance_km_reported": 4.8,
+   "direction_text": null,
+   "state": "alive",
+   "where": "dry creek bottom"
+  },
+  "elapsed_hours": 50,
+  "elapsed_precision_hours": 3,
+  "terrain_text": "steep ravines, creeks, rugged rocks",
+  "notes": "3 miles; ~50 hours per AP.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2021-plantersville-24",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy; followed a neighbour's dog."
+  },
+  "last_seen": {
+   "text": "Home near Plantersville, Grimes County, TX",
+   "lat": 30.334,
+   "lon": -95.8629,
+   "precision_m": 4000,
+   "time": null,
+   "time_text": "Wed (prob. 6 Oct 2021)"
+  },
+  "found": {
+   "text": "Near Texas SH 249 outside Magnolia, Montgomery County; found by landowner",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2021-10-09T11:45-05:00",
+   "time_text": "~11:45 Sat 9 Oct 2021",
+   "distance_km_reported": 8.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "woods near highway"
+  },
+  "elapsed_hours": 72,
+  "elapsed_precision_hours": 12,
+  "terrain_text": "dense woods",
+  "notes": "5 miles reported.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2005-uinta-25",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 11,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy, a Boy Scout; hid from searchers."
+  },
+  "last_seen": {
+   "text": "Climbing wall at the Bear River (East Fork) Boy Scout camp, Uinta Mtns",
+   "lat": 40.913,
+   "lon": -110.8291,
+   "precision_m": 5000,
+   "time": null,
+   "time_text": "Fri 17 Jun 2005, evening"
+  },
+  "found": {
+   "text": "On a trail near Lily Lake, found by an ATV volunteer",
+   "lat": 40.8774,
+   "lon": -110.8107,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "Tue 21 Jun 2005 ~noon",
+   "distance_km_reported": 8.0,
+   "direction_text": "uphill over a ridge away from East Fork Bear River",
+   "state": "alive",
+   "where": "trail"
+  },
+  "elapsed_hours": 90,
+  "elapsed_precision_hours": 6,
+  "terrain_text": "burned woods, steep trail, ridge 400 ft above camp",
+  "notes": "Camp position not geocodable; East Fork campground used as proxy (precision 5 km). Lily Lake geocode may be a different lake of that name.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2007-doughton-park-26",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 12,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy, a Boy Scout, left camp homesick."
+  },
+  "last_seen": {
+   "text": "Backcountry campsite, Doughton Park, Blue Ridge Parkway, NC",
+   "lat": 36.4077,
+   "lon": -81.1773,
+   "precision_m": 4000,
+   "time": null,
+   "time_text": "Sat 17 Mar 2007 (reported ~12:30)"
+  },
+  "found": {
+   "text": "Rugged thick brush near the camp",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "Tue 20 Mar 2007",
+   "distance_km_reported": 1.6,
+   "direction_text": null,
+   "state": "alive",
+   "where": "thick brush"
+  },
+  "elapsed_hours": 75,
+  "elapsed_precision_hours": 12,
+  "terrain_text": "rugged mountains, thick brush, streams",
+  "notes": "Distance reported as <1 mile and ~1.5 miles in different sources.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2019-ernul-27",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy; below-freezing nights."
+  },
+  "last_seen": {
+   "text": "Yard of (great-)grandmother's home, Ernul area, Craven County, NC",
+   "lat": 35.2667,
+   "lon": -76.9575,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "Tue 22 Jan 2019 afternoon"
+  },
+  "found": {
+   "text": "Woods 40-50 yd off the road, off Toler and Aurora Roads",
+   "lat": 35.2667,
+   "lon": -76.9575,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "Thu 24 Jan 2019 evening",
+   "distance_km_reported": 0.4,
+   "direction_text": null,
+   "state": "alive",
+   "where": "woods with briars"
+  },
+  "elapsed_hours": 52,
+  "elapsed_precision_hours": 4,
+  "terrain_text": "woods, briars",
+  "notes": "Quarter mile reported. Both points use the Toler Road geocode; home address unknown. Sheriff thinks he moved around.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2013-poplar-ridge-28",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 66,
+   "sex": "f",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The woman, an AT thru-hiker."
+  },
+  "last_seen": {
+   "text": "Poplar Ridge lean-to, Appalachian Trail, Maine",
+   "lat": 44.9699,
+   "lon": -70.4458,
+   "precision_m": 100,
+   "time": null,
+   "time_text": "morning 22 Jul 2013"
+  },
+  "found": {
+   "text": "Tent site in dense woods ~910 m from the AT on Navy land in Redington Twp, south of Mount Redington",
+   "lat": 45.0251,
+   "lon": -70.3884,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "remains found 14 Oct 2015",
+   "distance_km_reported": null,
+   "direction_text": "off trail, south of Mount Redington",
+   "state": "dead",
+   "where": "camp in dense woods"
+  },
+  "elapsed_hours": 19920,
+  "elapsed_precision_hours": 48,
+  "terrain_text": "dense spruce/hemlock forest",
+  "notes": "Survived at least 19 days at camp (journal to 10 Aug 2013); she probably reached the camp site within about a day of going off-trail. Found coords are the peak.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "IL-2016-jerusalem-29",
+  "country": "IL",
+  "sources": [],
+  "person": {
+   "age": 6,
+   "sex": "m",
+   "category": "autism",
+   "mobility": null,
+   "notes": "The boy."
+  },
+  "last_seen": {
+   "text": "Shmuel Neiman St, Neve Yaakov, north Jerusalem, after getting off a bus with his father",
+   "lat": 31.8422,
+   "lon": 35.2421,
+   "precision_m": 800,
+   "time": null,
+   "time_text": "4 Dec 2016 (time not given)"
+  },
+  "found": {
+   "text": "Open ground near the Palestinian town of Hizma",
+   "lat": 31.8339,
+   "lon": 35.2636,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "almost 24 h later (~5 Dec 2016)",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "alive",
+   "where": "open terrain"
+  },
+  "elapsed_hours": 24,
+  "elapsed_precision_hours": 4,
+  "terrain_text": "open rocky hills",
+  "notes": "Street not geocoded; neighbourhood centroid used. Straight-line ~2 km between geocodes.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "CY-2009-strovolos-30",
+  "country": "CY",
+  "sources": [],
+  "person": {
+   "age": 86,
+   "sex": "f",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The woman; hydrocephalus, disoriented."
+  },
+  "last_seen": {
+   "text": "Kaladjian aged-care home, Strovolos, Nicosia (last sighted near the University of Cyprus campus)",
+   "lat": 35.1329,
+   "lon": 33.3455,
+   "precision_m": 2500,
+   "time": "2009-05-06T09:00+03:00",
+   "time_text": "~09:00 6 May 2009"
+  },
+  "found": {
+   "text": "Open field with tall shrubs opposite Aglantzia cemetery, behind a National Guard camp",
+   "lat": 35.1523,
+   "lon": 33.3991,
+   "precision_m": 500,
+   "time": null,
+   "time_text": "Mon 25 May 2009 morning",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "dead",
+   "where": "open field with tall shrubs"
+  },
+  "elapsed_hours": 456,
+  "elapsed_precision_hours": 12,
+  "terrain_text": "suburban fringe, open fields",
+  "notes": "Care home not geocoded; Strovolos centroid used (coarse). Straight-line ~5 km between geocodes.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "CY-2021-yiolou-31",
+  "country": "CY",
+  "sources": [],
+  "person": {
+   "age": 59,
+   "sex": "m",
+   "category": "other",
+   "mobility": null,
+   "notes": "The man."
+  },
+  "last_seen": {
+   "text": "His car, found in the Drymou-Stroumpi-Yiolou area (Paphos); he had been at Ambelitis village Sunday evening",
+   "lat": 34.9246,
+   "lon": 32.4733,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "Sunday evening ~14 Nov 2021, reported ~20:00"
+  },
+  "found": {
+   "text": "Ravine in the Yiolou area, spotted by police helicopter",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2021-11-17T10:15+02:00",
+   "time_text": "10:15 Wed 17 Nov 2021",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "ravine"
+  },
+  "elapsed_hours": 62,
+  "elapsed_precision_hours": 4,
+  "terrain_text": "hilly farmland, ravines",
+  "notes": "Drove first; walking leg starts at the car, whose exact position is unknown (Giolou village used).",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "CN-2026-jiyuan-32",
+  "country": "CN",
+  "sources": [],
+  "person": {
+   "age": 56,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The hiker, on a wild unmarked route."
+  },
+  "last_seen": {
+   "text": "Car park at Pangu Temple (盘谷寺), Jiyuan, Henan; last track point near Zushi Miao",
+   "lat": 35.165,
+   "lon": 112.5842,
+   "precision_m": 1500,
+   "time": "2026-08-09T09:00+08:00",
+   "time_text": "~09:00 9 Aug 2026"
+  },
+  "found": {
+   "text": "Pool below the 75 m Panyugou waterfall at Shibagang (十八缸)",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2026-08-15T12:30+08:00",
+   "time_text": "~12:30 15 Aug 2026",
+   "distance_km_reported": 6.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "pool below waterfall"
+  },
+  "elapsed_hours": 147.5,
+  "elapsed_precision_hours": 3,
+  "terrain_text": "Taihang cliffs, unmarked route",
+  "notes": "Geocode is a bus stop named 盘古寺 in Kejing town; spelling differs from 盘谷寺, so treat as approximate. One outlet gives missing date 12 Aug.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "CN-2024-haba-33",
+  "country": "CN",
+  "sources": [],
+  "person": {
+   "age": 39,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "Hiker from Beijing."
+  },
+  "last_seen": {
+   "text": "Last contact near Haba Pass (哈巴垭口), Haba Snow Mountain west route, Shangri-La, Yunnan",
+   "lat": 27.3533,
+   "lon": 100.0439,
+   "precision_m": 4000,
+   "time": "2024-11-07T19:00+08:00",
+   "time_text": "~19:00 7 Nov 2024"
+  },
+  "found": {
+   "text": "Gully downstream of Heihai lake (黑海), west slope of Haba Snow Mountain",
+   "lat": 27.3533,
+   "lon": 100.0439,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "remains first found 19 Sep 2026",
+   "distance_km_reported": 4.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "alpine gully"
+  },
+  "elapsed_hours": 16800,
+  "elapsed_precision_hours": 240,
+  "terrain_text": "high-altitude alpine valley",
+  "notes": "Pass not geocoded; last-seen coordinates are the Heihai lake with a 4 km precision. Time until death unknown.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "HK-2026-fo-tan-34",
+  "country": "HK",
+  "sources": [],
+  "person": {
+   "age": 72,
+   "sex": "m",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The man; phone battery died."
+  },
+  "last_seen": {
+   "text": "Separated from friends near Kwai Tei New Village, Fo Tan, Sha Tin; at ~20:00 phoned saying he was descending toward Wong Chuk Yeung",
+   "lat": 22.3992,
+   "lon": 114.1901,
+   "precision_m": 800,
+   "time": null,
+   "time_text": "morning 8 Aug 2026"
+  },
+  "found": {
+   "text": "Mountain path in the Man Hang area, Fo Tan",
+   "lat": 22.3992,
+   "lon": 114.1901,
+   "precision_m": 1500,
+   "time": "2026-08-11T11:30+08:00",
+   "time_text": "~11:30 11 Aug 2026",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "dead",
+   "where": "mountain path"
+  },
+  "elapsed_hours": 75,
+  "elapsed_precision_hours": 4,
+  "terrain_text": "steep wooded hills",
+  "notes": "Kwai Tei and Man Hang share the same geocode; distance travelled unknown but small. Wong Chuk Yeung is ~1.4 km W.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "AU-2025-kosciuszko-35",
+  "country": "AU",
+  "sources": [],
+  "person": {
+   "age": 23,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The hiker."
+  },
+  "last_seen": {
+   "text": "Starting down the Hannels Spur track toward Geehi campground, Kosciuszko NP",
+   "lat": -36.4214,
+   "lon": 148.2272,
+   "precision_m": 3000,
+   "time": "2024-12-26T14:30+11:00",
+   "time_text": "~14:30 26 Dec 2024"
+  },
+  "found": {
+   "text": "Off the circuit walk near Blue Lake, found by hikers",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2025-01-08T15:15+11:00",
+   "time_text": "~15:15 8 Jan 2025",
+   "distance_km_reported": 10.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "off-track near Blue Lake"
+  },
+  "elapsed_hours": 312.75,
+  "elapsed_precision_hours": 1,
+  "terrain_text": "alpine/subalpine, dense scrub",
+  "notes": "Point on Hannels Spur where last seen is not exact.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "AU-2018-cherry-gully-36",
+  "country": "AU",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "The girl, with the family dog."
+  },
+  "last_seen": {
+   "text": "Family property at Cherry Gully, south of Warwick, Qld",
+   "lat": -28.4205,
+   "lon": 152.059,
+   "precision_m": 2000,
+   "time": "2018-04-20T15:00+10:00",
+   "time_text": "~15:00 Fri 20 Apr 2018"
+  },
+  "found": {
+   "text": "Bushland off Old Stanthorpe Rd, after going down a small valley and up a hillside",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2018-04-21T07:30+10:00",
+   "time_text": "~07:30 Sat 21 Apr",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "bush on hillside"
+  },
+  "elapsed_hours": 16.5,
+  "elapsed_precision_hours": 1,
+  "terrain_text": "bush, valley and hill",
+  "notes": "2 km from grandmother's account.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "NZ-2021-tolaga-bay-37",
+  "country": "NZ",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy."
+  },
+  "last_seen": {
+   "text": "Home at Mangatuna, near Tolaga Bay",
+   "lat": -38.2992,
+   "lon": 178.2728,
+   "precision_m": 2000,
+   "time": "2021-05-04T13:00+12:00",
+   "time_text": "~13:00 Tue 4 May 2021"
+  },
+  "found": {
+   "text": "Forestry block hillside up a long track after crossing a river",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2021-05-05T10:45+12:00",
+   "time_text": "~10:45 Wed 5 May",
+   "distance_km_reported": 3.5,
+   "direction_text": null,
+   "state": "alive",
+   "where": "forestry hillside"
+  },
+  "elapsed_hours": 21.75,
+  "elapsed_precision_hours": 1,
+  "terrain_text": "forestry slash, river, steep banks; ~7 C night",
+  "notes": "3 or 3.5 km reported.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "CA-2021-south-frontenac-38",
+  "country": "CA",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy."
+  },
+  "last_seen": {
+   "text": "Bing Retreat, family property off Canoe Lake Road, South Frontenac, ON",
+   "lat": 44.5766,
+   "lon": -76.5429,
+   "precision_m": 1500,
+   "time": "2021-03-28T11:30-04:00",
+   "time_text": "Sun 28 Mar 2021 ~11:00-12:00"
+  },
+  "found": {
+   "text": "Sleeping near a beaver pond across a body of water on the property",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2021-03-31T15:20-04:00",
+   "time_text": "~15:20 Wed 31 Mar",
+   "distance_km_reported": 0.95,
+   "direction_text": null,
+   "state": "alive",
+   "where": "beaver pond"
+  },
+  "elapsed_hours": 75.8,
+  "elapsed_precision_hours": 0.5,
+  "terrain_text": "woods, ponds, cold rain",
+  "notes": "Just under 1 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2011-hanover-39",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 8,
+   "sex": "m",
+   "category": "autism",
+   "mobility": null,
+   "notes": "The boy, non-verbal autistic."
+  },
+  "last_seen": {
+   "text": "Family walk in North Anna Battlefield Park, Hanover County, VA",
+   "lat": 37.8896,
+   "lon": -77.4945,
+   "precision_m": 800,
+   "time": null,
+   "time_text": "Sun 23 Oct 2011"
+  },
+  "found": {
+   "text": "Creek bed on quarry property",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2011-10-28T14:00-04:00",
+   "time_text": "~14:00 Fri 28 Oct",
+   "distance_km_reported": 1.6,
+   "direction_text": null,
+   "state": "alive",
+   "where": "creek bed"
+  },
+  "elapsed_hours": 120,
+  "elapsed_precision_hours": 8,
+  "terrain_text": "woods, creek, quarry",
+  "notes": "1 mile from the park.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2007-stetattle-40",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 31,
+   "sex": "f",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "Lived on berries and stream water."
+  },
+  "last_seen": {
+   "text": "Stetattle Creek trail near Diablo Dam, North Cascades NP",
+   "lat": 48.7157,
+   "lon": -121.1414,
+   "precision_m": 800,
+   "time": null,
+   "time_text": "Sunday (prob. 16 Sep 2007)"
+  },
+  "found": {
+   "text": "Along Stetattle Creek, spotted by helicopter",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2007-09-21T14:30-07:00",
+   "time_text": "14:30 Fri 21 Sep 2007",
+   "distance_km_reported": 8.0,
+   "direction_text": "up the creek valley",
+   "state": "alive",
+   "where": "creek side"
+  },
+  "elapsed_hours": 125,
+  "elapsed_precision_hours": 10,
+  "terrain_text": "forested creek valley",
+  "notes": "5 miles from trailhead. Trailhead coords use Diablo settlement.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "US-2014-olympic-hot-springs-41",
+  "country": "US",
+  "sources": [],
+  "person": {
+   "age": 60,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": ""
+  },
+  "last_seen": {
+   "text": "Seen by other hikers at Olympic Hot Springs (Elwha / Boulder Creek)",
+   "lat": 47.9767,
+   "lon": -123.6882,
+   "precision_m": 300,
+   "time": "2014-12-22T16:00-08:00",
+   "time_text": "~16:00 22 Dec 2014"
+  },
+  "found": {
+   "text": "Near the Boulder Creek trailhead, ~1/3 mile off trail and ~1000 ft above it",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "Sun 25 Jan 2015",
+   "distance_km_reported": null,
+   "direction_text": "upslope from trail",
+   "state": "dead",
+   "where": "steep forest slope"
+  },
+  "elapsed_hours": 816,
+  "elapsed_precision_hours": 12,
+  "terrain_text": "very steep, dense forest",
+  "notes": "Distance given only from the trail (0.54 km), not from last-seen point.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "AU-2009-mount-solitary-42",
+  "country": "AU",
+  "sources": [],
+  "person": {
+   "age": 19,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The hiker, a British backpacker."
+  },
+  "last_seen": {
+   "text": "Mount Solitary summit (left ~15:00, lost track descending ~17:30)",
+   "lat": -33.7793,
+   "lon": 150.3073,
+   "precision_m": 1500,
+   "time": "2009-07-03T17:30+10:00",
+   "time_text": "~17:30 3 Jul 2009"
+  },
+  "found": {
+   "text": "Near Medlow Gap (Fox) / near Narrow Neck Plateau (Wikipedia), found by campers",
+   "lat": -33.8282,
+   "lon": 150.2526,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "Wed ~15 Jul 2009",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "alive",
+   "where": "bush near fire trail"
+  },
+  "elapsed_hours": 282,
+  "elapsed_precision_hours": 12,
+  "terrain_text": "sandstone escarpment, valley floor, dense bush",
+  "notes": "Found spot disputed between sources.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ }
+]

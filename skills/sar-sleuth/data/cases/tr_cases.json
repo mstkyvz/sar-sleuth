@@ -1,0 +1,1741 @@
+[
+ {
+  "id": "tr-2026-cayiralan-01",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "The girl; family was visiting her grandfather on the yayla during Bayram"
+  },
+  "last_seen": {
+   "text": "Alamettin Yaylası, Söbeçimen köyü, Çayıralan, Yozgat",
+   "lat": 39.334076,
+   "lon": 35.767872,
+   "precision_m": 3000,
+   "time": "2026-05-28T20:15:00+03:00",
+   "time_text": "28 May 2026 saat 20.15 sularında (Vali via DHA)"
+  },
+  "found": {
+   "text": "on the yayla ~2 km from where she went missing",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2026-05-29T06:00:00+03:00",
+   "time_text": "sabah saat 06.00 civarında",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "asleep on the yayla (open highland pasture)"
+  },
+  "elapsed_hours": 9.75,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "highland pasture (yayla)",
+  "notes": "Last-seen point geocoded to Söbeçimen village because Alamettin Yaylası is not in Nominatim; the yayla may be several km from the village centre. AA/Habertürk say the overnight search began ~18:00, governor (via DHA) gives 20:15 as the time she went missing; governor time used. Found point not geocodable.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2020-ikizdere-02",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 11,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy; on a Quran-course picnic; fell from height and lost consciousness, woke at night, waited, walked at dawn toward town"
+  },
+  "last_seen": {
+   "text": "Tulumpınar köyü, İkizdere, Rize (picnic)",
+   "lat": 40.720706,
+   "lon": 40.610543,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "picnic on 4 July 2020; search started ~18:00"
+  },
+  "found": {
+   "text": "walking on the Tulumpınar road near İkizdere district centre",
+   "lat": 40.777992,
+   "lon": 40.559574,
+   "precision_m": 2500,
+   "time": null,
+   "time_text": "5 July 2020 early morning at first light",
+   "distance_km_reported": 12.0,
+   "direction_text": "toward İkizdere district centre",
+   "state": "alive",
+   "where": "on the road walking toward rescuers; minor wounds"
+  },
+  "elapsed_hours": 13.0,
+  "elapsed_precision_hours": 3.0,
+  "terrain_text": "forested mountain valley; ended on village road",
+  "notes": "Headline says 12 km; the geocoded village-to-town straight line is shorter, so 12 km is probably road distance. Part of the night he was unconscious/stationary (he said). Time lost estimated from 'during picnic' to dawn. Straight-line separation between the two geocoded points: 7.68 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-eruh-03",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "The girl; was playing in front of her house"
+  },
+  "last_seen": {
+   "text": "in front of home, Görendoruk köyü, Eruh, Siirt",
+   "lat": 37.677571,
+   "lon": 42.278144,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "morning, 6 April 2026; family alert ~10:00 (Halk TV) / 13:00 (İHA per search snippet)"
+  },
+  "found": {
+   "text": "open land ~4 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "same day, before 18:30 publication",
+   "distance_km_reported": 4.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in open terrain, exhausted"
+  },
+  "elapsed_hours": 5.0,
+  "elapsed_precision_hours": 4.0,
+  "terrain_text": "open rural land (arazi)",
+  "notes": "DHA/Halk TV say ~4 km from home; an İHA version reports 3.4 km from where she went missing. Found time not given; elapsed bounded by morning disappearance and 18:30 publication.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-serik-04",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 70,
+   "sex": "m",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The man, Alzheimer's"
+  },
+  "last_seen": {
+   "text": "his daughter's home (he lived in Şatırlı Mahallesi, Serik, Antalya)",
+   "lat": 36.983333,
+   "lon": 30.95,
+   "precision_m": 10000,
+   "time": null,
+   "time_text": "3 days before discovery"
+  },
+  "found": {
+   "text": "lemon orchard in Abdurrahmanlar Mahallesi, Serik",
+   "lat": 36.99,
+   "lon": 30.938611,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "evening, published 23 Aug 2026 00:39",
+   "distance_km_reported": 10.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "in a lemon orchard"
+  },
+  "elapsed_hours": 72.0,
+  "elapsed_precision_hours": 24.0,
+  "terrain_text": "coastal-plain farmland/orchards",
+  "notes": "Distance is given from the daughter's home, whose location is not stated; Şatırlı and Abdurrahmanlar centroids are close together, so the last-seen point is very uncertain (precision 10 km). Cause of death pending autopsy. Straight-line separation between the two geocoded points: 1.25 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-akdagmadeni-05",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 78,
+   "sex": "m",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The man, Alzheimer's; left home at night"
+  },
+  "last_seen": {
+   "text": "home, Yeniyapan köyü, Akdağmadeni, Yozgat",
+   "lat": 39.862223,
+   "lon": 35.908408,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "gece saat 01.30 sıralarında (date not stated; article published 16 Feb 2026 23:27)"
+  },
+  "found": {
+   "text": "open land ~7 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "after ~16 h of searching, published 16 Feb 2026 23:27",
+   "distance_km_reported": 7.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "motionless in open land"
+  },
+  "elapsed_hours": 20.0,
+  "elapsed_precision_hours": 4.0,
+  "terrain_text": "upland rural terrain, winter",
+  "notes": "Elapsed = 01:30 departure + reported morning alert + ~16 h search; estimate.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2023-kale-06",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 105,
+   "sex": "f",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The woman, Alzheimer's; went out to gather grass"
+  },
+  "last_seen": {
+   "text": "home, Belenköy Mahallesi, Kale, Denizli",
+   "lat": 37.436352,
+   "lon": 28.744761,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "not stated"
+  },
+  "found": {
+   "text": "~3 km from her home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "28 hours later",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "hungry and thirsty; place not described"
+  },
+  "elapsed_hours": 28.0,
+  "elapsed_precision_hours": 2.0,
+  "terrain_text": "rural hill country",
+  "notes": "Nominatim returned 'Belen, Kale, Denizli' for Belenköy; accepted as the same settlement (precision widened). Published 26 Jul 2023 (İHA).",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2020-uzumlu-07",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 80,
+   "sex": "f",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The woman, Alzheimer's"
+  },
+  "last_seen": {
+   "text": "home, Karakaya köyü, Üzümlü, Erzincan",
+   "lat": 39.679384,
+   "lon": 39.755626,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "dün akşam (23 Feb 2020 evening)"
+  },
+  "found": {
+   "text": "empty field ~2 km from the village",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "24 Feb 2020 öğle saatlerinde",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "sitting in an empty field; had fallen"
+  },
+  "elapsed_hours": 18.0,
+  "elapsed_precision_hours": 3.0,
+  "terrain_text": "open fields, winter",
+  "notes": "DHA via CNN Türk. Spent the night outdoors in February.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2023-pinarbasi-08",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 88,
+   "sex": null,
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The person (sex not stated), Alzheimer's"
+  },
+  "last_seen": {
+   "text": "home, Sümenler köyü, Pınarbaşı, Kastamonu",
+   "lat": 41.70517,
+   "lon": 33.040428,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "did not return home 'dün akşam' (11 Jul 2023)"
+  },
+  "found": {
+   "text": "~3 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "~8 h after the gendarmerie search started; published 12 Jul 2023 10:36",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "not described"
+  },
+  "elapsed_hours": 12.0,
+  "elapsed_precision_hours": 6.0,
+  "terrain_text": "forested karst uplands",
+  "notes": "Elapsed: departure time unknown; found ~8 h after search start.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2023-tavsanli-09",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 65,
+   "sex": "m",
+   "category": "forager",
+   "mobility": null,
+   "notes": "The man; mushroom picking"
+  },
+  "last_seen": {
+   "text": "forest near Alabarda Çamalan köyü, Tavşanlı, Kütahya",
+   "lat": 39.569885,
+   "lon": 29.237862,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "dün sabah (15 Oct 2023 morning)"
+  },
+  "found": {
+   "text": "near Balatdanişment Mahallesi, Harmancık, Bursa",
+   "lat": 39.632629,
+   "lon": 29.184129,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "16 Oct 2023, before 16:43 publication",
+   "distance_km_reported": 30.0,
+   "direction_text": "into Bursa province (west)",
+   "state": "alive",
+   "where": "near a neighbourhood after spending the night in forest"
+  },
+  "elapsed_hours": 30.0,
+  "elapsed_precision_hours": 8.0,
+  "terrain_text": "forested mountains on the Kütahya-Bursa border",
+  "notes": "Source says he WALKED about 30 km (path length, not straight line); straight-line geocoded separation is much shorter. Exact forest entry point unknown. Straight-line separation between the two geocoded points: 8.36 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-kaynasli-10",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 75,
+   "sex": "m",
+   "category": "forager",
+   "mobility": null,
+   "notes": "The man; mushroom picking"
+  },
+  "last_seen": {
+   "text": "left home in Üçköprü köyü, Kaynaşlı, Düzce for the Korugöl forest",
+   "lat": 40.795214,
+   "lon": 31.249377,
+   "precision_m": 4000,
+   "time": null,
+   "time_text": "sabah saatlerinde (20 Oct 2025)"
+  },
+  "found": {
+   "text": "forest ~3 km from Korugöl",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "'hours later'; published 21 Oct 2025",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in forest; brought out by off-road vehicle"
+  },
+  "elapsed_hours": 10.0,
+  "elapsed_precision_hours": 5.0,
+  "terrain_text": "dense forest (Korugöl area)",
+  "notes": "Distance is relative to Korugöl lake, not the village; actual last-seen point in the forest unknown. A search-result snippet of an ensonhaber headline (page blocked) says found after 8 h; 24saat says 'hours later'.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2021-tokat-11",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 2,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy; playing in front of family's summer house"
+  },
+  "last_seen": {
+   "text": "yayla house, Seküdağ Yaylası near Çat beldesi, Tokat",
+   "lat": 40.277538,
+   "lon": 36.718628,
+   "precision_m": 5000,
+   "time": null,
+   "time_text": "dün akşam, while parents put animals in barn (28 Apr 2021)"
+  },
+  "found": {
+   "text": "fields of a farming couple, ~10 km away",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "saat 16.00 sıralarında (29 Apr 2021)",
+   "distance_km_reported": 10.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "walking toward farmers in their field"
+  },
+  "elapsed_hours": 22.0,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "yayla with forest and farmland",
+  "notes": "Seküdağ Yaylası not in Nominatim; Çat used with 5 km precision. Article timestamp (30 Apr 09:09) predates the 16:00 find so the find was presumably 29 Apr. 10 km is the farmers' field distance as reported; may be road distance.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2021-kurucasile-12",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 82,
+   "sex": "m",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The man, retired miner"
+  },
+  "last_seen": {
+   "text": "home, Kale köyü, Kurucaşile, Bartın",
+   "lat": 41.778499,
+   "lon": 32.727616,
+   "precision_m": 1500,
+   "time": "2021-05-03T16:00:00+03:00",
+   "time_text": "önceki gün saat 16.00 sıralarında"
+  },
+  "found": {
+   "text": "stream bank ~5 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2021-05-05T13:00:00+03:00",
+   "time_text": "bugün saat 13.00 sıralarında",
+   "distance_km_reported": 5.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "sitting by a stream, exhausted; found by gendarmerie tracking dog"
+  },
+  "elapsed_hours": 45.0,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "forested coastal hills with streams",
+  "notes": "DHA.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-silivri-13",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 87,
+   "sex": "m",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The man, dementia"
+  },
+  "last_seen": {
+   "text": "home, Büyükkılıçlı Mahallesi, Silivri, İstanbul",
+   "lat": 41.163228,
+   "lon": 28.190187,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "dün akşam (25 Sep 2025)"
+  },
+  "found": {
+   "text": "forested area ~2 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "26 Sep 2025, before 16:51",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in rugged forest; carried out on stretcher"
+  },
+  "elapsed_hours": 18.0,
+  "elapsed_precision_hours": 6.0,
+  "terrain_text": "rugged wooded land",
+  "notes": "",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-kepsut-14",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 6,
+   "sex": "m",
+   "category": "autism",
+   "mobility": null,
+   "notes": "The boy, autistic; left home toward nearby forest"
+  },
+  "last_seen": {
+   "text": "home, Yoğunoluk Mahallesi, Kepsut, Balıkesir",
+   "lat": 39.66026,
+   "lon": 28.342721,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "26 Jul 2026"
+  },
+  "found": {
+   "text": "forest ~4 km from where he went missing",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "after ~4 h of searching",
+   "distance_km_reported": 4.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in forest"
+  },
+  "elapsed_hours": 4.5,
+  "elapsed_precision_hours": 1.5,
+  "terrain_text": "large forest",
+  "notes": "AA. Sex inferred from name.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2019-demirkoy-15",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 12,
+   "sex": "f",
+   "category": "mental_illness",
+   "mobility": null,
+   "notes": "The girl, intellectual disability; family visiting for a wedding"
+  },
+  "last_seen": {
+   "text": "settlement in Demirköy, Kırklareli (village not named)",
+   "lat": 41.824151,
+   "lon": 27.765147,
+   "precision_m": 6000,
+   "time": null,
+   "time_text": "while playing with children; ~5 h before the 28 Jun 2019 report"
+  },
+  "found": {
+   "text": "Kale mevkii, ~6 km from the settlement",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "night of 27-28 Jun 2019",
+   "distance_km_reported": 6.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "asleep on a stone in the forest; wet from crossing a stream"
+  },
+  "elapsed_hours": 5.0,
+  "elapsed_precision_hours": 1.5,
+  "terrain_text": "forest with streams (Istranca/Yıldız mountains)",
+  "notes": "Settlement name not given, so last seen = Demirköy district centre with 6 km precision. Category: intellectual disability (no enum value; mental_illness used).",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2021-sarikamis-16",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": null,
+   "category": "child",
+   "mobility": null,
+   "notes": "The child; playing in family yard"
+  },
+  "last_seen": {
+   "text": "family yard, Parmakdere köyü, Sarıkamış, Kars",
+   "lat": 40.313297,
+   "lon": 42.188625,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "bugün öğlen saatlerinde (18 Jul 2021)"
+  },
+  "found": {
+   "text": "footpath in forest ~5 km from the village",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "before 22:48 publication",
+   "distance_km_reported": 5.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "on a forest footpath"
+  },
+  "elapsed_hours": 6.0,
+  "elapsed_precision_hours": 4.0,
+  "terrain_text": "Sarıkamış pine forest",
+  "notes": "Found time not given; elapsed bounded by midday and 22:48 publication.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-yakutiye-17",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 70,
+   "sex": "m",
+   "category": "shepherd",
+   "mobility": null,
+   "notes": "The shepherd; with flock of ~160-180 sheep"
+  },
+  "last_seen": {
+   "text": "Çayırtepe Mahallesi, Yakutiye, Erzurum (left with flock)",
+   "lat": 39.964228,
+   "lon": 41.328784,
+   "precision_m": 2000,
+   "time": "2025-11-19T08:30:00+03:00",
+   "time_text": "19.11.2025 saat 08.30 (Valilik)"
+  },
+  "found": {
+   "text": "~5 km from where he was lost",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2025-11-21T13:05:00+03:00",
+   "time_text": "bugün 13.05'te (Valilik)",
+   "distance_km_reported": 5.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "with the flock; found by gendarmerie JÖH teams"
+  },
+  "elapsed_hours": 52.6,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "open high plateau, dense fog (visibility ~10 m), sub-zero",
+  "notes": "Age 65 in article lead, 70 in governor statement; governor value used. Moving with a flock.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-mus-18",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": null,
+   "sex": "m",
+   "category": "shepherd",
+   "mobility": null,
+   "notes": "The man, hired shepherd; went out at night to wash face at a fountain"
+  },
+  "last_seen": {
+   "text": "fountain near house, Gündoğan köyü, Muş merkez",
+   "lat": 38.90352,
+   "lon": 41.860613,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "11 Haziran Perşembe gece saatlerinde"
+  },
+  "found": {
+   "text": "Karameşe köyü, Muş merkez",
+   "lat": 38.91095,
+   "lon": 41.747124,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "13 Jun 2026 (published 19:35)",
+   "distance_km_reported": 11.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in a village"
+  },
+  "elapsed_hours": 44.0,
+  "elapsed_precision_hours": 12.0,
+  "terrain_text": "upland steppe/plain",
+  "notes": "Age not stated. His phone was found at the fountain. Nominatim has two Karameşe villages in Muş; the one in Muş Merkez (near Gündoğan) chosen. Headline wording is 'araniyor' but body says he was located. Straight-line separation between the two geocoded points: 9.85 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-gercus-19",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 2.5,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "The girl; wandered from the house unnoticed"
+  },
+  "last_seen": {
+   "text": "home, Bağlıca köyü, Gercüş, Batman",
+   "lat": 37.626474,
+   "lon": 41.159517,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "2 May 2026 öğle / öğleden sonra"
+  },
+  "found": {
+   "text": "a locality ~5.5 km from the village centre",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2026-05-03T08:00:00+03:00",
+   "time_text": "bu sabah saat 08.00 sularında",
+   "distance_km_reported": 5.5,
+   "direction_text": null,
+   "state": "alive",
+   "where": "exhausted, in open terrain"
+  },
+  "elapsed_hours": 19.0,
+  "elapsed_precision_hours": 2.0,
+  "terrain_text": "difficult open hill terrain",
+  "notes": "AA.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-gediz-20",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 80,
+   "sex": "f",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The woman, Alzheimer's; left home for the mosque"
+  },
+  "last_seen": {
+   "text": "home, Uluoymak Mahallesi, Gediz, Kütahya",
+   "lat": 38.986607,
+   "lon": 29.392188,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "3 days before 13 Mar 2025"
+  },
+  "found": {
+   "text": "near a stream bed around Muhipler Göleti, ~5 km from Gediz",
+   "lat": 38.991789,
+   "lon": 29.351,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "3rd day of search; published 13 Mar 2025",
+   "distance_km_reported": 5.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "semi-conscious near a stream bed"
+  },
+  "elapsed_hours": 72.0,
+  "elapsed_precision_hours": 18.0,
+  "terrain_text": "rolling hills, reservoir and stream bed",
+  "notes": "Uluoymak geocodes to a street of that name in Gediz (proxy). Found point geocoded to Eskimuhipler neighbourhood as a proxy for Muhipler Göleti (pond itself not found) - low confidence. Distance reported from Gediz town. Straight-line separation between the two geocoded points: 3.61 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2015-suluova-21",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 73,
+   "sex": "f",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The woman, Alzheimer's, poor hearing and sight"
+  },
+  "last_seen": {
+   "text": "Arucak köyü, Suluova, Amasya",
+   "lat": 40.687923,
+   "lon": 35.631447,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "not stated"
+  },
+  "found": {
+   "text": "under a tree on the road to Alabedir (neighbouring village)",
+   "lat": 40.689381,
+   "lon": 35.651886,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "~24 h later; published 16 Jul 2015",
+   "distance_km_reported": null,
+   "direction_text": "toward Alabedir",
+   "state": "alive",
+   "where": "sitting under a tree beside the road"
+  },
+  "elapsed_hours": 24.0,
+  "elapsed_precision_hours": 4.0,
+  "terrain_text": "flat farmland with sunflower fields",
+  "notes": "İHA. No distance given; found point lies somewhere between the two villages. Straight-line separation between the two geocoded points: 1.73 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2020-malazgirt-22",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 4,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "The girl; left home with older brother to play"
+  },
+  "last_seen": {
+   "text": "home, Saltukgazi Mahallesi, Malazgirt, Muş",
+   "lat": 39.151928,
+   "lon": 42.542968,
+   "precision_m": 1000,
+   "time": "2020-04-13T16:30:00+03:00",
+   "time_text": "dün saat 16.30 sıralarında"
+  },
+  "found": {
+   "text": "open land near Mezra köyü",
+   "lat": 39.177492,
+   "lon": 42.611768,
+   "precision_m": 3000,
+   "time": "2020-04-14T14:30:00+03:00",
+   "time_text": "saat 14.30 sıralarında",
+   "distance_km_reported": 30.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "exhausted in empty open land; found by a shepherd"
+  },
+  "elapsed_hours": 22.0,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "open steppe plain",
+  "notes": "OUTLIER: 30 km for a 4-year-old in 22 h is implausible on foot; reported distance may be wrong or road distance. Nominatim matched 'Mezraaköy, Malazgirt', only ~5 km from Saltukgazi - may be the wrong Mezra; treat found point with caution. Straight-line separation between the two geocoded points: 6.58 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-yatagan-23",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 84,
+   "sex": "f",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The woman"
+  },
+  "last_seen": {
+   "text": "home, Yava Mahallesi, Yatağan, Muğla",
+   "lat": 37.399881,
+   "lon": 28.103211,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "3 days before 6 Jun 2026"
+  },
+  "found": {
+   "text": "abandoned building ~1.5 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "published 6 Jun 2026 16:05",
+   "distance_km_reported": 1.5,
+   "direction_text": null,
+   "state": "dead",
+   "where": "inside an abandoned building"
+  },
+  "elapsed_hours": 72.0,
+  "elapsed_precision_hours": 24.0,
+  "terrain_text": "rugged terrain",
+  "notes": "Investigation opened.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2024-kadirli-24",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 82,
+   "sex": "f",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The woman, Alzheimer's"
+  },
+  "last_seen": {
+   "text": "home, 7 Mart Mahallesi, Kadirli, Osmaniye",
+   "lat": 37.372075,
+   "lon": 36.103007,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "önceki gün (27 Feb 2024)"
+  },
+  "found": {
+   "text": "empty land in Vayvaylı köyü",
+   "lat": 37.299782,
+   "lon": 36.03936,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "bugün (29 Feb 2024)",
+   "distance_km_reported": 10.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "gathering grass in empty land"
+  },
+  "elapsed_hours": 48.0,
+  "elapsed_precision_hours": 12.0,
+  "terrain_text": "lowland farmland",
+  "notes": " Straight-line separation between the two geocoded points: 9.81 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-kocaali-25",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 78,
+   "sex": "f",
+   "category": "mental_illness",
+   "mobility": null,
+   "notes": "The woman, intellectual disability"
+  },
+  "last_seen": {
+   "text": "home, Gümüşoluk Mahallesi, Kocaali, Sakarya",
+   "lat": 41.015932,
+   "lon": 30.922847,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "sabah saat 08.00 sularında"
+  },
+  "found": {
+   "text": "roadside ~3 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "saat 17.00 sıralarında",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "sitting at the roadside; spotted by a farming couple"
+  },
+  "elapsed_hours": 9.0,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "rural hazelnut/garden land",
+  "notes": "Published 15 Apr 2025 (İHA); same-day event assumed.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-gerede-26",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 57,
+   "sex": "m",
+   "category": "hunter",
+   "mobility": null,
+   "notes": "The man; went hunting in the forest"
+  },
+  "last_seen": {
+   "text": "home, Kandak Mahallesi, Davutbeyli köyü, Gerede, Bolu",
+   "lat": 40.815604,
+   "lon": 32.493168,
+   "precision_m": 2000,
+   "time": "2026-03-28T08:00:00+03:00",
+   "time_text": "sabah 08.00 sıralarında"
+  },
+  "found": {
+   "text": "forest ~2-3 km from the village centre",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2026-03-29T11:20:00+03:00",
+   "time_text": "saat 11.20 sıralarında (Halk TV: ~11.30)",
+   "distance_km_reported": 2.5,
+   "direction_text": null,
+   "state": "alive",
+   "where": "unconscious in forest"
+  },
+  "elapsed_hours": 27.3,
+  "elapsed_precision_hours": 0.5,
+  "terrain_text": "forest, difficult terrain",
+  "notes": "Distance 2-3 km (İHA) / ~3 km (Halk TV).",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2017-uludag-27",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 9,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy, a Qatari tourist"
+  },
+  "last_seen": {
+   "text": "Sarıalan picnic area, Uludağ, Bursa",
+   "lat": 40.13703,
+   "lon": 29.106221,
+   "precision_m": 1000,
+   "time": null,
+   "time_text": "22 Jul 2017 evening ~19:00 (TGRT)"
+  },
+  "found": {
+   "text": "Gölcük Çayırı, Uludağ, ~2 km from Sarıalan",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "~18 h after going missing",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "at a cliff edge in woods; slept there; tried to run from rescuers"
+  },
+  "elapsed_hours": 18.0,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "mountain forest and meadows",
+  "notes": "Hürriyet: 2 km; TGRT: 'within 1 hour walking distance'. TGRT officer account implies ~13:20 find.",
+  "source_note": "2 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2018-olimpos-28",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 2.5,
+   "sex": "m",
+   "category": "child",
+   "mobility": null,
+   "notes": "The boy; followed the family dog into the woods"
+  },
+  "last_seen": {
+   "text": "bungalow holiday village, Olimpos, Kumluca, Antalya",
+   "lat": 36.396558,
+   "lon": 30.473542,
+   "precision_m": 1000,
+   "time": "2018-05-17T18:30:00+03:00",
+   "time_text": "dün saat 18.30 sıralarında"
+  },
+  "found": {
+   "text": "irrigation pool next to a pomegranate orchard, ~1 km away",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2018-05-18T06:30:00+03:00",
+   "time_text": "sabah saat 06.30",
+   "distance_km_reported": 1.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "asleep on the tarpaulin covering an irrigation pool"
+  },
+  "elapsed_hours": 12.0,
+  "elapsed_precision_hours": 0.5,
+  "terrain_text": "coastal valley forest and orchards",
+  "notes": "",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2022-tarsus-29",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 33,
+   "sex": "m",
+   "category": "mental_illness",
+   "mobility": null,
+   "notes": "The man, intellectual disability"
+  },
+  "last_seen": {
+   "text": "home in Tarsus, Mersin (neighbourhood not given)",
+   "lat": 36.916483,
+   "lon": 34.895149,
+   "precision_m": 8000,
+   "time": null,
+   "time_text": "about a week before 8 Apr 2022"
+  },
+  "found": {
+   "text": "Silifke district, Mersin",
+   "lat": 36.377817,
+   "lon": 33.926037,
+   "precision_m": 8000,
+   "time": null,
+   "time_text": "published 8 Apr 2022",
+   "distance_km_reported": 130.0,
+   "direction_text": "west along the coast",
+   "state": "alive",
+   "where": "not described"
+  },
+  "elapsed_hours": 168.0,
+  "elapsed_precision_hours": 24.0,
+  "terrain_text": "coastal roads/towns",
+  "notes": "Long-distance wandering case; relatives say he walked the whole way. Reported 130 km likely road distance. Low location precision. Straight-line separation between the two geocoded points: 105.18 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-inegol-30",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 15,
+   "sex": "m",
+   "category": "mental_illness",
+   "mobility": null,
+   "notes": "The teenage boy, intellectual disability; left a disability care centre"
+  },
+  "last_seen": {
+   "text": "Engelsiz Yaşam Merkezi, Yeniceköy Mahallesi, İnegöl, Bursa",
+   "lat": 40.088213,
+   "lon": 29.419467,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "bugün saat 18.00 sıralarında (8 Dec 2025)"
+  },
+  "found": {
+   "text": "road at Kalburt mevkii, Cerrah Mahallesi, İnegöl",
+   "lat": 40.071008,
+   "lon": 29.448171,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "after ~6 h of searching",
+   "distance_km_reported": 10.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "on a road"
+  },
+  "elapsed_hours": 6.0,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "rural/foothill roads",
+  "notes": "Mode of travel not stated (assumed on foot). Sex inferred from name. Straight-line separation between the two geocoded points: 3.1 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-goynuk-31",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 46,
+   "sex": "m",
+   "category": "mental_illness",
+   "mobility": null,
+   "notes": "The man, intellectual disability"
+  },
+  "last_seen": {
+   "text": "home, Dedeler köyü, Göynük, Bolu",
+   "lat": 40.313509,
+   "lon": 30.89637,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "not stated (published 10 Feb 2026)"
+  },
+  "found": {
+   "text": "forest ~5 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "after ~20 h of searching",
+   "distance_km_reported": 5.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in forest"
+  },
+  "elapsed_hours": 22.0,
+  "elapsed_precision_hours": 6.0,
+  "terrain_text": "forested hills, winter",
+  "notes": "",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-gazipasa-32",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 2,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "The girl; playing in front of relatives' house"
+  },
+  "last_seen": {
+   "text": "relatives' house, Beyrebucak Mahallesi, Gazipaşa, Antalya",
+   "lat": 36.216622,
+   "lon": 32.38879,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "saat 17.00 sıralarında (date not stated; published 17 Jan 2025 01:32)"
+  },
+  "found": {
+   "text": "roadside low hill ~1 km away",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "~8 h later",
+   "distance_km_reported": 1.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "face down after rolling down a low hill beside a road"
+  },
+  "elapsed_hours": 8.0,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "hilly rural land",
+  "notes": "",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2024-simav-33",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 87,
+   "sex": "m",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The man; may have gone to collect firewood"
+  },
+  "last_seen": {
+   "text": "home, Cevizlik Mahallesi, Akdağ beldesi, Simav, Kütahya",
+   "lat": 39.20571,
+   "lon": 28.833755,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "unreachable for 3 days before report"
+  },
+  "found": {
+   "text": "Çakırın Damı mevkii, forest ~3 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "published 30 Oct 2024",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "at the foot of a rock in forest"
+  },
+  "elapsed_hours": 72.0,
+  "elapsed_precision_hours": 36.0,
+  "terrain_text": "forested mountains",
+  "notes": "AA. Elapsed is a lower-bound style estimate.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-akdagmadeni-34",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 85,
+   "sex": "m",
+   "category": "forager",
+   "mobility": null,
+   "notes": "The man; mushroom picking"
+  },
+  "last_seen": {
+   "text": "home, Davutlu köyü, Akdağmadeni, Yozgat",
+   "lat": 39.731766,
+   "lon": 35.910492,
+   "precision_m": 1500,
+   "time": "2026-06-22T11:00:00+03:00",
+   "time_text": "dün sabah 11.00 sularında"
+  },
+  "found": {
+   "text": "forest ~3 km away",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "23 Jun 2026, before 17:34",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in forest"
+  },
+  "elapsed_hours": 22.0,
+  "elapsed_precision_hours": 8.0,
+  "terrain_text": "forested uplands",
+  "notes": "Find time not given.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2022-kars-35",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 12,
+   "sex": "m",
+   "category": "shepherd",
+   "mobility": null,
+   "notes": "The boy; out grazing animals with cousins"
+  },
+  "last_seen": {
+   "text": "grazing near Halefoğlu köyü, Kars merkez",
+   "lat": 40.649345,
+   "lon": 43.290579,
+   "precision_m": 3000,
+   "time": null,
+   "time_text": "4 gün önce sabah saatlerinde"
+  },
+  "found": {
+   "text": "Yalınkaya köyü, Kars",
+   "lat": 40.618225,
+   "lon": 43.258442,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "4th day of search (published 4 May 2022)",
+   "distance_km_reported": 7.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "asleep at the foot of a rock; weak and exhausted"
+  },
+  "elapsed_hours": 84.0,
+  "elapsed_precision_hours": 12.0,
+  "terrain_text": "high steppe plateau",
+  "notes": "Child herding animals; category shepherd chosen. Straight-line separation between the two geocoded points: 4.4 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2020-keles-36",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 80,
+   "sex": "f",
+   "category": "forager",
+   "mobility": null,
+   "notes": "The woman; mushroom picking near home"
+  },
+  "last_seen": {
+   "text": "forest near Dağdemirciler köyü, Keles, Bursa",
+   "lat": 39.941376,
+   "lon": 29.158775,
+   "precision_m": 2500,
+   "time": null,
+   "time_text": "4 days before 7 Nov 2020"
+  },
+  "found": {
+   "text": "Yağcılar Bağları, Belenören köyü, Keles",
+   "lat": 39.868319,
+   "lon": 29.149852,
+   "precision_m": 2500,
+   "time": null,
+   "time_text": "7 Nov 2020 morning",
+   "distance_km_reported": 10.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in vineyards; found by hunters; exhausted"
+  },
+  "elapsed_hours": 96.0,
+  "elapsed_precision_hours": 6.0,
+  "terrain_text": "forested mountains, night temps ~1 °C",
+  "notes": " Straight-line separation between the two geocoded points: 8.16 km.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2022-amasra-37",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 65,
+   "sex": "m",
+   "category": "forager",
+   "mobility": null,
+   "notes": "The man; chestnut gathering"
+  },
+  "last_seen": {
+   "text": "left home, Kaleşah Mahallesi, Amasra, Bartın",
+   "lat": 41.737012,
+   "lon": 32.394813,
+   "precision_m": 2500,
+   "time": null,
+   "time_text": "dün sabah (24 Oct 2022)"
+  },
+  "found": {
+   "text": "forest ~5 km from where he was lost",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "after ~16 h of searching; published 25 Oct 2022 14:19",
+   "distance_km_reported": 5.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "pinned by a fallen rock on his arm"
+  },
+  "elapsed_hours": 26.0,
+  "elapsed_precision_hours": 6.0,
+  "terrain_text": "steep coastal forest",
+  "notes": "Immobilised by injury for part of the time. Sex inferred from name.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-ulus-38",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 73,
+   "sex": "f",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The woman; went into the forest looking for her livestock"
+  },
+  "last_seen": {
+   "text": "Buğurlar köyü, Ulus, Bartın",
+   "lat": 41.496258,
+   "lon": 32.628979,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "dün akşam saatlerinde (11 Mar 2026)"
+  },
+  "found": {
+   "text": "steep forest ~3 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "before 09:27 on 12 Mar 2026",
+   "distance_km_reported": 3.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "motionless after a fall; head and foot injuries; hypothermia risk"
+  },
+  "elapsed_hours": 14.0,
+  "elapsed_precision_hours": 3.0,
+  "terrain_text": "steep forest",
+  "notes": "",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-bayramoren-39",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 82,
+   "sex": "f",
+   "category": "forager",
+   "mobility": null,
+   "notes": "The woman; mushroom picking"
+  },
+  "last_seen": {
+   "text": "home, Yaylatepesi köyü, Bayramören, Çankırı",
+   "lat": 41.060093,
+   "lon": 33.183708,
+   "precision_m": 1500,
+   "time": "2025-11-17T12:00:00+03:00",
+   "time_text": "17 Kasım öğle saatleri (Valilik)"
+  },
+  "found": {
+   "text": "forest 2 km from home (crow-fly per Valilik)",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": "2025-11-20T16:30:00+03:00",
+   "time_text": "20 Kasım 2025 saat 16.30 sıralarında (Valilik)",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "in forest"
+  },
+  "elapsed_hours": 76.5,
+  "elapsed_precision_hours": 2.0,
+  "terrain_text": "forest",
+  "notes": "Valilik statement explicitly says 'kuş uçuşu 2 km'.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2014-dursunbey-40",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 84,
+   "sex": "f",
+   "category": "forager",
+   "mobility": null,
+   "notes": "The woman; mushroom picking"
+  },
+  "last_seen": {
+   "text": "home, Karakaya Mahallesi, Dursunbey, Balıkesir",
+   "lat": 39.661728,
+   "lon": 28.446611,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "salı sabahı (25 Nov 2014)"
+  },
+  "found": {
+   "text": "Sarıtaş mevkii, forest ~2 km from the village",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "morning, published 27 Nov 2014",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "dead",
+   "where": "in forest; died of cold; her bucket found first"
+  },
+  "elapsed_hours": 48.0,
+  "elapsed_precision_hours": 12.0,
+  "terrain_text": "forest, late November",
+  "notes": "İHA via mynet.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2024-hani-41",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 3,
+   "sex": "f",
+   "category": "child",
+   "mobility": null,
+   "notes": "Two cousins together, girls aged 3 and 4; went out to play"
+  },
+  "last_seen": {
+   "text": "home, Kuyular köyü, Hani, Diyarbakır",
+   "lat": 38.431763,
+   "lon": 40.276632,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "dün öğle saatlerinde (15 Jun 2024)"
+  },
+  "found": {
+   "text": "~8 km from the village",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "~9 h later",
+   "distance_km_reported": 8.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "tired and asleep; woke to whistles"
+  },
+  "elapsed_hours": 9.0,
+  "elapsed_precision_hours": 1.5,
+  "terrain_text": "hilly rural land",
+  "notes": "Pair of children travelling together; age recorded as the younger (3).",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2026-cide-42",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 75,
+   "sex": "f",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The woman; went to look after her animals"
+  },
+  "last_seen": {
+   "text": "home, Sırakaya köyü, Cide, Kastamonu",
+   "lat": 41.868076,
+   "lon": 33.003124,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "reported ~15:30 (2 Feb 2026)"
+  },
+  "found": {
+   "text": "forest ~2 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "not stated",
+   "distance_km_reported": 2.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "standing leaning against a tree, exhausted, had fallen several times"
+  },
+  "elapsed_hours": 4.0,
+  "elapsed_precision_hours": 3.0,
+  "terrain_text": "forest",
+  "notes": "Relative said she was ~3 h in the forest; elapsed rough.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-cumayeri-43",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 81,
+   "sex": "f",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The woman"
+  },
+  "last_seen": {
+   "text": "home, Üvezbeyli köyü (Kersendüzü mevkii), Cumayeri, Düzce",
+   "lat": 40.897391,
+   "lon": 30.897409,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "not stated"
+  },
+  "found": {
+   "text": "hazelnut orchard ~300 m from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "53 h later; published 30 Aug 2025",
+   "distance_km_reported": 0.3,
+   "direction_text": null,
+   "state": "alive",
+   "where": "semi-conscious in a hazelnut orchard"
+  },
+  "elapsed_hours": 53.0,
+  "elapsed_precision_hours": 1.0,
+  "terrain_text": "hazelnut orchards, hilly",
+  "notes": "AA (via Türkgün) says '2 days'; DHA gives 53 h. Very short displacement - probably immobilised early. Village spelled Üvezbeyli in DHA, Üvezbeli in OSM.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2018-karliova-44",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 85,
+   "sex": "m",
+   "category": "elderly",
+   "mobility": null,
+   "notes": "The man"
+  },
+  "last_seen": {
+   "text": "Kaynak köyü, Karlıova, Bingöl",
+   "lat": 39.244967,
+   "lon": 40.911601,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "dün sabah (28 Jul 2018)"
+  },
+  "found": {
+   "text": "hill at ~3000 m altitude, 7 km from the village",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "~30 h later",
+   "distance_km_reported": 7.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "on a hilltop, exhausted"
+  },
+  "elapsed_hours": 30.0,
+  "elapsed_precision_hours": 2.0,
+  "terrain_text": "high mountain",
+  "notes": "",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2023-andirin-45",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 56,
+   "sex": "f",
+   "category": "dementia",
+   "mobility": null,
+   "notes": "The woman, Alzheimer's"
+  },
+  "last_seen": {
+   "text": "home, Boztopraklı Mahallesi, Andırın, Kahramanmaraş",
+   "lat": 37.537295,
+   "lon": 36.303843,
+   "precision_m": 1500,
+   "time": null,
+   "time_text": "dün geceden beri (15 Nov 2023)"
+  },
+  "found": {
+   "text": "a hamlet (mezra) ~5 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "after 13 h of search; published 16 Nov 2023 19:33",
+   "distance_km_reported": 5.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in a hamlet"
+  },
+  "elapsed_hours": 16.0,
+  "elapsed_precision_hours": 5.0,
+  "terrain_text": "mountain foothills",
+  "notes": "",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-puturge-46",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": null,
+   "sex": "m",
+   "category": "mental_illness",
+   "mobility": null,
+   "notes": "Elderly man described as not mentally sound"
+  },
+  "last_seen": {
+   "text": "home, Üran Mahallesi, Pütürge, Malatya",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "reported missing ~19:45 (27 Jan 2025)"
+  },
+  "found": {
+   "text": "forest ~7 km from home",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "published 28 Jan 2025 11:34",
+   "distance_km_reported": 7.0,
+   "direction_text": null,
+   "state": "alive",
+   "where": "in forest"
+  },
+  "elapsed_hours": 14.0,
+  "elapsed_precision_hours": 6.0,
+  "terrain_text": "forested mountains, winter",
+  "notes": "Age not stated (elderly). Üran Mahallesi could not be geocoded (Nominatim no match), so coordinates are null.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ },
+ {
+  "id": "tr-2025-ayvacik-47",
+  "country": "TR",
+  "sources": [],
+  "person": {
+   "age": 61,
+   "sex": "m",
+   "category": "hiker",
+   "mobility": null,
+   "notes": "The hiker; separated from a 17-person hiking group"
+  },
+  "last_seen": {
+   "text": "near Gürleyik Şelalesi, Adatepebaşı köyü, Küçükkuyu, Ayvacık, Çanakkale",
+   "lat": 39.600311,
+   "lon": 26.638243,
+   "precision_m": 2000,
+   "time": null,
+   "time_text": "dün saat 16.00 sıralarında (26 May 2025)"
+  },
+  "found": {
+   "text": "near Gürleyik Şelalesi",
+   "lat": null,
+   "lon": null,
+   "precision_m": null,
+   "time": null,
+   "time_text": "27 h later",
+   "distance_km_reported": null,
+   "direction_text": null,
+   "state": "dead",
+   "where": "near the waterfall"
+  },
+  "elapsed_hours": 27.0,
+  "elapsed_precision_hours": 2.0,
+  "terrain_text": "steep forested valley with waterfall (Kaz Dağları)",
+  "notes": "No distance reported; found near the same waterfall where he was last seen, so displacement is small (<~2 km). Cause of death not stated.",
+  "source_note": "1 news report(s); links held privately by the maintainer (they name the person)"
+ }
+]
