@@ -20,6 +20,8 @@ Give it **where the person was last seen**, **when**, and **who they are**: age,
 - **Weather** over the missing hours, with warnings for cold, rain, snow and heat.
 - **The farthest point in any direction** ("if he went north…") and the walking route to it.
 
+**[Project page with animations and a live map demo →](https://mstkyvz.github.io/sar-sleuth/)**
+
 It is a [Claude Code](https://claude.com/claude-code) agent skill: ask in plain language and the agent runs the scripts. The scripts also work on their own from the command line. **No API keys:** every data source is open.
 
 > Built as **decision support** for search and rescue teams. It does not replace local knowledge or what teams learn in the field.
@@ -217,7 +219,7 @@ route to Cluster C1: 24 buildings (14 destroyed, 6 damaged): 4.0 km by vehicle (
 
 <p align="center"><img src="docs/img/kirikhan_access.png" width="620" alt="Kırıkhan after the earthquake on an OpenStreetMap basemap: closed roads, damaged buildings, cut-off clusters and the route to cluster C1 with directions"></p>
 
-**Interactive map:** [`access.html`](https://mstkyvz.github.io/sar-sleuth/demo/kirikhan-earthquake-access.html) opens in any browser, with OpenStreetMap, zoom, and a button per cluster that shows its route and directions. Every run writes one.
+**Interactive map ([live demo](https://mstkyvz.github.io/sar-sleuth/demo/kirikhan-earthquake-access.html)):** `access.html` opens in any browser, with OpenStreetMap, zoom, and a button per cluster that shows its route and directions. Every run writes one.
 
 In the dense street grid of central Kırıkhan there is almost always a way round: damaged buildings take only seconds longer to reach. The problem is the south-eastern neighbourhoods, which hang off a few streets. That is where to send teams on foot or open a road first.
 

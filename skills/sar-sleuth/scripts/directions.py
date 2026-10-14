@@ -242,9 +242,10 @@ HTML = """<!doctype html><html><head><meta charset="utf-8"><meta name="viewport"
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>html,body,#m{height:100%;margin:0;font:14px system-ui,sans-serif}
-#p{position:absolute;z-index:1000;top:10px;right:10px;width:330px;max-height:85%;overflow:auto;background:#fff;
+#p{position:absolute;z-index:1000;top:10px;right:10px;width:330px;max-height:85%;overflow:auto;box-sizing:border-box;background:#fff;
 padding:10px 12px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.25)}#p h3{margin:4px 0 6px}#p ol{padding-left:20px;margin:4px 0}
 .k{display:inline-block;width:18px;height:4px;margin-right:6px;vertical-align:middle}.note{color:#666;font-size:12px}
+@media(max-width:700px){#p{top:auto;bottom:10px;left:10px;right:10px;width:auto;max-height:40%}}
 button{margin:2px 4px 2px 0;padding:3px 8px;border:1px solid #bbb;border-radius:5px;background:#f6f6f6;cursor:pointer}</style></head>
 <body><div id="m"></div><div id="p"><h3>__TITLE__</h3><div id="sum">__SUMMARY__</div>
 <div><span class="k" style="background:#d61f1f"></span>closed road &nbsp;<span class="k" style="background:#eb961e"></span>slowed
@@ -252,7 +253,8 @@ button{margin:2px 4px 2px 0;padding:3px 8px;border:1px solid #bbb;border-radius:
 <p class="note">Estimate for response planning (decision support). Check road status on the ground.<br>Damage: Copernicus EMS (© European Union). Map: © OpenStreetMap contributors.</p></div>
 <script>
 const D=__DATA__;
-const m=L.map('m');L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,
+const m=L.map('m');m.fitBounds(D.bounds);   // set the view before adding vector layers
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,
 attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(m);
 L.geoJSON(D.roads,{style:f=>({color:f.properties.state=='closed'?'#d61f1f':'#eb961e',weight:f.properties.state=='closed'?4:3})}).addTo(m);
 const gc={'Destroyed':'#8b0000','Damaged':'#f07a1e','Possibly damaged':'#e6c83c'};
@@ -264,7 +266,8 @@ function show(r){ if(cur) m.removeLayer(cur); cur=L.layerGroup().addTo(m);
  if(r.walk.length) L.polyline(r.walk,{color:'#1f4fe0',weight:4,dashArray:'6 8'}).addTo(cur);
  L.circleMarker(r.drive[0],{radius:7,color:'#000',fillColor:'#2d6cff',fillOpacity:1}).addTo(cur);
  L.circleMarker(r.target,{radius:9,color:'#5a00a0',fillColor:'#b07cff',fillOpacity:.9}).addTo(cur).bindPopup(r.label);
- m.fitBounds(L.latLngBounds(r.drive.concat(r.walk,[r.target])).pad(.25));
+ const wide=window.innerWidth>700;
+ m.fitBounds(L.latLngBounds(r.drive.concat(r.walk,[r.target])),{paddingTopLeft:[30,30],paddingBottomRight:[wide?380:30,wide?30:260]});
  document.getElementById('dir').innerHTML='<h3>'+r.label+'</h3><b>'+r.summary+'</b><ol>'+r.steps.map(s=>'<li>'+s+'</li>').join('')+'</ol>';}
 D.routes.forEach((r,i)=>{const b=document.createElement('button');b.textContent=r.id;b.onclick=()=>show(r);document.getElementById('btns').appendChild(b);});
 m.fitBounds(D.bounds); if(D.routes.length) show(D.routes[0]);
