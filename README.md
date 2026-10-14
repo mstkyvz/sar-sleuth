@@ -307,6 +307,13 @@ All open, no account or key needed.
 - **Türkiye:** the likely zone may be tight for Turkish cases (geographic hold-out 51 %; see [Accuracy](#accuracy)).
 - **Assumed factors:** the vegetation factors, night behaviour and attractor weights are **assumptions** until more cases with exact found points are available.
 
+## Roadmap
+
+- [ ] **Shared web page for search management:** teams log searched sectors from their phones and the map updates for everyone ([#1](https://github.com/mstkyvz/sar-sleuth/issues/1)).
+- [ ] **Access after an earthquake:** blocked roads from damage maps, and time to reach each neighbourhood before and after (in progress).
+- [ ] **More solved cases, especially adults 16–64 and Türkiye:** the largest gain in accuracy will come from these.
+- [ ] **Calibrate the attractor weights** (paths, drainages, buildings) on cases with exact found points.
+
 ## Contributing
 
 **The most valuable contribution is a solved case:**
