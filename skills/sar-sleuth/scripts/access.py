@@ -182,6 +182,8 @@ def main() -> None:
     ap.add_argument("--ems-zip", action="append", default=[], help="downloaded grading vector package(s)")
     ap.add_argument("--from", dest="sources", action="append", default=[],
                     help="extra entry point lat,lon (depot, hospital, staging area); repeatable")
+    ap.add_argument("--route-to", action="append", default=[], help="also route to this lat,lon (a building, a camp); repeatable")
+    ap.add_argument("--routes", type=int, default=5, help="routes to the N worst cut-off clusters (default 5)")
     ap.add_argument("--no-edge-entries", action="store_true", help="do not add entry points where main roads leave the area")
     ap.add_argument("--out", required=True)
     ap.add_argument("--cache", default=".sar-cache")
@@ -252,7 +254,8 @@ def main() -> None:
     else:
         tb = ta = np.zeros(0)
     cut = ~np.isfinite(ta) & np.isfinite(tb)
-    delay = np.where(np.isfinite(ta), ta - tb, np.nan)
+    with np.errstate(invalid="ignore"):
+        delay = np.where(np.isfinite(ta), ta - tb, np.nan)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     # cut-off clusters: buildings that lost vehicle access, grouped by 150 m
@@ -315,15 +318,154 @@ def main() -> None:
     for c in clusters:
         feats.append({"type": "Feature", "properties": {"name": f"cut-off cluster {c['id']}", **c},
                       "geometry": {"type": "Point", "coordinates": [c["lon"], c["lat"]]}})
+    # ---- routes with directions, on a real map
+    import directions as DR
+    _, pred = DR.route_tree(net, fac_after, cfg["speed_kmh"], src)
+    names = DR.name_edges(net, roads, Path(a.cache) / "names")
+    reach_nodes = np.nonzero(np.isfinite(t_after))[0]
+    rtree = cKDTree(xy[reach_nodes])
+    targets = [(c["id"], f"Cluster {c['id']}: {c['buildings']} buildings ({c['destroyed']} destroyed, {c['damaged']} damaged)",
+                c["lat"], c["lon"]) for c in clusters[:a.routes]]
+    for i, s_ in enumerate(a.route_to):
+        la, lo = map(float, s_.split(","))
+        targets.append((f"T{i + 1}", f"Target T{i + 1} ({la:.5f}, {lo:.5f})", la, lo))
+    routes = []
+    gdir = out / "gpx"
+    gdir.mkdir(exist_ok=True)
+    for tid, label, la, lo in targets:
+        txy = np.array([lo * net.kx, la * net.ky])
+        cand = rtree.query_ball_point(txy, 600) or [int(rtree.query(txy)[1])]
+        nodes_c = reach_nodes[cand]
+        walk_m = np.hypot(*(xy[nodes_c] - txy).T)
+        score = t_after[nodes_c] + walk_m / 1000 / cfg["walk_kmh"] * 60
+        stop = int(nodes_c[int(np.argmin(score))])
+        wm = float(np.hypot(*(xy[stop] - txy)))
+        path = DR.path_to(pred, stop, len(xy))
+        steps = DR.instructions(net, path, names)
+        if wm > 15:
+            steps.append({"text": f"Vehicle stops here (road ahead closed or none); continue on foot about {DR.fmt_m(wm)} "
+                                  f"{DR.COMPASS[int((DR.bearing(xy[stop], txy) + 22.5) // 45) % 8]} to the target",
+                          "distance_m": round(wm), "lat": round(float(xy[stop][1] / net.ky), 6), "lon": round(float(xy[stop][0] / net.kx), 6)})
+        drive_km = sum(st["distance_m"] for st in steps[:-1 if wm > 15 else None]) / 1000
+        mins = float(t_after[stop])
+        r = {"id": tid, "label": label, "drive_km": round(drive_km, 2), "drive_min": round(mins, 1), "walk_m": round(wm),
+             "summary": f"{drive_km:.1f} km by vehicle (~{mins:.0f} min) + {DR.fmt_m(wm)} on foot",
+             "steps": [st["text"] for st in steps],
+             "drive": [[round(float(xy[k][1] / net.ky), 6), round(float(xy[k][0] / net.kx), 6)] for k in path],
+             "walk": [[round(float(xy[stop][1] / net.ky), 6), round(float(xy[stop][0] / net.kx), 6)], [la, lo]] if wm > 15 else [],
+             "target": [la, lo]}
+        routes.append(r)
+        feats.append({"type": "Feature", "properties": {"name": f"route to {tid}", "summary": r["summary"]},
+                      "geometry": {"type": "LineString", "coordinates": [[q[1], q[0]] for q in r["drive"]]}})
+        trk = "".join(f'<trkpt lat="{q[0]}" lon="{q[1]}"/>' for q in r["drive"] + r["walk"])
+        (gdir / f"route_{tid}.gpx").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="sar-sleuth" '
+                                               f'xmlns="http://www.topografix.com/GPX/1/1"><trk><name>{label}</name><trkseg>{trk}</trkseg></trk></gpx>\n')
+    summary["routes"] = [{k: v for k, v in r.items() if k not in ("drive", "walk")} for r in routes]
+    (out / "access.json").write_text(json.dumps(summary, indent=1, ensure_ascii=False))
     (out / "access.geojson").write_text(json.dumps({"type": "FeatureCollection", "features": feats}))
-    render(out / "access.png", net, xy, fac_after, bxy, bgrade, cut, delay, src, clusters, summary)
+    lat_all, lon_all = xy[:, 1] / net.ky, xy[:, 0] / net.kx
+    bbox = (float(lat_all.min()), float(lon_all.min()), float(lat_all.max()), float(lon_all.max()))
+    road_feats = [f_ for f_ in feats if f_["properties"].get("state")]
+    data = {"roads": {"type": "FeatureCollection", "features": road_feats},
+            "buildings": [[round(b[0], 6), round(b[1], 6), b[2], int(c_)] for b, c_ in zip(builds, cut) if b[2] != "No visible damage"],
+            "entries": summary["entry_points"], "routes": routes, "bounds": [[bbox[0], bbox[1]], [bbox[2], bbox[3]]]}
+    sm = (f"<b>{summary['roads']['closed']}</b> road segments closed ({summary['roads']['closed_km']} km), "
+          f"<b>{summary['buildings_cut_off']}</b> buildings cut off from vehicles. Pick a route:")
+    DR.write_html(out / "access.html", "Access after the earthquake", sm, data)
+    render_map(out / "access.png", net, xy, fac_after, builds, bgrade, cut, src, clusters, routes, summary, bbox,
+               Path(a.cache) / "tiles")
     print(json.dumps({k: summary[k] for k in ("buildings", "roads", "buildings_cut_off", "damaged_or_destroyed_cut_off",
                                               "median_minutes_before", "median_extra_minutes_damaged_buildings")},
                      indent=1, ensure_ascii=False))
+    for r in routes[:3]:
+        print(f"\nroute to {r['label']}: {r['summary']}")
+        for i, t_ in enumerate(r["steps"], 1):
+            print(f"   {i}. {t_}")
     for c in clusters[:8]:
         print(f"  {c['id']}: {c['buildings']} buildings ({c['destroyed']} destroyed, {c['damaged']} damaged) cut off, "
               f"nearest vehicle access {c['nearest_vehicle_access_m']} m @ {c['lat']},{c['lon']}")
-    print(f"-> {out}/access.png, access.json, access.geojson, buildings.csv")
+    print(f"-> {out}/access.png, access.html (interactive), access.json, access.geojson, buildings.csv, gpx/")
+
+
+def render_map(path: Path, net: Net, xy, fac, builds, bgrade, cut, src, clusters, routes, summary, bbox, cache: Path) -> None:
+    """Closed roads, damage and the first route with directions, on an OpenStreetMap-based basemap."""
+    import directions as DR
+    from PIL import ImageDraw, ImageFont
+    pad = 0.08
+    s_, w_, n_, e_ = bbox
+    dy, dx = (n_ - s_) * pad, (e_ - w_) * pad
+    im, proj, _ = DR.basemap((s_ - dy, w_ - dx, n_ + dy, e_ + dx), cache, max_px=1400)
+    im = im.convert("RGB")
+    d = ImageDraw.Draw(im, "RGBA")
+    ll = lambda i: proj(xy[i][1] / net.ky, xy[i][0] / net.kx)  # noqa: E731
+    for (a, b, L, cls, _, _), fc in zip(net.edges, fac):
+        if fc < 1:
+            d.line([ll(a), ll(b)], fill=(214, 31, 31, 255) if fc == 0 else (235, 150, 30, 230), width=4 if fc == 0 else 3)
+    gcol = {"Possibly damaged": (230, 200, 60, 220), "Damaged": (240, 122, 30, 235), "Destroyed": (139, 0, 0, 255)}
+    for (la, lo, g, _), c in zip(builds, cut):
+        if g not in gcol:
+            continue
+        u, v = proj(la, lo)
+        r = 3.5 if g != "Possibly damaged" else 2.5
+        d.ellipse([u - r, v - r, u + r, v + r], fill=gcol[g], outline=(90, 0, 160, 255) if c else None, width=2 if c else 1)
+    try:
+        font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 15)
+        small = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 13)
+        big = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 16)
+    except Exception:  # noqa: BLE001
+        font = small = big = ImageFont.load_default()
+    if routes:
+        r = routes[0]
+        pts = [proj(q[0], q[1]) for q in r["drive"]]
+        d.line(pts, fill=(31, 79, 224, 235), width=7, joint="curve")
+        for i in range(1, 8):                                    # arrowheads
+            j = int(len(pts) * i / 8)
+            if 2 < j < len(pts):
+                (x0, y0), (x1, y1) = pts[j - 3], pts[j]
+                ang = math.atan2(y1 - y0, x1 - x0)
+                a1 = (x1 - 15 * math.cos(ang) + 8 * math.sin(ang), y1 - 15 * math.sin(ang) - 8 * math.cos(ang))
+                a2 = (x1 - 15 * math.cos(ang) - 8 * math.sin(ang), y1 - 15 * math.sin(ang) + 8 * math.cos(ang))
+                d.polygon([(x1, y1), a1, a2], fill=(255, 255, 255, 255), outline=(31, 79, 224, 255))
+        if r["walk"]:
+            (u0, v0), (u1, v1) = proj(*r["walk"][0]), proj(*r["walk"][1])
+            n = max(2, int(math.hypot(u1 - u0, v1 - v0) / 10))
+            for k in range(0, n, 2):
+                d.line([(u0 + (u1 - u0) * k / n, v0 + (v1 - v0) * k / n), (u0 + (u1 - u0) * (k + 1) / n, v0 + (v1 - v0) * (k + 1) / n)],
+                       fill=(31, 79, 224, 255), width=4)
+        u, v = pts[0]
+        d.ellipse([u - 9, v - 9, u + 9, v + 9], fill=(45, 108, 255, 255), outline=(0, 0, 0, 255), width=2)
+        d.text((u + 11, v - 9), "START", fill=(0, 0, 0), font=big, stroke_width=3, stroke_fill=(255, 255, 255))
+    for c in clusters[:10]:
+        u, v = proj(c["lat"], c["lon"])
+        d.text((u + 7, v - 9), c["id"], fill=(255, 255, 255), font=big, stroke_width=3, stroke_fill=(90, 0, 160))
+    for i in src:
+        u, v = ll(i)
+        d.polygon([(u, v - 10), (u - 9, v + 7), (u + 9, v + 7)], fill=(0, 110, 220, 255), outline=(0, 0, 0, 255))
+    s = summary
+    head = [f"Access after the earthquake: {s['roads']['closed']} road segments closed ({s['roads']['closed_km']} km), "
+            f"{s['buildings_cut_off']} buildings cut off from vehicles",
+            "red: closed road  orange: slowed  dark red / orange / yellow dots: destroyed / damaged / possibly damaged",
+            "purple ring: cut off;  C1, C2 ...: cut-off clusters;  blue triangles: entry points"]
+    d.rectangle([10, 10, 790, 16 + 20 * len(head)], fill=(255, 255, 255, 235))
+    for i, t in enumerate(head):
+        d.text((16, 13 + 20 * i), t, fill=(0, 0, 0), font=small if i else font)
+    # directions and credits in a panel under the map, so nothing on the map is covered
+    from PIL import Image
+    lines = []
+    if routes:
+        r = routes[0]
+        lines = [f"Route to {r['label']}", r["summary"]] + [f"{i}. {t}" for i, t in enumerate(r["steps"], 1)]
+    lines += ["", "Estimate for response planning - decision support only. Damage: Copernicus EMS (© European Union). "
+                  "Map: © OpenStreetMap contributors."]
+    panel_h = 16 + 20 * len(lines)
+    full = Image.new("RGB", (im.size[0], im.size[1] + panel_h), (255, 255, 255))
+    full.paste(im, (0, 0))
+    dp = ImageDraw.Draw(full)
+    for i, t in enumerate(lines):
+        col = (31, 79, 224) if (routes and i < 2) else ((90, 90, 90) if i == len(lines) - 1 else (0, 0, 0))
+        dp.text((16, im.size[1] + 10 + 20 * i), t, fill=col, font=big if (routes and i == 0) else font)
+    im = full
+    im.save(path, quality=92)
 
 
 def render(path: Path, net: Net, xy, fac, bxy, bgrade, cut, delay, src, clusters, summary) -> None:

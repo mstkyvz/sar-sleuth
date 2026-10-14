@@ -83,5 +83,57 @@
    "nearest_vehicle_access_m": 218,
    "id": "C3"
   }
+ ],
+ "routes": [
+  {
+   "id": "C1",
+   "label": "Cluster C1: 24 buildings (14 destroyed, 6 damaged)",
+   "drive_km": 4.01,
+   "drive_min": 5.3,
+   "walk_m": 198,
+   "summary": "4.0 km by vehicle (~5 min) + 200 m on foot",
+   "steps": [
+    "Head north-east on Gaziantep-Antakya yolu, 2.6 km",
+    "Turn right onto Çevre Yolu Caddesi, 1.0 km",
+    "Turn left onto the street (no name), 360 m",
+    "Vehicle stops here (road ahead closed or none); continue on foot about 200 m south-east to the target"
+   ],
+   "target": [
+    36.47259,
+    36.366771
+   ]
+  },
+  {
+   "id": "C2",
+   "label": "Cluster C2: 12 buildings (9 destroyed, 3 damaged)",
+   "drive_km": 1.19,
+   "drive_min": 1.6,
+   "walk_m": 253,
+   "summary": "1.2 km by vehicle (~2 min) + 250 m on foot",
+   "steps": [
+    "Head north-west on the road (no name), 1.2 km",
+    "Vehicle stops here (road ahead closed or none); continue on foot about 250 m north-east to the target"
+   ],
+   "target": [
+    36.475554,
+    36.376285
+   ]
+  },
+  {
+   "id": "C3",
+   "label": "Cluster C3: 3 buildings (3 destroyed, 0 damaged)",
+   "drive_km": 1.18,
+   "drive_min": 1.6,
+   "walk_m": 234,
+   "summary": "1.2 km by vehicle (~2 min) + 230 m on foot",
+   "steps": [
+    "Head north-west on the road (no name), 1.2 km",
+    "Vehicle stops here (road ahead closed or none); continue on foot about 230 m west to the target"
+   ],
+   "target": [
+    36.474347,
+    36.371683
+   ]
+  }
  ]
 }

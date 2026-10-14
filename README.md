@@ -204,17 +204,20 @@ The [Copernicus Emergency Management Service](https://mapping.emergency.copernic
 - **Closes roads:** segments graded damaged or destroyed, and streets within debris distance of a destroyed building. A narrow local street closes within 20 m of a collapse; a wide road keeps a lane and only closes within 10 m.
 - **Slows roads:** segments next to damaged buildings, and roads graded "possibly damaged".
 - **Times every building:** the drive from the entry points, where main roads leave the area, plus your own staging points via `--from`. A building counts as reachable if a vehicle can get within 150 m; teams carry the rest.
-- **Lists cut-off clusters:** groups of buildings that lost vehicle access, with their damage counts and how far it is to the nearest road still open.
+- **Lists cut-off clusters:** groups of buildings that lost vehicle access, with their damage counts.
+- **Gives a route to each cluster** on the roads that are still open, with **turn-by-turn directions and street names** taken from OpenStreetMap / Overture, and a GPX file per route. The route shows where the vehicle has to stop and how far the team walks from there.
 
 ```
-442 destroyed, 705 damaged, 446 possibly damaged buildings
-475 road segments closed (25 km), 115 slowed
-39 buildings cut off from vehicles (35 damaged or destroyed)
-  C1: 24 buildings (14 destroyed, 6 damaged), nearest vehicle access 198 m
-  C2: 12 buildings (9 destroyed, 3 damaged),  nearest vehicle access 208 m
+route to Cluster C1: 24 buildings (14 destroyed, 6 damaged): 4.0 km by vehicle (~5 min) + 200 m on foot
+   1. Head north-east on Gaziantep-Antakya yolu, 2.6 km
+   2. Turn right onto Çevre Yolu Caddesi, 1.0 km
+   3. Turn left onto the street (no name), 360 m
+   4. Vehicle stops here (road ahead closed or none); continue on foot about 200 m south-east to the target
 ```
 
-<p align="center"><img src="docs/img/kirikhan_access.png" width="560" alt="Kırıkhan after the earthquake: closed roads in red, damaged buildings, cut-off clusters"></p>
+<p align="center"><img src="docs/img/kirikhan_access.png" width="620" alt="Kırıkhan after the earthquake on an OpenStreetMap basemap: closed roads, damaged buildings, cut-off clusters and the route to cluster C1 with directions"></p>
+
+**Interactive map:** [`access.html`](https://mstkyvz.github.io/sar-sleuth/demo/kirikhan-earthquake-access.html) opens in any browser, with OpenStreetMap, zoom, and a button per cluster that shows its route and directions. Every run writes one.
 
 In the dense street grid of central Kırıkhan there is almost always a way round: damaged buildings take only seconds longer to reach. The problem is the south-eastern neighbourhoods, which hang off a few streets. That is where to send teams on foot or open a road first.
 
@@ -238,7 +241,8 @@ Every run writes to `--out`:
 | `sectors.csv` / `sectors.geojson` | Every sector: rank, POA (share of the probability), cumulative POA, area, bounds | spreadsheet, GIS |
 | `gpx/sector_NN.gpx` | Boundary of each top sector | Garmin, phone GPS apps |
 | `search_status.png`, `search.json` | With `search.py`: map after the searches so far, log, next sectors, probability of success | any image viewer / text |
-| `access.png`, `access.json`, `access.geojson`, `buildings.csv` | With `access.py`: closed and slowed roads, cut-off clusters, every building's drive time before/after | image viewer, GIS, spreadsheet |
+| `access.png`, `access.html` | With `access.py`: map on OpenStreetMap with closed roads, damage, cut-off clusters and the first route with directions; interactive version with every route | image viewer, browser |
+| `access.json`, `access.geojson`, `buildings.csv`, `gpx/route_*.gpx` | Closed and slowed roads, clusters, routes with turn-by-turn steps, every building's drive time before/after | GIS, spreadsheet, GPS |
 | `reach.json` | Every input and parameter, budgets, areas, distances per direction, transit stops with arrival times, weather and warnings | text editor, other tools |
 | `time.npy`, `prob.npy`, `time_transit.npy`, `grid.json` | Walking hours and probability per grid cell | Python |
 
@@ -327,6 +331,7 @@ All open, no account or key needed.
 | Weather | Open-Meteo | cold, rain, snow and heat warnings | CC BY 4.0 |
 | Timetables | Mobility Database catalog → city GTFS feeds | buses, trams, metro | per feed (listed in `reach.json`) |
 | Building and road damage | Copernicus EMS rapid mapping (grading products) | blocked roads after a disaster | © European Union, free with attribution |
+| Basemap tiles | OpenStreetMap (tile.openstreetmap.org) | background of the access maps | © OpenStreetMap contributors, [tile usage policy](https://operations.osmfoundation.org/policies/tiles/) |
 | Found-distance statistics | UK Missing Person Behaviour Study, Koester / ISRID, Australian study, and others | rings and probability | quoted as facts with citation |
 
 ---
