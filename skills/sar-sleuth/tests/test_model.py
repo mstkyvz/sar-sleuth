@@ -219,3 +219,25 @@ class SearchTest(unittest.TestCase):
         pod = SE.track_pod(g, lc, Path(f.name), None, MODEL["sweep_width_m"])
         self.assertGreater(pod[g.n + 2, g.n], 0.5)     # 20 m off the line, inside the 60 m swath
         self.assertLess(pod[g.n + 6, g.n], 0.05)       # 60 m off: outside it
+
+
+class AccessTest(unittest.TestCase):
+    def test_debris_closes_street_and_detour_is_found(self):
+        import access as AC
+        cfg = MODEL["access"]
+        net = AC.Net(36.5)
+        # a square block: two routes from A (0,0) to C (0.002 deg east, 0.002 north)
+        A, B, C, D = (36.0, 36.5), (36.002, 36.5), (36.002, 36.502), (36.0, 36.502)
+        net.add_road([A, B], "local", "No visible damage", 0)
+        net.add_road([B, C], "local", "No visible damage", 1)
+        net.add_road([A, D], "local", "No visible damage", 2)
+        net.add_road([D, C], "local", "No visible damage", 3)
+        xy = np.array(net.xy)
+        mid_ab = (xy[0] + xy[1]) / 2                                      # a destroyed building next to street A-B
+        fac, why = AC.edge_states(net, mid_ab[None, :] + [0, 5], np.array(["Destroyed"]), cfg)
+        self.assertEqual(fac[0], 0.0)
+        self.assertTrue(all(f == 1 for f in fac[1:]))
+        t0 = AC.times(net, np.ones(4), cfg["speed_kmh"], [0])
+        t1 = AC.times(net, fac, cfg["speed_kmh"], [0])
+        self.assertAlmostEqual(t1[2], t0[2], places=3)                     # C still reached the other way round
+        self.assertGreater(t1[1], t0[1] * 2)                              # B now only via the long way

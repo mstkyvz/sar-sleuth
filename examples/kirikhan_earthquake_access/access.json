@@ -1,0 +1,87 @@
+{
+ "notice": "Estimate for response planning (decision support): debris distances and speeds are assumptions; check road status on the ground.",
+ "source": [
+  "EMSR648_AOI18_GRA_PRODUCT_r1_RTP01_v1_vector.zip",
+  "Copernicus Emergency Management Service (© European Union), rapid mapping"
+ ],
+ "buildings": {
+  "No visible damage": 0,
+  "Possibly damaged": 446,
+  "Damaged": 705,
+  "Destroyed": 442
+ },
+ "entry_points": [
+  {
+   "lat": 36.465628,
+   "lon": 36.33781
+  },
+  {
+   "lat": 36.465592,
+   "lon": 36.337556
+  },
+  {
+   "lat": 36.5338,
+   "lon": 36.380277
+  },
+  {
+   "lat": 36.533773,
+   "lon": 36.380444
+  },
+  {
+   "lat": 36.502956,
+   "lon": 36.396357
+  },
+  {
+   "lat": 36.502812,
+   "lon": 36.396302
+  },
+  {
+   "lat": 36.464538,
+   "lon": 36.380472
+  }
+ ],
+ "roads": {
+  "segments": 5918,
+  "closed": 475,
+  "closed_km": 25.23,
+  "slowed": 115,
+  "reasons": {
+   "debris from a destroyed building": 475,
+   "next to a damaged building": 93,
+   "road possibly damaged": 22
+  }
+ },
+ "buildings_cut_off": 39,
+ "damaged_or_destroyed_cut_off": 35,
+ "median_minutes_before": 4.9,
+ "median_extra_minutes_damaged_buildings": 0.1,
+ "cut_off_clusters": [
+  {
+   "lat": 36.47259,
+   "lon": 36.366771,
+   "buildings": 24,
+   "destroyed": 14,
+   "damaged": 6,
+   "nearest_vehicle_access_m": 198,
+   "id": "C1"
+  },
+  {
+   "lat": 36.475554,
+   "lon": 36.376285,
+   "buildings": 12,
+   "destroyed": 9,
+   "damaged": 3,
+   "nearest_vehicle_access_m": 208,
+   "id": "C2"
+  },
+  {
+   "lat": 36.474347,
+   "lon": 36.371683,
+   "buildings": 3,
+   "destroyed": 3,
+   "damaged": 0,
+   "nearest_vehicle_access_m": 218,
+   "id": "C3"
+  }
+ ]
+}

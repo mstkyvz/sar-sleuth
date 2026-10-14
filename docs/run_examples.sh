@@ -32,3 +32,6 @@ cp docs/img/boyabat_reach.gif examples/boyabat_woman_69_likely/
 # keep the repository light: per-cell arrays are regenerated on demand
 find examples -name '*.npy' -delete
 find examples -name grid.json -delete
+
+uv run -q skills/sar-sleuth/scripts/access.py --ems EMSR648 --aoi 18 --out examples/kirikhan_earthquake_access
+cp examples/kirikhan_earthquake_access/access.png docs/img/kirikhan_access.png

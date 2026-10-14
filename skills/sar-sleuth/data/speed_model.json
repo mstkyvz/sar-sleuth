@@ -658,5 +658,37 @@
   "95": 8,
   "100": 50,
   "0": 25
+ },
+ "access": {
+  "_source": "ASSUMPTION unless stated; used by access.py. Speeds are typical urban/rural driving speeds for emergency vehicles in normal conditions. Debris distances: a collapsed reinforced-concrete building spreads debris roughly up to a fraction of its height; Turkish urban residential blocks are mostly 4-8 storeys (12-25 m). A destroyed building is taken to close a narrow local street within 20 m and a wider road within 10 m (one lane may stay usable); a damaged building only slows traffic next to it. Calibrate against post-event road-status reports (e.g. AFAD / KGM road closure lists) when available.",
+  "speed_kmh": {
+   "highway": 80,
+   "primary": 60,
+   "secondary": 45,
+   "local": 25,
+   "track": 12
+  },
+  "walk_kmh": 4.0,
+  "possibly_damaged_road_factor": 0.5,
+  "damaged_building_road_factor": 0.5,
+  "debris_m": {
+   "Destroyed": {
+    "highway": 6,
+    "primary": 10,
+    "secondary": 12,
+    "local": 20,
+    "track": 15
+   },
+   "Damaged": {
+    "highway": 0,
+    "primary": 0,
+    "secondary": 6,
+    "local": 10,
+    "track": 8
+   }
+  },
+  "entry_edge_m": 300,
+  "carry_m": 150,
+  "_carry_m": "ASSUMPTION: a building counts as reachable when a vehicle can get within this distance (teams carry equipment and stretchers the rest)."
  }
 }

@@ -191,6 +191,38 @@ next sectors (highest probability per km² now):  4, 5, 6, 7, 9, 8, 10, 11
 - **POD from an estimate:** a team leader's estimate per sector also works, for example `--pod 0.6`.
 - **Repeated searches** of the same ground combine.
 
+### 7. After an earthquake: which roads are blocked, who can be reached?
+
+> **Q:** After the 6 February 2023 earthquake, which parts of Kırıkhan (Hatay) could rescue vehicles no longer reach?
+
+```bash
+uv run skills/sar-sleuth/scripts/access.py --ems EMSR648 --aoi 18 --out out/kirikhan
+```
+
+The [Copernicus Emergency Management Service](https://mapping.emergency.copernicus.eu/activations/EMSR648) publishes rapid damage maps a few days after a disaster. Every building and road segment is graded from post-event imagery, and the packages can be downloaded with no key. `access.py` builds the road network from those packages, then:
+
+- **Closes roads:** segments graded damaged or destroyed, and streets within debris distance of a destroyed building. A narrow local street closes within 20 m of a collapse; a wide road keeps a lane and only closes within 10 m.
+- **Slows roads:** segments next to damaged buildings, and roads graded "possibly damaged".
+- **Times every building:** the drive from the entry points, where main roads leave the area, plus your own staging points via `--from`. A building counts as reachable if a vehicle can get within 150 m; teams carry the rest.
+- **Lists cut-off clusters:** groups of buildings that lost vehicle access, with their damage counts and how far it is to the nearest road still open.
+
+```
+442 destroyed, 705 damaged, 446 possibly damaged buildings
+475 road segments closed (25 km), 115 slowed
+39 buildings cut off from vehicles (35 damaged or destroyed)
+  C1: 24 buildings (14 destroyed, 6 damaged), nearest vehicle access 198 m
+  C2: 12 buildings (9 destroyed, 3 damaged),  nearest vehicle access 208 m
+```
+
+<p align="center"><img src="docs/img/kirikhan_access.png" width="560" alt="Kırıkhan after the earthquake: closed roads in red, damaged buildings, cut-off clusters"></p>
+
+In the dense street grid of central Kırıkhan there is almost always a way round: damaged buildings take only seconds longer to reach. The problem is the south-eastern neighbourhoods, which hang off a few streets. That is where to send teams on foot or open a road first.
+
+**Limits:**
+- **The result is only as good as the damage map.** Early products miss damage. Antakya's first EMS map, for example, grades only a handful of buildings as destroyed.
+- **Debris distances and speeds are assumptions.** They should be checked against road-closure reports.
+- **Not modelled:** traffic, fuel and the order in which roads are cleared.
+
 ---
 
 ## Output
@@ -206,6 +238,7 @@ Every run writes to `--out`:
 | `sectors.csv` / `sectors.geojson` | Every sector: rank, POA (share of the probability), cumulative POA, area, bounds | spreadsheet, GIS |
 | `gpx/sector_NN.gpx` | Boundary of each top sector | Garmin, phone GPS apps |
 | `search_status.png`, `search.json` | With `search.py`: map after the searches so far, log, next sectors, probability of success | any image viewer / text |
+| `access.png`, `access.json`, `access.geojson`, `buildings.csv` | With `access.py`: closed and slowed roads, cut-off clusters, every building's drive time before/after | image viewer, GIS, spreadsheet |
 | `reach.json` | Every input and parameter, budgets, areas, distances per direction, transit stops with arrival times, weather and warnings | text editor, other tools |
 | `time.npy`, `prob.npy`, `time_transit.npy`, `grid.json` | Walking hours and probability per grid cell | Python |
 
@@ -293,6 +326,7 @@ All open, no account or key needed.
 | Current snow and water | Copernicus Sentinel-2 L2A via Element84 Earth Search | snow cover, floods before the event | Copernicus free and open |
 | Weather | Open-Meteo | cold, rain, snow and heat warnings | CC BY 4.0 |
 | Timetables | Mobility Database catalog → city GTFS feeds | buses, trams, metro | per feed (listed in `reach.json`) |
+| Building and road damage | Copernicus EMS rapid mapping (grading products) | blocked roads after a disaster | © European Union, free with attribution |
 | Found-distance statistics | UK Missing Person Behaviour Study, Koester / ISRID, Australian study, and others | rings and probability | quoted as facts with citation |
 
 ---
@@ -310,7 +344,12 @@ All open, no account or key needed.
 ## Roadmap
 
 - [ ] **Shared web page for search management:** teams log searched sectors from their phones and the map updates for everyone ([#1](https://github.com/mstkyvz/sar-sleuth/issues/1)).
-- [ ] **Access after an earthquake:** blocked roads from damage maps, and time to reach each neighbourhood before and after (in progress).
+- [x] **Access after an earthquake:** blocked roads from Copernicus EMS damage maps, and buildings cut off from vehicles (`access.py`).
+- [ ] **Earthquake access, next steps:**
+  - Sentinel-1/2 change detection when no EMS map exists yet.
+  - Landslides cutting rural roads.
+  - Population (GHSL) to rank villages.
+  - Calibrate debris distances on road-closure reports from 2023.
 - [ ] **More solved cases, especially adults 16–64 and Türkiye:** the largest gain in accuracy will come from these.
 - [ ] **Calibrate the attractor weights** (paths, drainages, buildings) on cases with exact found points.
 

@@ -33,6 +33,8 @@ uv run ${CLAUDE_SKILL_DIR}/scripts/reach.py --at <lat,lon> --since <ISO time wit
 
 8. **During the search** (`search.py`): `init <reach out dir>` → `log <dir> --sector N --pod 0.x` or `--gpx track.gpx [--searchers N --spacing m]` after each unsuccessful search → `status <dir>`: Bayesian update (searched cells × (1 − POD), the rest and "outside the area" gain), next sectors by probability per km², cumulative probability of success, `search_status.png`. Sweep widths per ground type are in `speed_model.json` → `sweep_width_m` (assumptions within published ranges).
 
+9. **After a disaster** (`access.py --ems EMSR… --aoi N` or `--ems-zip`): Copernicus EMS grading product → road network, closed roads (graded damaged/destroyed, or within debris distance of a destroyed building) and slowed ones → drive time to every building from entry points (+ `--from` staging points) → buildings cut off from vehicles, grouped into clusters. Say that the result depends on how complete the damage map is, and that debris distances are assumptions.
+
 `person.py --at … --since … --age …` prints the profile and budget alone, without terrain.
 
 ## Question → command
