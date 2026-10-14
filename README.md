@@ -50,6 +50,7 @@ uv run skills/sar-sleuth/scripts/reach.py \
 
 **Where and when:**
 - `--toward N --toward S`: farthest point and route in those directions. Turkish `K G D B` also work.
+- `--to lat,lon`: the destination they were heading for. Draws the best route and the corridor of near-best routes (`route.png`).
 - `--transit auto|yes|no`, `--gtfs <zip url>`: public transport.
 - `--roads auto|overture|overpass|none`
 - `--conditions DAYS`: Sentinel-2 snow and flood check.
@@ -112,7 +113,33 @@ farthest point by direction (straight km / walking-route km):
 
 <p align="center"><img src="docs/img/uludag_cane_map.png" width="460"></p>
 
-### 4. City: walking the streets, and buses, trams, metro
+### 4. Heading somewhere: a corridor, not a circle
+
+> **Q:** A 35-year-old hiker set off from the Uludağ hotels area to walk down to the Sarıalan cable-car station and never arrived. Where should we look?
+
+When the destination is known, `--to lat,lon` draws:
+- **The best walking route** as an arrow.
+- **The corridor of near-best routes:** red, orange and yellow mark routes up to 15, 35 and 75 % longer than the best one. A person who took a wrong turn, followed a stream down or went around a steep slope is most likely still inside it.
+
+<table align="center"><tr>
+<td align="center"><img src="docs/img/uludag_heading.gif" width="400"><br><sub>The front of possible positions (red) moving along the corridor and spreading where the terrain allows</sub></td>
+<td align="center"><img src="docs/img/uludag_heading_route.png" width="400"><br><sub>Best route (blue arrow), corridor bands, and branches B1 / B2 that leave the route</sub></td>
+</tr></table>
+
+```
+heading: best route 5.08 km, 1.17 h walking
+  B1  right of the route, leaves it at km 1.9, up to 2.6 km off, ~90 m lower than the route
+  B2  left of the route,  leaves it at km 1.6, up to 1.6 km off, ~30 m lower than the route
+```
+
+**Search order:**
+1. The best route itself.
+2. The red band.
+3. The branches: here both lie below the route, towards the stream valleys, where tired walkers drift.
+
+`reach.json → heading` also gives how far along the route the person could be by now (likely and max).
+
+### 5. City: walking the streets, and buses, trams, metro
 
 > **Q:** A 78-year-old man with dementia was last seen at 10:00 in central Antalya. Where could he be?
 
@@ -145,6 +172,7 @@ Every run writes to `--out`:
 | File | Contents | Open with |
 |---|---|---|
 | `reach.png` | Reach map: likely zone, physical limit, statistics rings, hourly lines, farthest points, transit | any image viewer |
+| `route.png` | With `--to`: best route, corridor bands, branches, position by now | any image viewer |
 | `priority.png` | Probability heat map and the top 15 numbered sectors | any image viewer |
 | `reach.geojson` | All lines, rings, farthest points and routes, reachable stops | Google Earth, QGIS, geojson.io, OsmAnd / Locus |
 | `sectors.csv` / `sectors.geojson` | Every sector: rank, POA (share of the probability), cumulative POA, area, bounds | spreadsheet, GIS |

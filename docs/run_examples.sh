@@ -13,6 +13,9 @@ for h in 48 72 120; do
      --roads none --res $res --no-priority --out examples/boyabat_woman_69_$d
 done
 $R --at 39.3341,35.7679 --since 2026-05-28T20:15+03:00 --hours 10 --age 3 --sex f --out examples/cayiralan_child_3
+$R --at 40.0985,29.1300 --to 40.1370,29.1062 --since 2026-10-13T11:00+03:00 --hours 3 --age 35 --sex m --view-km 6 --out examples/uludag_hiker_heading
+uv run -q docs/make_route_gif.py examples/uludag_hiker_heading docs/img/uludag_heading.gif --view-km 6 --size 520
+cp examples/uludag_hiker_heading/route.png docs/img/uludag_heading_route.png
 $R --at 40.0985,29.1300 --since 2026-10-13T11:00+03:00 --hours 24 --age 60 --sex m --mobility cane --toward N --toward S --out examples/uludag_man_60_cane
 $R --at 36.8875,30.7056 --since 2026-10-13T10:00+03:00 --hours 6 --age 78 --sex m --dementia --out examples/antalya_dementia_78
 

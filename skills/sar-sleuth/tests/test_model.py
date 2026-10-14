@@ -173,3 +173,23 @@ class TransitTest(unittest.TestCase):
         self.assertTrue(np.isfinite(arr[3]))                    # D is a ~40 m walk from C
         arr2, _ = T.scan(stops, conn, np.array([0.2, np.inf, np.inf, np.inf]), 4.0, 0.15)
         self.assertTrue(np.isinf(arr2[2]))                      # stop A beyond the walking budget
+
+
+class HeadingTest(unittest.TestCase):
+    def test_corridor_follows_road_and_finds_detour(self):
+        import route as RT
+        g, z = flat_grid(50)
+        lc = np.full(z.shape, 20, np.uint8)                          # scrub
+        road = np.zeros(z.shape, np.uint8)
+        road[: g.n + 1, g.n] = 1                                     # straight road north to the destination
+        pr = P.build_profile(P.Person(age=35, sex="m"), MODEL)
+        cls, extra, passable = R.cell_classes(lc, road, np.zeros(z.shape, bool), MODEL)
+        t, pred = R.travel_hours(g, z, cls, extra, passable, pr, MODEL, 5.0)
+        dest = g.to_ll(2, g.n)
+        info, arr = RT.corridor(g, R.travel_hours.graph, t, pred, (float(dest[0]), float(dest[1])), 0.2, 2.0, z_arr=z)
+        self.assertAlmostEqual(info["best_route_km"], (g.n - 2) * g.res / 1000, delta=0.05)
+        ex = arr["excess"]
+        self.assertAlmostEqual(float(ex[g.n // 2, g.n]), 0.0, places=3)          # on the road: best route
+        self.assertGreater(float(ex[g.n // 2, g.n + 15]), 0.15)                  # off in the scrub: a longer route
+        self.assertFalse(info["position_likely"]["arrived"])
+        self.assertTrue(info["position_max"]["arrived"])

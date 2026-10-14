@@ -730,7 +730,7 @@ def render(g: Grid, z, lc, road, cliff, t, levels: dict, path: Path, title: str,
     except Exception:  # noqa: BLE001
         font = ImageFont.load_default()
     d.text((30 + L, y0), f"{km} km", fill=(0, 0, 0), font=font)
-    d.text((im.size[0] - 330, im.size[1] - 22), "estimate for search planning - decision support only",
+    d.text((im.size[0] - 380, im.size[1] - 22), "estimate for search planning - decision support only",
            fill=(255, 255, 255), font=font, stroke_width=2, stroke_fill=(0, 0, 0))
     lines = [title, f"red: likely limit ({like:.1f} h walking)", f"orange: max limit ({mx:.1f} h walking)",
              "white: walking time 1, 2, 4, 8 ... h", "blue: found-distance rings 25/50/75/95 % (statistics)",
@@ -739,6 +739,75 @@ def render(g: Grid, z, lc, road, cliff, t, levels: dict, path: Path, title: str,
     d.rectangle([10, 10, 470, 18 + 19 * len(lines)], fill=(255, 255, 255))
     for i, s in enumerate(lines):
         d.text((16, 14 + 19 * i), s, fill=(0, 0, 0), font=font)
+    im.save(path, quality=90)
+
+
+def render_route(g: Grid, z, lc, road, excess, info: dict, path: Path, title: str) -> None:
+    hs = hillshade(z, g.res)
+    base = np.zeros(z.shape + (3,), np.float32)
+    for k_, rgb in LC_RGB.items():
+        base[lc == k_] = rgb
+    img = base * (0.45 + 0.55 * hs[..., None])
+    img = img * 0.55 + 255 * 0.45 * hs[..., None]               # wash out so the corridor stands out
+    img[road == 1] = (60, 60, 60)
+    img[road == 2] = (120, 80, 50)
+    ex = np.where(np.isfinite(excess), excess, 9)
+    for b, col, al in ((0.75, (255, 220, 0), 0.30), (0.35, (255, 140, 0), 0.45), (0.15, (220, 30, 30), 0.55)):
+        m = ex <= b
+        img[m] = img[m] * (1 - al) + np.array(col) * al
+    im = Image.fromarray(img.clip(0, 255).astype(np.uint8))
+    scale = max(1, int(round(1000 / g.size)))
+    im = im.resize((g.size * scale, g.size * scale), Image.NEAREST) if scale > 1 else im.resize((1000, 1000), Image.LANCZOS)
+    k = im.size[0] / g.size
+    d = ImageDraw.Draw(im)
+    try:
+        font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 15)
+        big = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial Bold.ttf", 16)
+    except Exception:  # noqa: BLE001
+        font = big = ImageFont.load_default()
+    pts = []
+    for lo_, la_ in info["route"]:
+        r_, c_ = g.to_rc(la_, lo_)
+        pts.append((float(c_) * k + k / 2, float(r_) * k + k / 2))
+    d.line(pts, fill=(20, 60, 230), width=5)
+    for i in range(1, 6):                                      # arrowheads along the route
+        j = int(len(pts) * i / 6)
+        if 0 < j < len(pts):
+            (x0, y0), (x1, y1) = pts[max(0, j - 3)], pts[j]
+            ang = math.atan2(y1 - y0, x1 - x0)
+            tip = (x1, y1)
+            l_, w_ = 16, 9
+            a1 = (x1 - l_ * math.cos(ang) + w_ * math.sin(ang), y1 - l_ * math.sin(ang) - w_ * math.cos(ang))
+            a2 = (x1 - l_ * math.cos(ang) - w_ * math.sin(ang), y1 - l_ * math.sin(ang) + w_ * math.cos(ang))
+            d.polygon([tip, a1, a2], fill=(20, 60, 230))
+    for b in info["branches"][:6]:
+        r_, c_ = g.to_rc(b["far_point"]["lat"], b["far_point"]["lon"])
+        x, y = float(c_) * k, float(r_) * k
+        d.text((x - 8, y - 10), b["id"], fill=(255, 255, 255), font=big, stroke_width=3, stroke_fill=(120, 40, 0))
+    for nm, col in (("position_likely", (255, 255, 255)), ("position_max", (0, 0, 0))):
+        p_ = info[nm]
+        r_, c_ = g.to_rc(p_["lat"], p_["lon"])
+        x, y = float(c_) * k + k / 2, float(r_) * k + k / 2
+        d.rectangle([x - 6, y - 6, x + 6, y + 6], fill=col, outline=(20, 60, 230), width=2)
+    x0, y0 = pts[0]
+    d.ellipse([x0 - 8, y0 - 8, x0 + 8, y0 + 8], fill=(255, 255, 0), outline=(0, 0, 0), width=2)
+    x1, y1 = pts[-1]
+    d.polygon([(x1, y1), (x1, y1 - 26), (x1 + 18, y1 - 20), (x1, y1 - 14)], fill=(20, 160, 60), outline=(0, 0, 0))
+    km = max(1, int(round(g.size * g.res / 1000 / 5)))
+    L = km * 1000 / g.res * k
+    yb = im.size[1] - 30
+    d.rectangle([20, yb - 4, 30 + L + 60, yb + 18], fill=(255, 255, 255))
+    d.line([(25, yb + 8), (25 + L, yb + 8)], fill=(0, 0, 0), width=4)
+    d.text((30 + L, yb), f"{km} km", fill=(0, 0, 0), font=font)
+    lines = [title + " - heading for a destination",
+             f"blue arrow: best route {info['best_route_km']} km, {info['best_route_walking_h']} h walking",
+             "red / orange / yellow: routes up to 15 / 35 / 75 % longer (where a lost person drifts)",
+             "B1, B2 ...: branches that leave the best route; squares: position by now (white likely, black max)"]
+    d.rectangle([10, 10, 700, 18 + 19 * len(lines)], fill=(255, 255, 255))
+    for i, s_ in enumerate(lines):
+        d.text((16, 14 + 19 * i), s_, fill=(0, 0, 0), font=font)
+    d.text((im.size[0] - 380, im.size[1] - 22), "estimate for search planning - decision support only",
+           fill=(255, 255, 255), font=font, stroke_width=2, stroke_fill=(0, 0, 0))
     im.save(path, quality=90)
 
 
@@ -793,7 +862,7 @@ def render_priority(g, z, lc, road, P, secs, t, T_like, T_max, path: Path, title
     d.rectangle([20, y0 - 4, 30 + L + 60, y0 + 18], fill=(255, 255, 255))
     d.line([(25, y0 + 8), (25 + L, y0 + 8)], fill=(0, 0, 0), width=4)
     d.text((30 + L, y0), f"{km} km", fill=(0, 0, 0), font=font)
-    d.text((im.size[0] - 330, im.size[1] - 22), "estimate for search planning - decision support only",
+    d.text((im.size[0] - 380, im.size[1] - 22), "estimate for search planning - decision support only",
            fill=(255, 255, 255), font=font, stroke_width=2, stroke_fill=(0, 0, 0))
     cum = secs[min(top, len(secs)) - 1]["cum_poa"] if secs else 0
     lines = [title, "colour: probability per km² (yellow = highest)",
@@ -832,6 +901,8 @@ def main() -> None:
                     help="public transport (GTFS timetables): auto = on in built-up areas for ages 7+ when a feed covers them")
     ap.add_argument("--gtfs", action="append", default=[], help="extra GTFS zip URL (city not in the Mobility Database catalog)")
     ap.add_argument("--transit-km", type=float, default=20, help="area radius for transit (default 20 km)")
+    ap.add_argument("--to", help="destination lat,lon the person was heading for: draws the best route and the corridor "
+                                  "of near-best routes instead of only circles (route.png)")
     ap.add_argument("--grid-km", type=float, help="compute only within this radius (finer cells for the likely zone; "
                                                  "the physical limit is then cut at the edge and flagged)")
     ap.add_argument("--view-km", type=float, help="draw the maps only out to this radius (computation still covers everything)")
@@ -865,6 +936,10 @@ def main() -> None:
             else:
                 transit_why = f"off: not urban (built-up {built:.0%} within 1 km; --transit yes to force)"
     log(f"transit: {transit_why}")
+    if a.to:
+        tl, to_ = map(float, a.to.split(","))
+        d_xy = math.hypot((tl - lat0) * M_LAT, (to_ - lon0) * M_LON_EQ * math.cos(math.radians(lat0)))
+        reach_m = max(reach_m, 1.6 * d_xy + 1500)       # room for the destination and detours around it
     if a.grid_km:
         reach_m = a.grid_km * 1000                    # user-limited area: the physical limit may run off the edge
     res = a.res or float(min(250, max(25, math.ceil(2 * reach_m / a.max_cells / 5) * 5)))
@@ -903,7 +978,10 @@ def main() -> None:
         k = np.argmin((rr - g.n) ** 2 + (cc - g.n) ** 2)
         passable[g.n, g.n] = True
         cls[g.n, g.n], extra[g.n, g.n] = cls[rr[k], cc[k]], extra[rr[k], cc[k]]
-    t, pred = travel_hours(g, z, cls, extra, passable, pr, model, T_max * 1.001)
+    limit_h = T_max * 1.001
+    if a.to:
+        limit_h = max(limit_h, 6 * (d_xy / 1000) / max(pr.walk_kmh, 0.5) + 1)   # the destination must be reached
+    t, pred = travel_hours(g, z, cls, extra, passable, pr, model, limit_h)
     t_tr, transit_info = None, {"status": transit_why}
     if use_transit:
         t_tr, transit_info = transit_reach(g, t, since, a.hours, pr, T_like, T_max, a.gtfs, cache / "gtfs")
@@ -911,6 +989,12 @@ def main() -> None:
 
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
+    route_info, route_arr = None, {}
+    if a.to:
+        import route as RT
+        route_info, route_arr = RT.corridor(g, travel_hours.graph, t, pred, (tl, to_), T_like, T_max, z_arr=z)
+        if "excess" in route_arr:
+            np.save(out / "excess.npy", route_arr["excess"].astype(np.float32))
     hourly = [h for h in (0.5, 1, 2, 4, 8, 12, 16, 24) if h < T_max]
     levels = {"likely": T_like, "max": T_max, "hourly": hourly}
     feats = []
@@ -954,6 +1038,23 @@ def main() -> None:
             feats.append({"type": "Feature", "properties": {"name": f"stop reachable by vehicle: {x['stop']}", **x},
                           "geometry": {"type": "Point", "coordinates": [x["lon"], x["lat"]]}})
         np.save(out / "time_transit.npy", t_tr.astype(np.float32))
+    if route_info and "route" in route_info:
+        feats.append({"type": "Feature", "properties": {"name": "best route to destination",
+                                                        "walking_h": route_info["best_route_walking_h"], "km": route_info["best_route_km"]},
+                      "geometry": {"type": "LineString", "coordinates": route_info["route"]}})
+        for b in (0.15, 0.35, 0.75):
+            ex = route_arr["excess"]
+            ls = contours(g, np.where(np.isfinite(ex), ex, 9.0), b)
+            if ls:
+                feats.append({"type": "Feature", "properties": {"name": f"corridor: routes up to {int(b * 100)} % longer"},
+                              "geometry": {"type": "MultiLineString", "coordinates": ls}})
+        for b in route_info["branches"]:
+            feats.append({"type": "Feature", "properties": {"name": f"branch {b['id']}", **{k: v for k, v in b.items() if k != 'far_point'}},
+                          "geometry": {"type": "Point", "coordinates": [b["far_point"]["lon"], b["far_point"]["lat"]]}})
+        for nm in ("position_likely", "position_max"):
+            p_ = route_info[nm]
+            feats.append({"type": "Feature", "properties": {"name": nm.replace("_", " "), **p_},
+                          "geometry": {"type": "Point", "coordinates": [p_["lon"], p_["lat"]]}})
     bearings = [(x, parse_bearing(x)) for x in a.toward] or list(DIRS.items())
     toward = {}
     for name, b in bearings:
@@ -979,7 +1080,7 @@ def main() -> None:
         "grid": g.meta(), "conditions": cond_info, "roads": {"source": road_src, "ways": nways},
         "start_cell": {"elevation_m": round(float(z[g.n, g.n]), 1),
                        "landcover": int(lc[g.n, g.n]), "on_road": int(road[g.n, g.n])},
-        "rings": rings, "transit": transit_info,
+        "rings": rings, "transit": transit_info, "heading": route_info,
         "likely": stats(g, t, T_like), "max": stats(g, t, T_max), "toward": toward,
         "hourly": {f"{h:g}": stats(g, t, h) for h in hourly},
         "warnings": [w for w in [warn] if w] + road_warn,
@@ -1010,6 +1111,13 @@ def main() -> None:
             vg, cut = view_crop(g, a.view_km)
             render_priority(vg, cut(z), cut(lc), cut(road), cut(prob), secs, cut(t), T_like, T_max, out / "priority.png",
                             f"{title} - search priority ({cat})")
+    if route_info and "route" in route_info and not a.no_render:
+        vg, cut = view_crop(g, a.view_km)
+        render_route(vg, cut(z), cut(lc), cut(road), cut(route_arr["excess"]), route_info, out / "route.png", title)
+        hi = route_info
+        print(f"heading: best route {hi['best_route_km']} km, {hi['best_route_walking_h']} h walking; by now likely "
+              f"{hi['position_likely']['km_along_route']} km along ({'arrived' if hi['position_likely']['arrived'] else 'not arrived'}); "
+              f"{len(hi['branches'])} branches -> route.png")
     if not a.no_render:
         vg, cut = view_crop(g, a.view_km)
         render(vg, cut(z), cut(lc), cut(road), cut(cliff), cut(t), levels, out / "reach.png", title,

@@ -29,6 +29,8 @@ uv run ${CLAUDE_SKILL_DIR}/scripts/reach.py --at <lat,lon> --since <ISO time wit
 
 6. **Transit** (`transit.py`, `--transit auto|yes|no`): in built-up areas for ages 7+, GTFS timetables of the missing period (feeds found automatically in the Mobility Database catalog; `--gtfs <zip>` adds one) → Connection Scan from the stops the person can walk to → walking on from where they get off. `reach.json` → `transit`: stops reachable by vehicle with arrival times, extra reach. Report the farthest stops and line ends as places to check (drivers, CCTV); state it is conditional on boarding.
 
+7. **Heading** (`route.py`, `--to lat,lon`): when the destination is known (village, hut, car park, cable car), the best walking route and the corridor of routes up to 15/35/75 % longer; `reach.json` → `heading`: route km and hours, position by now, branches (side, where they leave the route, how far off, higher/lower than the route). Answer with the route first, then the red band, then the branches (lower branches = towards drainages).
+
 `person.py --at … --since … --age …` prints the profile and budget alone, without terrain.
 
 ## Question → command
@@ -36,6 +38,7 @@ uv run ${CLAUDE_SKILL_DIR}/scripts/reach.py --at <lat,lon> --since <ISO time wit
 | Question | Run |
 |---|---|
 | "A 3-year-old went missing at <place>; how far in N days?" | Geocode the place (village / yayla / trailhead; `nominatim.openstreetmap.org/search`, or an OSM `place=locality` near the village if the named spot is missing). Run `reach.py --age 3 --hours 24` and again with `--hours 48`, `72`. Answer with `likely` / `max` → `max_km` and `median_km` per run |
+| "He set off from X to walk to Y and never arrived" | `reach.py --at <X> --to <Y> --hours <since> …`; report the best route, how far along by now, the corridor and the branches (`route.png`) |
 | "From <lat,lon>, a 60-year-old with a cane walks north/south: how far, to where?" | `reach.py --at <lat,lon> --age 60 --mobility cane --toward N --toward S` (Turkish `K G D B KD KB GD GB` also work, or a bearing in degrees). Answer with `toward.<dir>.likely/max`: farthest point (lat,lon), straight-line km, walking-route km; the routes are in `reach.geojson` |
 | "Last seen at 18:00, found at 06:00: was X km plausible?" | `--since <18:00 with offset> --hours 12`; compare the found point's walking time `time.npy` (via `grid.json`) with the `likely` and `max` budgets |
 | Unknown age / fitness / time | Run both ends (`--fitness low` and `high`, earliest and latest time) and report the range |
