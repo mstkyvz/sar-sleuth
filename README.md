@@ -163,6 +163,34 @@ On foot, his likely zone reaches about 6 km (red). If he boarded a bus, he could
 - **Automatic:** found in the [Mobility Database](https://mobilitydatabase.org) catalog (about 6,700 GTFS feeds worldwide, no key). In Türkiye that includes Antalya, Adana, Gaziantep, Erzurum, Kocaeli, Ordu, Düzce, Çanakkale, Muğla and İzmir metro/tram. Cyprus, Israel and Athens are covered too.
 - **Manual:** any other city can be added with `--gtfs <zip url>`, for example İstanbul İETT from data.ibb.gov.tr.
 
+### 6. During the search: update the map as teams come back
+
+The first map says where to **start**. As teams search and find nothing, `search.py` updates the probability (Bayesian search theory) and says where to look **next**:
+
+```bash
+S=out/boyabat                                       # a reach.py output directory
+uv run skills/sar-sleuth/scripts/search.py init   $S
+uv run skills/sar-sleuth/scripts/search.py log    $S --sector 1 --pod 0.7 --team A          # "sector 1, about 70 % covered"
+uv run skills/sar-sleuth/scripts/search.py log    $S --sector 2 --pod 0.5 --team B
+uv run skills/sar-sleuth/scripts/search.py log    $S --gpx team_c.gpx --searchers 6 --spacing 20 --team C
+uv run skills/sar-sleuth/scripts/search.py status $S
+```
+
+```
+logged: sector 1, POD 70%; this search had a 4.2% chance of finding them; outside the area now 5.2%
+logged: track team_c.gpx (6 searcher(s)), mean POD on covered cells 63%; this search had a 2.8% chance ...
+searches logged: 3; cumulative probability of success so far 9.0%; outside the area now 5.5%
+next sectors (highest probability per km² now):  4, 5, 6, 7, 9, 8, 10, 11
+```
+
+<p align="center"><img src="docs/img/search_status.png" width="480" alt="Search status: searched areas tinted blue, next sectors in green"></p>
+
+**How the update works:**
+- **A searched cell** keeps `p × (1 − POD)` of its probability. Everything else gains: unsearched cells, and the chance that the person is **outside the area** altogether.
+- **POD from a team's GPS track:** the effective sweep width per ground type (open grass ~60 m, forest ~20 m, dense scrub ~12 m) gives the coverage, and Koopman's law turns it into `POD = 1 − e^(−coverage)`.
+- **POD from an estimate:** a team leader's estimate per sector also works, for example `--pod 0.6`.
+- **Repeated searches** of the same ground combine.
+
 ---
 
 ## Output
@@ -177,6 +205,7 @@ Every run writes to `--out`:
 | `reach.geojson` | All lines, rings, farthest points and routes, reachable stops | Google Earth, QGIS, geojson.io, OsmAnd / Locus |
 | `sectors.csv` / `sectors.geojson` | Every sector: rank, POA (share of the probability), cumulative POA, area, bounds | spreadsheet, GIS |
 | `gpx/sector_NN.gpx` | Boundary of each top sector | Garmin, phone GPS apps |
+| `search_status.png`, `search.json` | With `search.py`: map after the searches so far, log, next sectors, probability of success | any image viewer / text |
 | `reach.json` | Every input and parameter, budgets, areas, distances per direction, transit stops with arrival times, weather and warnings | text editor, other tools |
 | `time.npy`, `prob.npy`, `time_transit.npy`, `grid.json` | Walking hours and probability per grid cell | Python |
 
@@ -209,6 +238,7 @@ The agent's answer is short. It gives the likely distance and area, the statisti
      RINGS         published found-distance statistics per category and terrain
      PRIORITY      rings × walking time × paths, drainages, buildings, downhill
      SECTORS       ranked by probability per km², GPX for teams
+     DURING SEARCH Bayesian update from searched sectors / GPS tracks (search.py)
 ```
 
 - **Speed on terrain:** Wood et al. (2023) fitted their model on 88,000 km of GPS tracks. Uphill and downhill are costed separately, along with hill slope, path type and vegetation.
@@ -305,6 +335,7 @@ Tests: `cd skills/sar-sleuth && uv run -q --with numpy --with scipy --with pillo
 - Twardy, Koester, Gatt (2006). *Missing person behaviour: an Australian study*
 - Doke (2012). *Analysis of search incidents and lost person behavior in Yosemite National Park*
 - Dibbelt, Pajor, Strasser, Wagner (2018). *Connection Scan Algorithm.* ACM JEA
+- Koopman (1946). *Search and Screening.* OEG Report 56; Koester, Cooper, Frost, Robe (2004). *Sweep width estimation for ground search and rescue.* US Coast Guard / NASAR
 
 ## License
 

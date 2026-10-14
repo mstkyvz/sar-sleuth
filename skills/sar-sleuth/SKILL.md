@@ -31,6 +31,8 @@ uv run ${CLAUDE_SKILL_DIR}/scripts/reach.py --at <lat,lon> --since <ISO time wit
 
 7. **Heading** (`route.py`, `--to lat,lon`): when the destination is known (village, hut, car park, cable car), the best walking route and the corridor of routes up to 15/35/75 % longer; `reach.json` → `heading`: route km and hours, position by now, branches (side, where they leave the route, how far off, higher/lower than the route). Answer with the route first, then the red band, then the branches (lower branches = towards drainages).
 
+8. **During the search** (`search.py`): `init <reach out dir>` → `log <dir> --sector N --pod 0.x` or `--gpx track.gpx [--searchers N --spacing m]` after each unsuccessful search → `status <dir>`: Bayesian update (searched cells × (1 − POD), the rest and "outside the area" gain), next sectors by probability per km², cumulative probability of success, `search_status.png`. Sweep widths per ground type are in `speed_model.json` → `sweep_width_m` (assumptions within published ranges).
+
 `person.py --at … --since … --age …` prints the profile and budget alone, without terrain.
 
 ## Question → command

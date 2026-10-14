@@ -193,3 +193,29 @@ class HeadingTest(unittest.TestCase):
         self.assertGreater(float(ex[g.n // 2, g.n + 15]), 0.15)                  # off in the scrub: a longer route
         self.assertFalse(info["position_likely"]["arrived"])
         self.assertTrue(info["position_max"]["arrived"])
+
+
+class SearchTest(unittest.TestCase):
+    def test_bayes_update(self):
+        import search as SE
+        p = np.array([0.4, 0.3, 0.25])                 # inside the area; 0.05 outside
+        pod = np.array([0.8, 0.0, 0.0])
+        p2, out2, pos = SE.bayes(p, 0.05, pod)
+        self.assertAlmostEqual(pos, 0.32)
+        self.assertAlmostEqual(p2.sum() + out2, 1.0)
+        self.assertAlmostEqual(p2[0], 0.08 / 0.68)
+        self.assertGreater(p2[1], 0.3)                 # unsearched cells gain
+        self.assertGreater(out2, 0.05)                 # and so does "outside the area"
+
+    def test_track_pod_spreads_over_swath(self):
+        import search as SE
+        g, z = flat_grid(40, 10.0)
+        lc = np.full(z.shape, 30, np.uint8)            # open grass: 60 m sweep width
+        la0, lo0 = g.to_ll(g.n, 5)
+        la1, lo1 = g.to_ll(g.n, g.size - 6)
+        import tempfile
+        with tempfile.NamedTemporaryFile("w", suffix=".gpx", delete=False) as f:
+            f.write(f'<gpx><trk><trkseg><trkpt lat="{la0}" lon="{lo0}"/><trkpt lat="{la1}" lon="{lo1}"/></trkseg></trk></gpx>')
+        pod = SE.track_pod(g, lc, Path(f.name), None, MODEL["sweep_width_m"])
+        self.assertGreater(pod[g.n + 2, g.n], 0.5)     # 20 m off the line, inside the 60 m swath
+        self.assertLess(pod[g.n + 6, g.n], 0.05)       # 60 m off: outside it

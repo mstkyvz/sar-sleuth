@@ -644,5 +644,19 @@
     "structure": 1.4
    }
   }
+ },
+ "sweep_width_m": {
+  "_source": "ASSUMPTION within published ranges: effective sweep width (m) of one searcher for a responsive-sized adult target, by ESA WorldCover class. Koopman's random-search law POD = 1 - exp(-W L / A) is the standard model in land SAR (Koester, Cooper, Frost, Robe 2004, 'Sweep width estimation for ground search and rescue', US Coast Guard / NASAR; Koopman 1946). Field-measured widths range from ~10 m in dense brush to over 60 m in open terrain. Calibrate with local sweep-width experiments when available; for small children or unresponsive people use lower values.",
+  "10": 20,
+  "20": 12,
+  "30": 60,
+  "40": 45,
+  "50": 30,
+  "60": 60,
+  "70": 40,
+  "90": 20,
+  "95": 8,
+  "100": 50,
+  "0": 25
  }
 }
